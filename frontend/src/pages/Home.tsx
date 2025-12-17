@@ -1,5 +1,11 @@
-import React from "react";
+import Carousel from "../components/Carousel/Carousel";
+import PopularGameSection from "../components/Section/PopularGameSection";
 
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <>
+      <Carousel />
+      <PopularGameSection />
+    </>
+  );
 }

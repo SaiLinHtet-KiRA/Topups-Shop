@@ -1,5 +1,4 @@
 .nav-container {
-  border-bottom: 1px solid white;
   display: flex;
   position: sticky;
   top: 3;
@@ -7,7 +6,7 @@
   align-items: center;
   padding: 10px 10px;
 }
-.icon-container {
+.logo-container {
   width: 56px;
   height: 56px;
   background-color: blue;
