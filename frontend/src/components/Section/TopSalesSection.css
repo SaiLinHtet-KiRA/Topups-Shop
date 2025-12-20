@@ -1,0 +1,83 @@
+.top-sales-card {
+  width: 340px;
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 5px;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: black;
+  padding: 12px;
+}
+.top-sales-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  align-self: center;
+}
+.top-sales-info {
+  padding: 0px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  header {
+    letter-spacing: 0.05rem;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+.top-sales-badge-wrapper {
+  display: flex;
+  gap: 6px;
+}
+.top-sales-badge {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-weight: bolder;
+  font-size: 14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background-color: rgba(245, 245, 245, 0.164);
+  svg {
+    width: 20px;
+    stroke: whitesmoke;
+  }
+}
+.game-badge {
+  width: fit-content;
+  display: flex;
+  padding: 4px 12px 4px 6px;
+  align-items: center;
+  gap: 5px;
+  background-color: rgba(245, 245, 245, 0.164);
+  border-radius: 30px;
+  span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    overflow: hidden;
+  }
+  header {
+    flex-grow: 1;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-weight: bolder;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.topup-btn {
+  margin-top: 10px;
+  width: 100%;
+  background-color: var(--primary-color);
+  font-size: 16px;
+  border-radius: 24px;
+  padding: 8px 0px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border: 0px;
+}

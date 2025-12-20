@@ -5,24 +5,26 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "./PopularGameSection.css";
 import { Fire } from "../../svg";
+
 export default function PopularGameSection() {
   const data = {
     name: "Mobile Legend Bang Bang",
     icon: "/MLBB/icon.webp",
   };
+
   return (
-    <section className="popular-game-section">
-      <header className="popular-game-section-header">
-        <span>Popular Games</span>
-        <Fire className="svg-sm" />
+    <section className="section">
+      <header className="section-header">
+        <span>Popular Games </span>
+        <Fire className="svg-lg" />
       </header>
-      <section className="popular-game-section-card-container">
+      <section className="section-cards-container">
         <Swiper
           slidesPerView={"auto"}
           spaceBetween={10}
           freeMode={true}
           modules={[FreeMode]}
-          className="popular-game-section-swiper"
+          className="section-swiper"
         >
           {Array(10)
             .fill(0)
