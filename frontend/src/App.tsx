@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import NavgiationBar from "./components/NavgiationBar";
 import TabBar from "./components/TabBar";
 import { useEffect, useState } from "react";
+import Footer from "./components/Footer";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -13,7 +14,6 @@ export default function App() {
       setUser(tg.initDataUnsafe?.user || null);
     }
   }, []);
-  if (!user) return <div>No user data</div>;
 
   return (
     <>
@@ -21,7 +21,8 @@ export default function App() {
       <main>
         <Outlet />
       </main>
-      {/* <TabBar /> */}
+      <Footer />
+      <TabBar />
     </>
   );
 }

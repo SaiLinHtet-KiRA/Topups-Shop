@@ -1,37 +1,56 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./TabBar.css";
 import { Controller, Home, Search, User } from "../svg";
-import { useLocation, useNavigate } from "react-router";
-
+import { Link, useLocation } from "react-router";
+import { motion } from "motion/react";
 export default function TabBar() {
   const { pathname } = useLocation();
-
-  const Tabs = ["/", "/Games", "/Search", "/Profile"];
+  const tabBar = useRef<null | HTMLDivElement>(null);
+  const Tabs = ["/", "/games", "/search", "/profile"];
   const TabIcons = [Home, Controller, Search, User];
 
+  useEffect(() => {
+    const FadeOut = () => {
+      if (
+        !(window.innerHeight + window.scrollY >= document.body.offsetHeight)
+      ) {
+        if (tabBar.current) {
+          tabBar.current.style.animation = "fade-out 0.5s ease forwards";
+        }
+      }
+    };
+    const FadeIn = () => {
+      if (
+        !(window.innerHeight + window.scrollY >= document.body.offsetHeight)
+      ) {
+        if (tabBar.current) {
+          tabBar.current.style.animation = "fade-in 0.5s ease forwards";
+        }
+      }
+    };
+
+    window.addEventListener("scroll", FadeOut);
+    window.addEventListener("scrollend", FadeIn);
+    return () => {
+      window.addEventListener("scroll", FadeOut);
+      window.addEventListener("scrollend", FadeIn);
+    };
+  }, []);
   return (
-    <nav className="tab-bar-wrapper">
-      <div className="tab-bar">
-        <div className="tab-container">
-          {Tabs.map((tab, i) => (
-            <div
-              key={tab}
-              className="tab-wrapper"
-              style={{ transform: `rotate(${30 * i}deg)` }}
-            >
-              <div className="tab" style={{ rotate: `${-50 - 30 * i}deg` }}>
-                {React.createElement(TabIcons[i], {
-                  className: "svg",
-                  style: {
-                    stroke: pathname == tab ? "balck" : "white",
-                  },
-                })}
-                {pathname == tab && <span className="tab-active" />}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+    <nav className="tab-bar-wrapper" ref={tabBar}>
+      {Tabs.map((tab, i) => (
+        <Link to={tab} className="tab" key={tab}>
+          {React.createElement(TabIcons[i], {
+            className: "svg",
+            style: {
+              stroke: pathname == tab ? "var(--primary-color)" : "white",
+            },
+          })}
+          {pathname == tab && (
+            <motion.span layoutId="tab-active" className="tab-active" />
+          )}
+        </Link>
+      ))}
     </nav>
   );
 }

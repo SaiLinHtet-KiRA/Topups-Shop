@@ -195,3 +195,46 @@ export const BankNote: SvgCompontentProp = (props) => (
     />
   </svg>
 );
+export const ArrowRightCircle: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    {...props}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+    />
+  </svg>
+);
+export const CopyRight: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 32 32"
+    enableBackground="new 0 0 32 32"
+    xmlSpace="preserve"
+    {...props}
+  >
+    <circle
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeMiterlimit={10}
+      cx={16}
+      cy={16}
+      r={12}
+    />
+    <path
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeMiterlimit={10}
+      d="M20.4,13.9c-0.8-1.7-2.5-2.9-4.5-2.9 c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5c2,0,3.7-1.2,4.5-2.9"
+    />
+  </svg>
+);

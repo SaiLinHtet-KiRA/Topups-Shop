@@ -4,16 +4,16 @@ import { FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./TopSalesSection.css";
-import { AwardRibbon, BankNote, Box } from "../../svg";
+import { ArrowRightCircle, AwardRibbon, BankNote, Box } from "../../svg";
 import numberToText from "../../helper/numberToText";
 
 export default function TopSalesSection() {
   const data = {
     package_name: "Diamond 10x10",
-    image: "/MLBB/dia-lg.webp",
+    image: "/Games/MLBB/dia-lg.webp",
     price: 10000,
     sold: 1100,
-    game: { name: "Mobile Legend Bang Bang", icon: "/MLBB/icon.webp" },
+    game: { name: "Mobile Legend Bang Bang", icon: "/Games/MLBB/icon.webp" },
   };
 
   return (
@@ -56,7 +56,10 @@ export default function TopSalesSection() {
                       </span>
                       <header className="">{data.game.name}</header>
                     </div>
-                    <button className="topup-btn">Top Up</button>
+                    <button className="topup-btn">
+                      Top Up
+                      <ArrowRightCircle className="svg" />
+                    </button>
                   </div>
                 </div>
               </SwiperSlide>

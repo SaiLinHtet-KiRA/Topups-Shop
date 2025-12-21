@@ -73,6 +73,10 @@
 .topup-btn {
   margin-top: 10px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
   background-color: var(--primary-color);
   font-size: 16px;
   border-radius: 24px;
@@ -80,4 +84,9 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   border: 0px;
+  .svg {
+    margin-top: 2px;
+    width: 24px;
+    stroke: whitesmoke;
+  }
 }
