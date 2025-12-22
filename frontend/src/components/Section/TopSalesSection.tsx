@@ -1,11 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
+import { ArrowRightCircle, AwardRibbon, BankNote, Box } from "../../svg";
+import numberToText from "../../helper/numberToText";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./TopSalesSection.css";
-import { ArrowRightCircle, AwardRibbon, BankNote, Box } from "../../svg";
-import numberToText from "../../helper/numberToText";
 
 export default function TopSalesSection() {
   const data = {

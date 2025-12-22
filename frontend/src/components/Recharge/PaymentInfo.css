@@ -1,0 +1,42 @@
+.payment-info-wrapper {
+  margin: 1rem 1.4rem;
+  header {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin: 1rem 0rem;
+  }
+}
+.payment-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  span {
+    font-size: 1.4rem;
+    font-weight: 900;
+  }
+}
+.qr-container {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  padding: 1rem;
+  background-color: whitesmoke;
+  border-radius: 0.4rem;
+}
+.acc_number {
+  position: relative;
+  .svg {
+    position: absolute;
+    top: -0.6rem;
+    right: -1.4rem;
+    position: absolute;
+    width: 1.3rem;
+  }
+}
+.acc_number:active {
+  color: var(--primary-color);
+  .svg {
+    stroke: var(--primary-color);
+  }
+}

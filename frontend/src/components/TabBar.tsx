@@ -3,39 +3,16 @@ import "./TabBar.css";
 import { Controller, Home, Search, User } from "../svg";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
+import useScroll from "../hook/useScrollEnd";
+
 export default function TabBar() {
   const { pathname } = useLocation();
   const tabBar = useRef<null | HTMLDivElement>(null);
-  const Tabs = ["/", "/games", "/search", "/profile"];
-  const TabIcons = [Home, Controller, Search, User];
+  const Tabs = ["/", "/games", "/profile"];
+  const TabIcons = [Home, Controller, User];
 
-  useEffect(() => {
-    const FadeOut = () => {
-      if (
-        !(window.innerHeight + window.scrollY >= document.body.offsetHeight)
-      ) {
-        if (tabBar.current) {
-          tabBar.current.style.animation = "fade-out 0.5s ease forwards";
-        }
-      }
-    };
-    const FadeIn = () => {
-      if (
-        !(window.innerHeight + window.scrollY >= document.body.offsetHeight)
-      ) {
-        if (tabBar.current) {
-          tabBar.current.style.animation = "fade-in 0.5s ease forwards";
-        }
-      }
-    };
+  useScroll(tabBar);
 
-    window.addEventListener("scroll", FadeOut);
-    window.addEventListener("scrollend", FadeIn);
-    return () => {
-      window.addEventListener("scroll", FadeOut);
-      window.addEventListener("scrollend", FadeIn);
-    };
-  }, []);
   return (
     <nav className="tab-bar-wrapper" ref={tabBar}>
       {Tabs.map((tab, i) => (
@@ -44,6 +21,7 @@ export default function TabBar() {
             className: "svg",
             style: {
               stroke: pathname == tab ? "var(--primary-color)" : "white",
+              fill: pathname == tab ? "var(--primary-color)" : "white",
             },
           })}
           {pathname == tab && (

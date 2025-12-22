@@ -1,13 +1,27 @@
 .nav-container {
   display: flex;
   position: sticky;
-  top: 3;
+  top: 0;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  padding: 1rem 1rem;
+  z-index: 10;
+  background-color: var(--bg-color);
 }
 .logo-container {
-  width: 56px;
-  height: 56px;
+  width: 4rem;
+  height: 4rem;
   background-color: blue;
+}
+.balance-container {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-weight: 900;
+  background-color: rgba(255, 255, 255, 0.35);
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.4rem;
+  .svg {
+    width: 26px;
+  }
 }

@@ -15,6 +15,7 @@ export const Home: SvgCompontentProp = (props) => (
     {...props}
   >
     <path
+      fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
       d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
@@ -28,7 +29,6 @@ export const Controller: SvgCompontentProp = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 32 32"
     xmlSpace="preserve"
-    fill="currentColor"
     {...props}
   >
     <style type="text/css">{"\n\t.sketchy_een{fill:#111918;}\n"}</style>
@@ -45,6 +45,7 @@ export const Search: SvgCompontentProp = (props) => (
     {...props}
   >
     <path
+      fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
       d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
@@ -61,6 +62,7 @@ export const User: SvgCompontentProp = (props) => (
     {...props}
   >
     <path
+      fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
       d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
@@ -90,6 +92,7 @@ export const Fire: SvgCompontentProp = (props) => (
       <stop offset={0.972} stopColor="#f44336" />
     </radialGradient>
     <path
+      stroke="transparent"
       d="M35.56 40.73c-.57 6.08-.97 16.84 2.62 21.42c0 0-1.69-11.82 13.46-26.65c6.1-5.97 7.51-14.09 5.38-20.18c-1.21-3.45-3.42-6.3-5.34-8.29c-1.12-1.17-.26-3.1 1.37-3.03c9.86.44 25.84 3.18 32.63 20.22c2.98 7.48 3.2 15.21 1.78 23.07c-.9 5.02-4.1 16.18 3.2 17.55c5.21.98 7.73-3.16 8.86-6.14c.47-1.24 2.1-1.55 2.98-.56c8.8 10.01 9.55 21.8 7.73 31.95c-3.52 19.62-23.39 33.9-43.13 33.9c-24.66 0-44.29-14.11-49.38-39.65c-2.05-10.31-1.01-30.71 14.89-45.11c1.18-1.08 3.11-.12 2.95 1.5z"
       fill="url(#IconifyId17ecdb2904d178eab8626)"
     />
@@ -122,43 +125,53 @@ export const AwardRibbon: SvgCompontentProp = (props) => (
     <g>
       <g>
         <polygon
+          stroke="transparent"
           fill="#212529"
           points="22.94 30.38 35.06 37.38 21.06 61.62 18 52.93 8.94 54.62 22.94 30.38"
         />
         <path
           d="M22.94,30.38l-5.61,9.71c1.14,2.23,4,2.84,6.17,2.75a7.85,7.85,0,0,1,2.15.21c1.48.6,2.87,2.1,4.61,2.64l4.8-8.31Z"
           fill="#111315"
+          stroke="transparent"
         />
         <polygon
           fill="#212529"
+          stroke="transparent"
           points="41.06 30.38 28.94 37.38 42.94 61.62 46 52.93 55.06 54.62 41.06 30.38"
         />
         <path
+          stroke="transparent"
           d="M41.06,30.38l-12.12,7,4.8,8.31c1.74-.54,3.13-2,4.61-2.64a7.89,7.89,0,0,1,2.15-.21c2.16.09,5-.53,6.17-2.75Z"
           fill="#111315"
         />
         <polygon
           fill="#dd051d"
+          stroke="transparent"
           points="31.58 35.37 19.31 56.65 18 52.93 14.11 53.66 26.4 32.38 31.58 35.37"
         />
         <polygon
+          stroke="transparent"
           fill="#dd051d"
           points="49.9 53.66 46 52.93 44.69 56.66 32.42 35.37 37.6 32.38 49.9 53.66"
         />
         <path
+          stroke="transparent"
           d="M37.6,32.38l-5.18,3,4.79,8.3c1.78-1.39,4.12-.49,6.25-1.14Z"
           fill="#a60416"
         />
         <path
+          stroke="transparent"
           d="M26.4,32.38,20.54,42.53c2.13.65,4.47-.25,6.25,1.14l4.79-8.3Z"
           fill="#a60416"
         />
         <path
+          stroke="transparent"
           d="M50.55,23.5c0-2.11,1.57-4.44,1-6.34S48.2,14.24,47,12.6s-1.3-4.48-3-5.69-4.35-.42-6.32-1S34.11,3,32,3s-3.83,2.24-5.73,2.86-4.68-.14-6.32,1-1.75,4-3,5.69-3.85,2.59-4.49,4.56.95,4.23.95,6.34-1.57,4.44-.95,6.34S15.8,32.76,17,34.4s1.3,4.48,3,5.69,4.35.42,6.32,1S29.89,44,32,44s3.83-2.24,5.73-2.86,4.68.14,6.32-1,1.75-4,3-5.69,3.85-2.59,4.49-4.56S50.55,25.61,50.55,23.5Z"
           fill="#fccd1d"
         />
         <circle cx={32} cy={23.5} fill="#f9a215" r={14.5} />
         <path
+          stroke="transparent"
           d="M33.37,16l1.52,2.63a1.54,1.54,0,0,0,1.06.76L39,20a1.53,1.53,0,0,1,.85,2.56l-2.1,2.22a1.5,1.5,0,0,0-.4,1.22l.36,3a1.57,1.57,0,0,1-2.22,1.58l-2.81-1.27a1.6,1.6,0,0,0-1.32,0l-2.81,1.27A1.57,1.57,0,0,1,26.31,29l.36-3a1.5,1.5,0,0,0-.4-1.22l-2.1-2.22A1.53,1.53,0,0,1,25,20l3-.59a1.54,1.54,0,0,0,1.06-.76L30.63,16A1.59,1.59,0,0,1,33.37,16Z"
           fill="#fccd1d"
         />
@@ -235,6 +248,54 @@ export const CopyRight: SvgCompontentProp = (props) => (
       strokeWidth={2}
       strokeMiterlimit={10}
       d="M20.4,13.9c-0.8-1.7-2.5-2.9-4.5-2.9 c-2.8,0-5,2.2-5,5c0,2.8,2.2,5,5,5c2,0,3.7-1.2,4.5-2.9"
+    />
+  </svg>
+);
+export const Currency: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    {...props}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+    />
+  </svg>
+);
+export const DocumentDuplicate: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    {...props}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+    />
+  </svg>
+);
+export const DownArrow: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    {...props}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="m19.5 8.25-7.5 7.5-7.5-7.5"
     />
   </svg>
 );

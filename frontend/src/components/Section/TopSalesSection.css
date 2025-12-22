@@ -42,7 +42,6 @@
   background-color: rgba(245, 245, 245, 0.164);
   svg {
     width: 20px;
-    stroke: whitesmoke;
   }
 }
 .game-badge {
@@ -87,6 +86,5 @@
   .svg {
     margin-top: 2px;
     width: 24px;
-    stroke: whitesmoke;
   }
 }

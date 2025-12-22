@@ -1,10 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
-import Games from "../../data/Games";
+import { Fire } from "../../svg";
+import Games from "../../data/games";
+import GameCard from "../GameCard";
+
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./PopularGameSection.css";
-import { Fire } from "../../svg";
 
 export default function PopularGameSection() {
   return (
@@ -22,15 +24,8 @@ export default function PopularGameSection() {
           className="section-swiper"
         >
           {Games.map((game) => (
-            <SwiperSlide>
-              <div className="game-card">
-                <img src={game.icon} alt={game.name} />
-                <div>
-                  <span>
-                    <h1>{game.name}</h1>
-                  </span>
-                </div>
-              </div>
+            <SwiperSlide key={game.name}>
+              <GameCard {...game} />
             </SwiperSlide>
           ))}
         </Swiper>

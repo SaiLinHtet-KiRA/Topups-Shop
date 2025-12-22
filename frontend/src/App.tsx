@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 
 export default function App() {
   const [user, setUser] = useState(null);
+  console.log("app");
   useEffect(() => {
     if (window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;

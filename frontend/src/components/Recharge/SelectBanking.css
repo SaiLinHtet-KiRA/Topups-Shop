@@ -1,0 +1,46 @@
+.banking-selector {
+  position: relative;
+  border: 1px solid whitesmoke;
+  padding: 0.5rem 1rem;
+  border-radius: 0.8rem;
+  margin: 1rem 2rem;
+  cursor: pointer;
+}
+.value-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .icon {
+    margin-top: 0.5rem;
+  }
+}
+.value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.banking-name {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  letter-spacing: 0.08rem;
+  font-weight: 900;
+}
+.icon-container {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.banking-options {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  left: 0;
+  margin-top: 1rem;
+  backdrop-filter: blur(0.3rem);
+  border-radius: 0.25rem;
+  .value-container {
+    padding: 0.5rem 1rem;
+  }
+}

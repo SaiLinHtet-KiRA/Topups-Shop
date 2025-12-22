@@ -1,0 +1,13 @@
+.games-wrapper {
+  padding: 0.5rem 1rem;
+  header {
+    font-size: 2rem;
+    margin: 1rem 0rem;
+  }
+}
+.game-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 160px);
+  justify-content: center;
+  gap: 1rem;
+}
