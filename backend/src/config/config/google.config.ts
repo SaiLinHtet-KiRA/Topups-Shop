@@ -1,0 +1,4 @@
+export const { GOOGLE_CLIENT, GOOGLE_SECRET } = {
+  GOOGLE_CLIENT: process.env.GOOGLE_CLIENT!,
+  GOOGLE_SECRET: process.env.GOOGLE_SECRET!,
+};

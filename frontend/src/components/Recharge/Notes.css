@@ -1,0 +1,27 @@
+.note-wrapper {
+  margin: 1rem 1.5rem;
+  header {
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+  }
+}
+.note-container {
+  list-style-position: outside;
+  font-weight: 600;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  li {
+    letter-spacing: 0.2rem;
+  }
+}
+.warning {
+  display: flex;
+  gap: 0.5rem;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  color: var(--warning-color);
+  .svg {
+    width: 1.4rem;
+    stroke: var(--warning-color);
+  }
+}

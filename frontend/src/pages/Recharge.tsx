@@ -3,6 +3,9 @@ import PaymentInfo from "../components/Recharge/PaymentInfo";
 import SelectBanking from "../components/Recharge/SelectBanking";
 import { useMemo } from "react";
 import bankings from "../data/bankings";
+import Notes from "../components/Recharge/Notes";
+import SelecFile from "../components/Recharge/SelecFile";
+import "./Recharge.css";
 
 export default function Recharge() {
   const [params] = useSearchParams();
@@ -19,6 +22,8 @@ export default function Recharge() {
         number={selected!.number}
         payment={payment}
       />
+      <Notes />
+      <SelecFile payment={payment} />
     </section>
   );
 }

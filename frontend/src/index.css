@@ -2,6 +2,7 @@
   --bg-color: #121212;
   --primary-color: #00bba7;
   --gray-color: #717171;
+  --warning-color: #fe1d55;
 }
 html {
   width: 100svw;
