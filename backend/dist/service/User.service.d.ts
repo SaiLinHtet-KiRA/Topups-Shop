@@ -1,5 +1,5 @@
 import { UserDocument } from "../model/User.model";
-import UserServiceType from "../interface/service/User.service.type";
+import type UserServiceType from "../interface/service/User.service.type";
 declare class UserService implements UserServiceType {
     findOrCreateUser(id: string): Promise<UserDocument>;
     getUsers(start: number, limit: number): Promise<UserDocument[]>;
