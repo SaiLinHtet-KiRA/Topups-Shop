@@ -1,4 +1,4 @@
-import { UserDocument } from "model/User.model";
+import { UserDocument } from "../model/User.model";
 import UserServiceType from "../interface/service/User.service.type";
 import UserRepo from "../repo/user.repo";
 
