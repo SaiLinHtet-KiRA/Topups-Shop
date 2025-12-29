@@ -13,7 +13,7 @@ class UserService implements UserServiceType {
     }
   }
   getUsers(start: number, limit: number): Promise<UserDocument[]> {
-    throw new Error("Method not implemented.");
+    throw new Error("Method not implemented asds.");
   }
   getUserById(id: string): Promise<UserDocument> {
     throw new Error("Method not implemented.");
