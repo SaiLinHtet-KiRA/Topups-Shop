@@ -1,8 +1,8 @@
 import { UserDocument } from "../model/User.model";
-import type UserServiceType from "../interface/service/User.service.type";
+// import type UserServiceType from "../interface/service/User.service.type";
 import UserRepo from "../repo/user.repo";
 
-class UserService implements UserServiceType {
+class UserService {
   async findOrCreateUser(id: string): Promise<UserDocument> {
     try {
       const user = await UserRepo.getUserById(id);

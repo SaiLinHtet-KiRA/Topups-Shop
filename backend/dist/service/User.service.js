@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// import type UserServiceType from "../interface/service/User.service.type";
 const user_repo_1 = __importDefault(require("../repo/user.repo"));
 class UserService {
     async findOrCreateUser(id) {
