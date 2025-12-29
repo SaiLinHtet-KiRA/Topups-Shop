@@ -19,6 +19,7 @@ class ExpressServer {
             origin: [
                 "http://localhost:5173",
                 "https://424nhtsn-5173.asse.devtunnels.ms",
+                "https://unmetalised-elna-nonstrategical.ngrok-free.dev",
             ],
             credentials: true,
         }));
