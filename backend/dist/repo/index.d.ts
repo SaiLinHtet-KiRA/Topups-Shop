@@ -1,0 +1,10 @@
+import RechargeRepo from "./Recharge.repo";
+import UserRepo from "./User.repo";
+import GameRepo from "./Game.repo";
+import TopupRepo from "./Topup.repo";
+import CoinRepo from "./Coin.repo";
+export declare const rechargeRepo: RechargeRepo;
+export declare const userRepo: UserRepo;
+export declare const gameRepo: GameRepo;
+export declare const coinRepo: CoinRepo;
+export declare const topupRepo: TopupRepo;

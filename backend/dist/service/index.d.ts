@@ -1,0 +1,12 @@
+import RechargeService from "./Recharge.service";
+import UserService from "./User.service";
+import GameService from "./Game.service";
+import TopueService from "./Topup.service";
+import CheckID from "./CheckId.service";
+import CoinService from "./Coin.service";
+export declare const checkID: CheckID;
+export declare const recharge: RechargeService;
+export declare const user: UserService;
+export declare const game: GameService;
+export declare const coin: CoinService;
+export declare const topup: TopueService;
