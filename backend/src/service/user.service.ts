@@ -1,18 +1,15 @@
 import { UserDocument } from "model/User.model";
-import UserServiceType from "../interface/service/user.service.type";
+import UserServiceType from "../interface/service/User.service.type";
 import UserRepo from "../repo/user.repo";
 
 class UserService implements UserServiceType {
-  async findOrCreateUser(
-    id: string,
-    data: UserDocument
-  ): Promise<UserDocument> {
+  async findOrCreateUser(id: string): Promise<UserDocument> {
     try {
       const user = await UserRepo.getUserById(id);
       if (!user) throw Error("user dose not existed in DB");
       return user;
     } catch (error) {
-      return await UserRepo.createUser(data);
+      return await UserRepo.createUser(id);
     }
   }
   getUsers(start: number, limit: number): Promise<UserDocument[]> {

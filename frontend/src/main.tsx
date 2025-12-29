@@ -10,6 +10,8 @@ import {
 import Home from "./pages/Home.tsx";
 import Games from "./pages/Games.tsx";
 import Recharge from "./pages/Recharge.tsx";
+import { Provider } from "react-redux";
+import store from "./redux/store.ts";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -23,5 +25,7 @@ const router = createBrowserRouter(
 );
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );

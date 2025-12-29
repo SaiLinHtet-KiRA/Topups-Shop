@@ -1,6 +1,11 @@
 import { Link } from "react-router";
 import { Currency } from "../svg";
 import "./NavgiationBar.css";
+import {
+  useGetAccountInfoQuery,
+  useLazyGetAccountInfoQuery,
+} from "../redux/api/auth";
+import { BACKEND_URL } from "../config";
 
 export default function NavgiationBar() {
   return (
@@ -15,9 +20,20 @@ export default function NavgiationBar() {
   );
 }
 function Balance() {
+  const [getInfo, data] = useLazyGetAccountInfoQuery();
   return (
-    <Link to="recharge" className="balance-container">
+    <button
+      onClick={() =>
+        fetch(BACKEND_URL + "/auth/profile", {
+          method: "GET",
+          credentials: "include",
+        })
+      }
+    >
       <Currency className="svg" />0 MMK
-    </Link>
+    </button>
+    // <Link to="recharge" className="balance-container">
+    //   <Currency className="svg" />0 MMK
+    // </Link>
   );
 }

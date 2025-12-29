@@ -4,9 +4,9 @@ export interface PersonalInfo {
   phone?: string;
   email: string;
 }
-
 export interface AccountInfo {
   _id?: string;
+  id: string;
   role: "admin" | "customer";
   notification: string;
   email: string;

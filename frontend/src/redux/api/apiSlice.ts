@@ -2,9 +2,7 @@ import { BACKEND_URL } from "../../config";
 import { fetchBaseQuery, createApi } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: "https://game-shop-mus5.onrender.com",
   baseUrl: BACKEND_URL,
-
   credentials: "include",
 });
 

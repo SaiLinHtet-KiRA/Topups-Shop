@@ -13,23 +13,25 @@ export default class ExpressServer {
   }
   startServer() {
     this.app.set("trust proxy", true);
+    this.app.use(
+      cors({
+        origin: [
+          "http://localhost:5173",
+          "https://424nhtsn-5173.asse.devtunnels.ms",
+        ],
+        credentials: true,
+      })
+    );
 
     this.app.use(
       cookie({
         name: "Eden Game Shop",
         secret: COOKIE_SECRET,
         maxAge: 2 * 24 * 60 * 1000,
+        keys: ["secretkey"],
         httpOnly: true,
-        secure: false,
-        sameSite: "lax",
-      })
-    );
-
-    this.app.use(
-      cors({
-        origin: ["https://unmetalised-elna-nonstrategical.ngrok-free.dev"],
-        methods: ["*"],
-        credentials: true,
+        secure: true,
+        sameSite: "none",
       })
     );
 

@@ -1,26 +1,22 @@
-import { AccountInfo, PersonalInfo } from "@/interface/User";
+// import { AccountInfo, PersonalInfo } from "@/interface/User";
 import { apiSlice } from "./apiSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    success: builder.query<(AccountInfo & { coin: number }) | undefined, void>({
-      query: () => "/auth/success",
+    getAccountInfo: builder.query<any, null>({
+      query: () => "/auth/profile",
     }),
-    getUserInfo: builder.query<PersonalInfo, void>({
-      query: () => "/auth/info",
-    }),
-    updateUserInfo: builder.mutation<PersonalInfo, PersonalInfo>({
-      query: (data) => ({
-        url: "/auth/info",
+    telegramLogin: builder.mutation<any, string>({
+      query: (id) => ({
+        url: "/auth/telegram?id=" + "1665560632",
         method: "POST",
-        body: data,
       }),
     }),
   }),
 });
 
 export const {
-  useSuccessQuery,
-  useGetUserInfoQuery,
-  useUpdateUserInfoMutation,
+  useGetAccountInfoQuery,
+  useLazyGetAccountInfoQuery,
+  useTelegramLoginMutation,
 } = authApiSlice;

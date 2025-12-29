@@ -1,10 +1,11 @@
 import UserModel, { UserDocument } from "../model/User.model";
 import UserRepoType from "../interface/repo/User.repo.type";
+import { NotFoundError } from "../util/error/errors";
 
 class UserRepo implements UserRepoType {
-  async createUser(data: UserDocument): Promise<UserDocument> {
+  async createUser(id: string): Promise<UserDocument> {
     try {
-      const User = new UserModel();
+      const User = new UserModel({ id });
       return await User.save();
     } catch (error) {
       throw new Error("Method not implemented.");
@@ -14,7 +15,13 @@ class UserRepo implements UserRepoType {
     throw new Error("Method not implemented.");
   }
   async getUserById(id: string): Promise<UserDocument> {
-    throw new Error("Method not implemented.");
+    try {
+      const user = await UserModel.findOne({ id });
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
   }
   async updateUserById(id: string, data: UserDocument): Promise<UserDocument> {
     throw new Error("Method not implemented.");

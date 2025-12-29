@@ -8,6 +8,7 @@ declare global {
     }
     interface Request {
       user?: AccountInfo & { coin: number };
+      session: { token: string };
     }
   }
 }

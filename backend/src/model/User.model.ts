@@ -1,14 +1,14 @@
 import mongoose from "mongoose";
 
 export interface UserDocument extends mongoose.Document {
-  id: number;
+  id: string;
   banned: boolean;
 }
 
 const userSchema = new mongoose.Schema(
   {
     id: {
-      type: Number,
+      type: String,
       require: true,
       index: true,
       unique: true,
