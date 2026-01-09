@@ -18,16 +18,9 @@ export default function NavgiationBar() {
 }
 function Balance() {
   const [getInfo, _] = useLazyGetAccountInfoQuery();
-  console.log(getInfo);
+
   return (
-    <button
-      onClick={() =>
-        fetch(BACKEND_URL + "/auth/profile", {
-          method: "GET",
-          credentials: "include",
-        })
-      }
-    >
+    <button onClick={() => getInfo("")}>
       <Currency className="svg" />0 MMK
     </button>
     // <Link to="recharge" className="balance-container">

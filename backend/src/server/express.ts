@@ -27,7 +27,7 @@ export default class ExpressServer {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
         secure: false,
         httpOnly: true,
-        sameSite: "none",
+        sameSite: "lax",
       })
     );
 

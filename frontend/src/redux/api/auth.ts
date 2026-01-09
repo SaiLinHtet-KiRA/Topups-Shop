@@ -3,7 +3,7 @@ import { apiSlice } from "./apiSlice";
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
-    getAccountInfo: builder.query<any, null>({
+    getAccountInfo: builder.query<any, any>({
       query: () => "/auth/profile",
     }),
     telegramLogin: builder.mutation<any, string>({
