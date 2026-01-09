@@ -1,5 +1,5 @@
 import GameCard from "@/components/GameCard";
-import games, { type Game } from "@/data/games_data";
+import games, { type Game } from "@/data/games";
 
 import "./games.css";
 
