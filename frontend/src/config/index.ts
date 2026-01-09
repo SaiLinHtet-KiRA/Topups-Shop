@@ -1,1 +1,1 @@
-export const BACKEND_URL = "https://topups-shop.onrender.com";
+export const BACKEND_URL = "http://172.20.10.3:4000";

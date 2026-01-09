@@ -1,1 +1,0 @@
-{"version":3,"file":"checkAuthenticated.js","sourceRoot":"","sources":["../../src/middleware/checkAuthenticated.ts"],"names":[],"mappings":";;;AACA,iDAAsD;AAE/C,MAAM,kBAAkB,GAAG,CAChC,GAAY,EACZ,GAAa,EACb,IAAkB,EAClB,EAAE;IACF,IAAI,CAAC,GAAG,CAAC,IAAI;QAAE,MAAM,IAAI,uBAAc,CAAC,uBAAuB,CAAC,CAAC;IACjE,IAAI,EAAE,CAAC;AACT,CAAC,CAAC;AAPW,QAAA,kBAAkB,sBAO7B"}

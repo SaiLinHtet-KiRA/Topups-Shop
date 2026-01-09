@@ -3,25 +3,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// import type UserServiceType from "../interface/service/User.service.type";
-const user_repo_1 = __importDefault(require("../repo/user.repo"));
+const User_repo_1 = __importDefault(require("@/repo/User.repo"));
 class UserService {
     async findOrCreateUser(id) {
         try {
-            const user = await user_repo_1.default.getUserById(id);
-            if (!user)
-                throw Error("user dose not existed in DB");
+            const user = await User_repo_1.default.getUserByFindOne(id);
             return user;
         }
         catch (error) {
-            return await user_repo_1.default.createUser(id);
+            return await User_repo_1.default.createUser(id);
         }
     }
     getUsers(start, limit) {
         throw new Error("Method not implemented asds.");
     }
-    getUserById(id) {
-        throw new Error("Method not implemented.");
+    async getUserById(id) {
+        try {
+            const user = await User_repo_1.default.getUserByID(id);
+            return user;
+        }
+        catch (error) {
+            throw error;
+        }
     }
     updateUserById(id, data) {
         throw new Error("Method not implemented.");
@@ -31,4 +34,4 @@ class UserService {
     }
 }
 exports.default = new UserService();
-//# sourceMappingURL=user.service.js.map
+//# sourceMappingURL=User.service.js.map

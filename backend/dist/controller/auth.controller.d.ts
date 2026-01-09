@@ -4,7 +4,7 @@ declare class AuthController implements AuthControllerType {
     TelegramLogin(req: Request<null, null, null, {
         id: string;
     }>, res: Response): Promise<void>;
-    getUser(req: Request<null, null, null, {
+    getAccountInfo(req: Request<null, null, null, {
         id: string;
     }>, res: Response): Promise<void>;
 }

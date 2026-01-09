@@ -1,5 +1,5 @@
-import { UserDocument } from "model/User.model";
-export default interface authService {
+import { UserDocument } from "@/model/User.model";
+export default interface UserService {
     findOrCreateUser(id: string): Promise<UserDocument>;
     getUsers(start: number, limit: number): Promise<UserDocument[]>;
     getUserById(id: string): Promise<UserDocument>;

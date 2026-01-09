@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Currency } from "../svg";
 import "./NavgiationBar.css";
-import { useLazyGetAccountInfoQuery } from "../redux/api/auth";
+import { useAppSelector } from "@/redux/store";
 
 export default function NavgiationBar() {
   return (
@@ -16,14 +16,11 @@ export default function NavgiationBar() {
   );
 }
 function Balance() {
-  const [getInfo, _] = useLazyGetAccountInfoQuery();
-
+  const { balance } = useAppSelector(({ user }) => user);
   return (
-    <button onClick={() => getInfo("")}>
-      <Currency className="svg" />0 MMK
-    </button>
-    // <Link to="recharge" className="balance-container">
-    //   <Currency className="svg" />0 MMK
-    // </Link>
+    <Link to="recharge" className="balance-container">
+      <Currency className="svg" />
+      {balance} MMK
+    </Link>
   );
 }

@@ -1,6 +1,6 @@
 import * as express from "express";
 import Type, { AccountInfo } from "../interface/types/User";
-
+import { type Field } from "multer";
 declare global {
   namespace Express {
     interface User extends AccountInfo {

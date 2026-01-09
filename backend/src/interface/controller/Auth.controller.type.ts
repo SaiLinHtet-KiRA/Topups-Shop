@@ -5,4 +5,8 @@ export default interface AuthControllerType {
     req: Request<null, null, null, { id: string }>,
     res: Response
   ): Promise<void>;
+  getAccountInfo(
+    req: Request<null, null, null, { id: string }>,
+    res: Response
+  ): Promise<void>;
 }

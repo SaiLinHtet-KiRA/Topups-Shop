@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { ArrowUpTray } from "../../svg";
 import "./SelecFile.css";
+import { useDepositMutation } from "@/redux/api/deposit";
 
 export default function SelecFile({ payment }: { payment: string }) {
   const [receipt, setReceipt] = useState<File | null>(null);
+  const [deposit] = useDepositMutation();
   console.log("payment", payment);
   return (
     <section className="select-file-container">
@@ -32,7 +34,14 @@ export default function SelecFile({ payment }: { payment: string }) {
           }}
         />
       </label>
-      <button className="submit-btn">Submit</button>
+      <button
+        className="submit-btn"
+        onClick={() => {
+          if (receipt) deposit(receipt);
+        }}
+      >
+        Submit
+      </button>
     </section>
   );
 }

@@ -3,9 +3,10 @@ import mongoose from "mongoose";
 export interface UserDocument extends mongoose.Document {
   id: string;
   banned: boolean;
+  balance: number;
 }
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema(
   {
     id: {
       type: String,
@@ -18,6 +19,10 @@ const userSchema = new mongoose.Schema(
       default: false,
       indexedDB: true,
     },
+    balance: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
@@ -27,6 +32,6 @@ const userSchema = new mongoose.Schema(
 
 const UserModel = mongoose.connection
   .useDb("User")
-  .model<UserDocument>("User", userSchema);
+  .model<UserDocument>("User", UserSchema);
 
 export default UserModel;

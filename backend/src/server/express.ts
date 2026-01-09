@@ -31,14 +31,14 @@ export default class ExpressServer {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
         secure: false,
         httpOnly: true,
-        sameSite: "none",
+        sameSite: "lax",
       })
     );
 
     this.app.use(express.json());
     this.app.use(Routes);
 
-    // this.app.use(HandleErrorWithLogger);
+    this.app.use(HandleErrorWithLogger);
     this.app.listen(4000, () =>
       console.log("Express server is started in port ", 4000)
     );
