@@ -33,7 +33,7 @@ export default class ExpressServer {
         keys: ["secretkey"],
         httpOnly: true,
         secure: false,
-        sameSite: "none",
+        sameSite: "lax",
       })
     );
 
