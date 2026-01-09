@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router";
+import { useNavigate } from "react-router";
 import bankings from "../../data/bankings";
 import { DownArrow } from "../../svg";
 import { useEffect, useRef, useState } from "react";

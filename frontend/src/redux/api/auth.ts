@@ -7,7 +7,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: () => "/auth/profile",
     }),
     telegramLogin: builder.mutation<any, string>({
-      query: (id) => ({
+      query: () => ({
         url: "/auth/telegram?id=" + "1665560632",
         method: "POST",
       }),

@@ -1,10 +1,7 @@
 import { Link } from "react-router";
 import { Currency } from "../svg";
 import "./NavgiationBar.css";
-import {
-  useGetAccountInfoQuery,
-  useLazyGetAccountInfoQuery,
-} from "../redux/api/auth";
+import { useLazyGetAccountInfoQuery } from "../redux/api/auth";
 import { BACKEND_URL } from "../config";
 
 export default function NavgiationBar() {
@@ -20,7 +17,8 @@ export default function NavgiationBar() {
   );
 }
 function Balance() {
-  const [getInfo, data] = useLazyGetAccountInfoQuery();
+  const [getInfo, _] = useLazyGetAccountInfoQuery();
+  console.log(getInfo);
   return (
     <button
       onClick={() =>

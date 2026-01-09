@@ -4,6 +4,7 @@ import "./SelecFile.css";
 
 export default function SelecFile({ payment }: { payment: string }) {
   const [receipt, setReceipt] = useState<File | null>(null);
+  console.log("payment", payment);
   return (
     <section className="select-file-container">
       <label htmlFor="select-receipt" className="input-container">

@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import "./TabBar.css";
-import { Controller, Home, Search, User } from "../svg";
+import { Controller, Home, User } from "../svg";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
 import useScroll from "../hook/useScrollEnd";

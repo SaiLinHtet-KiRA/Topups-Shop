@@ -1,4 +1,3 @@
-import React from "react";
 import { CopyRight } from "../svg";
 
 export default function Footer() {
