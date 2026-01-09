@@ -27,7 +27,7 @@ class ExpressServer {
             maxAge: 24 * 60 * 60 * 1000, // 1 day
             secure: false,
             httpOnly: true,
-            sameSite: "lax",
+            sameSite: "none",
         }));
         this.app.use(express_1.default.json());
         this.app.use(router_1.default);
