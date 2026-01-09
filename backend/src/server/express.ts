@@ -12,7 +12,7 @@ export default class ExpressServer {
     this.app = express();
   }
   startServer() {
-    this.app.set("trust proxy", true);
+    this.app.set("trust proxy", 1);
     this.app.use(
       cors({
         origin: [
@@ -32,6 +32,7 @@ export default class ExpressServer {
         maxAge: 2 * 24 * 60 * 1000,
         keys: ["secretkey"],
         httpOnly: true,
+        secureProxy: false,
         secure: false,
         sameSite: "lax",
       })
@@ -40,7 +41,7 @@ export default class ExpressServer {
     this.app.use(express.json());
     this.app.use(Routes);
 
-    this.app.use(HandleErrorWithLogger);
+    // this.app.use(HandleErrorWithLogger);
     this.app.listen(4000, () =>
       console.log("Express server is started in port ", 4000)
     );
