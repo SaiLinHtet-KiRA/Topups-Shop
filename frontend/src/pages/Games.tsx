@@ -1,5 +1,5 @@
 import GameCard from "../components/GameCard";
-import games from "@/data/games";
+import games, { type Game } from "@/data/games";
 
 import "./games.css";
 
@@ -8,7 +8,7 @@ export default function Games() {
     <section className="games-wrapper">
       <header>Games</header>
       <section className="game-cards-wrapper">
-        {games.map((game) => (
+        {games.map((game: Game) => (
           <GameCard {...game} />
         ))}
       </section>
