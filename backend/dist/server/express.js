@@ -14,14 +14,18 @@ class ExpressServer {
     startServer() {
         this.app.set("trust proxy", 1);
         this.app.use((0, cors_1.default)({
-            origin: ["http://localhost:5173", "https://topups-shop-1.onrender.com"],
+            origin: [
+                "http://localhost:5173",
+                "https://topups-shop-1.onrender.com",
+                "http://172.20.10.3:5173",
+            ],
             credentials: true,
         }));
         this.app.use((0, cookie_session_1.default)({
             name: "session",
             keys: ["your-secret-key"],
             maxAge: 24 * 60 * 60 * 1000, // 1 day
-            secure: true,
+            secure: false,
             httpOnly: true,
             sameSite: "lax",
         }));

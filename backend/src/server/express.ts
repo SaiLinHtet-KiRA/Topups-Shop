@@ -15,7 +15,11 @@ export default class ExpressServer {
     this.app.set("trust proxy", 1);
     this.app.use(
       cors({
-        origin: ["http://localhost:5173", "https://topups-shop-1.onrender.com"],
+        origin: [
+          "http://localhost:5173",
+          "https://topups-shop-1.onrender.com",
+          "http://172.20.10.3:5173",
+        ],
         credentials: true,
       })
     );
@@ -25,7 +29,7 @@ export default class ExpressServer {
         name: "session",
         keys: ["your-secret-key"],
         maxAge: 24 * 60 * 60 * 1000, // 1 day
-        secure: true,
+        secure: false,
         httpOnly: true,
         sameSite: "lax",
       })
