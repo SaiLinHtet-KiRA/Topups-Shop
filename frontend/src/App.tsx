@@ -1,12 +1,11 @@
 import { Outlet } from "react-router";
 import NavgiationBar from "./components/NavgiationBar";
 import TabBar from "./components/TabBar";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import Footer from "./components/Footer";
 import { useTelegramLoginMutation } from "./redux/api/auth";
 
 export default function App() {
-  const [user, setUser] = useState(null);
   const [telegramLogin] = useTelegramLoginMutation();
   console.log("app");
   // useEffect(() => {
