@@ -25,9 +25,9 @@ export default class ExpressServer {
         name: "session",
         keys: ["your-secret-key"],
         maxAge: 24 * 60 * 60 * 1000, // 1 day
-        secure: process.env.NODE_ENV === "production",
+        secure: false,
         httpOnly: true,
-        sameSite: "lax",
+        sameSite: "none",
       })
     );
 
