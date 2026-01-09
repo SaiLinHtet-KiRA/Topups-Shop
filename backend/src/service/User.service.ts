@@ -1,6 +1,6 @@
-import { UserDocument } from "@/model/User.model";
-import type UserServiceType from "@/interface/service/User.service.type";
-import UserRepo from "@/repo/User.repo";
+import { UserDocument } from "../model/User.model";
+import type UserServiceType from "../interface/service/User.service.type";
+import UserRepo from "../repo/User.repo";
 
 class UserService implements UserServiceType {
   async findOrCreateUser(id: string): Promise<UserDocument> {
@@ -8,13 +8,13 @@ class UserService implements UserServiceType {
       const user = await UserRepo.getUserByFindOne(id);
       return user;
     } catch (error) {
-      return await UserRepo.createUser(id);
+      return await UserRepo.create(id);
     }
   }
   getUsers(start: number, limit: number): Promise<UserDocument[]> {
     throw new Error("Method not implemented asds.");
   }
-  async getUserById(id: string): Promise<UserDocument> {
+  async getById(id: string): Promise<UserDocument> {
     try {
       const user = await UserRepo.getUserByID(id);
       return user;
@@ -22,10 +22,10 @@ class UserService implements UserServiceType {
       throw error;
     }
   }
-  updateUserById(id: string, data: UserDocument): Promise<UserDocument> {
+  updatById(id: string, data: UserDocument): Promise<UserDocument> {
     throw new Error("Method not implemented.");
   }
-  deleteUserById(id: string): Promise<UserDocument> {
+  deleteById(id: string): Promise<UserDocument> {
     throw new Error("Method not implemented.");
   }
 }

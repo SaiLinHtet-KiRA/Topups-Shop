@@ -1,9 +1,9 @@
-import UserModel, { UserDocument } from "@/model/User.model";
-import UserRepoType from "@/interface/repo/User.repo.type";
-import { NotFoundError } from "@/util/error/errors";
+import UserModel, { UserDocument } from "../model/User.model";
+import UserRepoType from "../interface/repo/User.repo.type";
+import { NotFoundError } from "../util/error/errors";
 
 class UserRepo implements UserRepoType {
-  async createUser(id: string): Promise<UserDocument> {
+  async create(id: string): Promise<UserDocument> {
     try {
       const User = new UserModel({ id });
       return await User.save();

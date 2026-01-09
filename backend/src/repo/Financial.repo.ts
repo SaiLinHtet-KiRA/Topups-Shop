@@ -1,43 +1,29 @@
-import UserModel, { UserDocument } from "@/model/User.model";
-import UserRepoType from "@/interface/repo/User.repo.type";
-import { NotFoundError } from "@/util/error/errors";
+import FinancialServiceType from "../interface/repo/Financial.repo.type";
+import DepositModel, { DepositDocument } from "../model/Deposit.model";
 
-class UserRepo implements UserRepoType {
-  async createUser(id: string): Promise<UserDocument> {
+class FinancialRepo implements FinancialServiceType {
+  async create(): Promise<DepositDocument> {
     try {
-      const User = new UserModel({ id });
-      return await User.save();
-    } catch (error) {
-      throw new Error("Method not implemented.");
-    }
-  }
-  async getUserByID(id: string): Promise<UserDocument> {
-    try {
-      const User = await UserModel.findById(id);
-      if (!User) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
-      return User;
-    } catch (error) {
-      throw new Error("Method not implemented.");
-    }
-  }
-  async getUsers(start: number, limit: number): Promise<UserDocument[]> {
-    throw new Error("Method not implemented.");
-  }
-  async getUserByFindOne(id: string): Promise<UserDocument> {
-    try {
-      const user = await UserModel.findOne({ id });
-      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
-      return user;
+      const deposit = new DepositModel();
+      return await deposit.save();
     } catch (error) {
       throw error;
     }
   }
-  async updateUserById(id: string, data: UserDocument): Promise<UserDocument> {
-    throw new Error("Method not implemented.");
+  updateById(id: string, data: DepositDocument): Promise<DepositDocument> {
+    try {
+      throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
   }
-  async deleteUserById(id: string): Promise<UserDocument> {
-    throw new Error("Method not implemented.");
+  deleteById(id: string): Promise<DepositDocument> {
+    try {
+      throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
   }
 }
 
-export default new UserRepo();
+export default new FinancialRepo();
