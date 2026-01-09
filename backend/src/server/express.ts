@@ -32,7 +32,7 @@ export default class ExpressServer {
         maxAge: 2 * 24 * 60 * 1000,
         keys: ["secretkey"],
         httpOnly: true,
-        secure: true,
+        secure: false,
         sameSite: "none",
       })
     );
