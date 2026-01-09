@@ -2,7 +2,6 @@ import { Link } from "react-router";
 import { Currency } from "../svg";
 import "./NavgiationBar.css";
 import { useLazyGetAccountInfoQuery } from "../redux/api/auth";
-import { BACKEND_URL } from "../config";
 
 export default function NavgiationBar() {
   return (
