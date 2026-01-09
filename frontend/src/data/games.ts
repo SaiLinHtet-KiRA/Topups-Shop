@@ -1,9 +1,4 @@
-export interface Game {
-  name: string;
-  icon: string;
-}
-
-const games: Game[] = [
+export default [
   { name: "Mobile Legend Bang Bang", icon: "/Games/MLBB/icon.webp" },
   { name: "Blood Strike", icon: "/Games/Blood Strike/icon.webp" },
   { name: "PUBG Mobile", icon: "/Games/PUBG/icon.webp" },
@@ -13,4 +8,3 @@ const games: Game[] = [
   { name: "Arena Breakout", icon: "/Games/Arena Breakout/icon.webp" },
   { name: "Once Human", icon: "/Games/Once Human/icon.webp" },
 ];
-export default games;

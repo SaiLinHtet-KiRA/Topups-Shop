@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import { Fire } from "../../svg";
-import games, { type Game } from "@/data/games";
+import games from "@/data/games";
 import GameCard from "../GameCard";
 
 import "swiper/css";
@@ -23,7 +23,7 @@ export default function PopularGameSection() {
           modules={[FreeMode]}
           className="section-swiper"
         >
-          {games.map((game: Game) => (
+          {games.map((game) => (
             <SwiperSlide key={game.name}>
               <GameCard {...game} />
             </SwiperSlide>
