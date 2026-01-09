@@ -21,7 +21,7 @@ class ExpressServer {
             name: "session",
             keys: ["your-secret-key"],
             maxAge: 24 * 60 * 60 * 1000, // 1 day
-            secure: false,
+            secure: true,
             httpOnly: true,
             sameSite: "lax",
         }));
