@@ -13,4 +13,4 @@ const games: Game[] = [
   { name: "Arena Breakout", icon: "/Games/Arena Breakout/icon.webp" },
   { name: "Once Human", icon: "/Games/Once Human/icon.webp" },
 ];
-export { games };
+export default games;
