@@ -1,4 +1,9 @@
-const games = [
+export interface Game {
+  name: string;
+  icon: string;
+}
+
+const games: Game[] = [
   { name: "Mobile Legend Bang Bang", icon: "/Games/MLBB/icon.webp" },
   { name: "Blood Strike", icon: "/Games/Blood Strike/icon.webp" },
   { name: "PUBG Mobile", icon: "/Games/PUBG/icon.webp" },
