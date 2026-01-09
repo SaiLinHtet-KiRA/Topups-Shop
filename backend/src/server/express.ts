@@ -27,14 +27,13 @@ export default class ExpressServer {
 
     this.app.use(
       cookie({
-        name: "Eden Game Shop",
+        name: "eden_game_shop",
         secret: COOKIE_SECRET,
         maxAge: 2 * 24 * 60 * 1000,
         keys: ["secretkey"],
         httpOnly: true,
-        secureProxy: false,
         secure: false,
-        sameSite: "lax",
+        sameSite: "none",
       })
     );
 
