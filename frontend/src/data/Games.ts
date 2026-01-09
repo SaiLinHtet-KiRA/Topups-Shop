@@ -8,4 +8,4 @@ const games = [
   { name: "Arena Breakout", icon: "/Games/Arena Breakout/icon.webp" },
   { name: "Once Human", icon: "/Games/Once Human/icon.webp" },
 ];
-export default games;
+export { games };
