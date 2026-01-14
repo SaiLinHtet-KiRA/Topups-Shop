@@ -12,7 +12,6 @@ export default function requireAuth(req: any, res: any, next: any) {
     req.user = payload;
     next();
   } catch (err) {
-    console.log(err);
     return res.status(401).send("Invalid token");
   }
 }

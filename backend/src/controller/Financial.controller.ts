@@ -1,10 +1,22 @@
 import FinancialControllerType from "../interface/controller/Financial.controller.type";
 import { Request, Response } from "express";
+import FinancialService from "../service/Financial.service";
+import Receipt from "../interface/other/Receipt";
 
 class FinancialController implements FinancialControllerType {
-  async deposit(req: Request, res: Response): Promise<void> {
+  async deposit(
+    req: Request<any, any, Omit<Receipt, "receipt" | "userID">>,
+    res: Response
+  ): Promise<void> {
     try {
-      if (req.file) res.status(200);
+      if (req.file)
+        await FinancialService.createDeposit({
+          receipt: req.file.buffer,
+          userID: req.user.id,
+          ...req.body,
+        });
+
+      res.status(200);
     } catch (error) {
       throw error;
     }

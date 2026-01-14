@@ -22,7 +22,7 @@ class UserService implements UserServiceType {
       throw error;
     }
   }
-  updatById(id: string, data: UserDocument): Promise<UserDocument> {
+  updatUserById(id: string, data: UserDocument): Promise<UserDocument> {
     throw new Error("Method not implemented.");
   }
   deleteById(id: string): Promise<UserDocument> {

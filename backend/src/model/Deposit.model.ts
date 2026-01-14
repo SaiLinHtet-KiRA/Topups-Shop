@@ -1,13 +1,17 @@
 import mongoose from "mongoose";
 import SeqModel from "./Seq.model";
+import UserService from "../service/User.service";
+import UserModel from "./User.model";
 
 export interface DepositDocument extends mongoose.Document {
   id: number;
-  qr: string;
+  userID: mongoose.Schema.Types.ObjectId;
   amount: number;
   status: "pending" | "success" | "fail";
   createdAt: Date;
   upatedAt: Date;
+  name: string;
+  banking: string;
 }
 
 const DepositSchema = new mongoose.Schema<DepositDocument>(
@@ -16,9 +20,18 @@ const DepositSchema = new mongoose.Schema<DepositDocument>(
       type: Number,
       require: true,
     },
-    qr: {
+    userID: {
+      type: mongoose.Schema.Types.ObjectId,
+      require: true,
+      ref: "User",
+    },
+    name: {
       type: String,
-      require: false,
+      require: true,
+    },
+    banking: {
+      type: String,
+      require: true,
     },
     amount: {
       type: Number,
@@ -37,17 +50,46 @@ const DepositSchema = new mongoose.Schema<DepositDocument>(
 );
 
 DepositSchema.pre("save", async function () {
+  console.log("DepositSchema", this);
   try {
+    console.log("DepositSchema", this);
+
     if (this.isNew) {
       const newOrderID = await SeqModel.findByIdAndUpdate(
         { _id: "orderId" },
-        { $inc: { seq: 1 } }
+        { $inc: { seq: 1 } },
+        { new: true, upsert: true }
       );
+
       if (!newOrderID) throw Error("Some things wrong on getting new order id");
+      await UserModel.findByIdAndUpdate(this.userID, {
+        $push: { deposits: this._id },
+      });
       this.id = newOrderID.seq;
+    } else {
     }
   } catch (error) {
     throw error;
+  }
+});
+DepositSchema.pre("findOneAndUpdate", async function (doc) {
+  try {
+    const update = this.getUpdate() as { status: string };
+    const deposit = await this.model.findById(this.getQuery()._id);
+    if (update && deposit) {
+      if (update.status === "success") {
+        await UserModel.findByIdAndUpdate(deposit.userID, {
+          $inc: { balance: deposit.amount },
+        });
+      }
+      if (update.status === "fail") {
+        await UserModel.findByIdAndUpdate(deposit.userID, {
+          $inc: { balance: -deposit.amount },
+        });
+      }
+    }
+  } catch (err) {
+    throw err;
   }
 });
 

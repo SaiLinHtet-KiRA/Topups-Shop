@@ -1,18 +1,29 @@
-import FinancialServiceType from "../interface/repo/Financial.repo.type";
+import Receipt from "../interface/other/Receipt";
+import FinancialRepoType from "../interface/repo/Financial.repo.type";
 import DepositModel, { DepositDocument } from "../model/Deposit.model";
+import { NotFoundError } from "../util/error/errors";
 
-class FinancialRepo implements FinancialServiceType {
-  async create(): Promise<DepositDocument> {
+class FinancialRepo implements FinancialRepoType {
+  async create(receipt: DepositDocument): Promise<DepositDocument> {
     try {
-      const deposit = new DepositModel();
+      const deposit = new DepositModel({ ...receipt });
       return await deposit.save();
     } catch (error) {
       throw error;
     }
   }
-  updateById(id: string, data: DepositDocument): Promise<DepositDocument> {
+  async updateById(
+    id: string,
+    data: DepositDocument
+  ): Promise<DepositDocument> {
     try {
-      throw new Error("Method not implemented.");
+      const updated = await DepositModel.findByIdAndUpdate(id, data, {
+        new: true,
+      }).lean();
+      if (!updated) {
+        throw new NotFoundError(`Order-${id} wasn't found in data base`);
+      }
+      return updated;
     } catch (error) {
       throw error;
     }
@@ -20,6 +31,18 @@ class FinancialRepo implements FinancialServiceType {
   deleteById(id: string): Promise<DepositDocument> {
     try {
       throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getById(id: string): Promise<DepositDocument> {
+    try {
+      const deposit = await DepositModel.findById(id);
+
+      if (!deposit)
+        throw new NotFoundError(`Order-${id} wasn't found in data base`);
+
+      return deposit;
     } catch (error) {
       throw error;
     }

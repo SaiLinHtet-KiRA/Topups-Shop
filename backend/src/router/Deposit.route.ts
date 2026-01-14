@@ -2,6 +2,7 @@ import { Router } from "express";
 import checkFileExist from "../middleware/checkFileExist.middleware";
 import multer from "multer";
 import financialController from "../controller/Financial.controller";
+import requireAuth from "../middleware/requireAuth";
 
 const router = Router();
 const upload = multer({
@@ -10,6 +11,7 @@ const upload = multer({
 });
 router.post(
   "",
+  requireAuth,
   [upload.single("receipt"), checkFileExist],
   financialController.deposit
 );

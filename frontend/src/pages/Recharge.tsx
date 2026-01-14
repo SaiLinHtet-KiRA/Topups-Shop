@@ -4,7 +4,7 @@ import SelectBanking from "../components/Recharge/SelectBanking";
 import { useMemo } from "react";
 import bankings from "../data/bankings";
 import Notes from "../components/Recharge/Notes";
-import SelecFile from "../components/Recharge/SelecFile";
+import Form from "../components/form/Form";
 import "./Recharge.css";
 
 export default function Recharge() {
@@ -23,7 +23,7 @@ export default function Recharge() {
         payment={payment}
       />
       <Notes />
-      <SelecFile payment={payment} />
+      <Form payment={payment} />
     </section>
   );
 }

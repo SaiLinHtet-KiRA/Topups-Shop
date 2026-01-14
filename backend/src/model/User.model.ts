@@ -4,15 +4,21 @@ export interface UserDocument extends mongoose.Document {
   id: string;
   banned: boolean;
   balance: number;
+  deposits: mongoose.Schema.Types.ObjectId[];
 }
 
-const UserSchema = new mongoose.Schema(
+const UserSchema = new mongoose.Schema<UserDocument>(
   {
     id: {
       type: String,
       require: true,
       index: true,
       unique: true,
+    },
+    deposits: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: "Deposit",
+      default: [],
     },
     banned: {
       type: Boolean,

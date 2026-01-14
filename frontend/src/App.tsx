@@ -36,7 +36,7 @@ export default function App() {
       console.log("featch");
       telegramLogin("7253314643");
     }
-  }, [data]);
+  }, [data, isFetching]);
   return (
     <>
       <NavgiationBar />

@@ -1,6 +1,6 @@
 import type { CSSProperties, FunctionComponent } from "react";
 
-type SvgCompontentProp = FunctionComponent<{
+export type SvgCompontentProp = FunctionComponent<{
   className: string;
   style?: CSSProperties;
 }>;

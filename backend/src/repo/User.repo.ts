@@ -33,7 +33,13 @@ class UserRepo implements UserRepoType {
     }
   }
   async updateUserById(id: string, data: UserDocument): Promise<UserDocument> {
-    throw new Error("Method not implemented.");
+    try {
+      const user = await UserModel.findByIdAndUpdate(id, data);
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
   }
   async deleteUserById(id: string): Promise<UserDocument> {
     throw new Error("Method not implemented.");

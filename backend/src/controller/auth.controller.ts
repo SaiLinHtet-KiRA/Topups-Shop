@@ -25,7 +25,7 @@ class AuthController implements AuthControllerType {
     res: Response
   ): Promise<void> {
     try {
-      const { banned, balance } = await userService.getUseId(req.user.id);
+      const { banned, balance } = await userService.getById(req.user.id);
 
       res.status(200).json({ banned, balance });
     } catch (error) {
