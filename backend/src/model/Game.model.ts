@@ -11,17 +11,15 @@ export interface GameDocument extends mongoose.Document {
 
 const GameSchema = new mongoose.Schema(
   {
-    name: {
-      type: String,
-      require: true,
-    },
-    icon: {
-      type: String,
-      require: true,
-    },
+    name: { type: String, require: true },
+    icon: { type: String, require: true },
+    about: { type: String, require: true },
+    check_id_url: { type: String },
+    palyStore: { type: String, require: true },
+    appStore: { type: String, require: true },
     packages: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "Package",
+      ref: "Packages",
     },
   },
   {

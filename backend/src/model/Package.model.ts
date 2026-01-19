@@ -1,16 +1,18 @@
 import mongoose from "mongoose";
+import { GameDocument } from "./Game.model";
 
 export interface PackageDocument extends mongoose.Document {
   name: string;
   icon: string;
-  game: mongoose.Schema.Types.ObjectId;
+  game: mongoose.Schema.Types.ObjectId | GameDocument;
   sold: number;
-  price: number;
+  old_price: number;
+  new_price: number;
   createdAt: Date;
   upatedAt: Date;
 }
 
-const PackageSchema = new mongoose.Schema(
+const PackageSchema = new mongoose.Schema<PackageDocument>(
   {
     name: {
       type: String,
@@ -29,7 +31,11 @@ const PackageSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    price: {
+    old_price: {
+      type: Number,
+      require: true,
+    },
+    new_price: {
       type: Number,
       require: true,
     },
