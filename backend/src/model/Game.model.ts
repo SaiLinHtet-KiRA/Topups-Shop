@@ -1,15 +1,21 @@
-import mongoose from "mongoose";
-import { PackageDocument } from "./Package.model";
+import mongoose, { HydratedDocument } from "mongoose";
+import { PackagesDocument } from "./Packages.model";
 
-export interface GameDocument extends mongoose.Document {
+export interface Game {
   name: string;
   icon: string;
-  packages: PackageDocument[];
-  createdAt: Date;
-  upatedAt: Date;
+  about: string;
+  check_id_url: string;
+  palyStore: string;
+  appStore: string;
+  packages?: mongoose.Types.ObjectId[];
+  createdAt?: Date;
+  upatedAt?: Date;
 }
 
-const GameSchema = new mongoose.Schema(
+export type GameDocument = HydratedDocument<Game>;
+
+const GameSchema = new mongoose.Schema<GameDocument>(
   {
     name: { type: String, require: true },
     icon: { type: String, require: true },
@@ -25,11 +31,11 @@ const GameSchema = new mongoose.Schema(
   {
     timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
-const GametModel = mongoose.connection
+const GameModel = mongoose.connection
   .useDb("Game")
   .model<GameDocument>("Game", GameSchema);
 
-export default GametModel;
+export default GameModel;

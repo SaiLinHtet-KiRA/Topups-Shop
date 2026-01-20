@@ -1,16 +1,18 @@
-import mongoose from "mongoose";
+import mongoose, { HydratedDocument } from "mongoose";
 import { GameDocument } from "./Game.model";
 
-export interface PackageDocument extends mongoose.Document {
+export interface Package {
   name: string;
   icon: string;
-  game: mongoose.Schema.Types.ObjectId | GameDocument;
+  game: mongoose.Types.ObjectId | GameDocument;
   sold: number;
   old_price: number;
   new_price: number;
-  createdAt: Date;
-  upatedAt: Date;
+  createdAt?: Date;
+  upatedAt?: Date;
 }
+
+export type PackageDocument = HydratedDocument<Package>;
 
 const PackageSchema = new mongoose.Schema<PackageDocument>(
   {
@@ -43,7 +45,7 @@ const PackageSchema = new mongoose.Schema<PackageDocument>(
   {
     timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
 const PackageModel = mongoose.connection

@@ -1,17 +1,18 @@
-import mongoose from "mongoose";
+import mongoose, { HydratedDocument } from "mongoose";
 import { PackageDocument } from "./Package.model";
 
-export interface PackagesDocument extends Omit<mongoose.Document, "_id"> {
+export interface Packages {
   name: string;
-  packages: mongoose.Schema.Types.ObjectId[] | PackageDocument[];
+  packages: mongoose.Types.ObjectId[];
 }
+export type PackagesDocument = HydratedDocument<Packages>;
 
 const PackagsSchema = new mongoose.Schema<PackagesDocument>(
   {
     name: { type: String, require: true },
     packages: [mongoose.Schema.Types.ObjectId],
   },
-  { timestamps: false, _id: false, versionKey: false }
+  { timestamps: false, _id: false, versionKey: false },
 );
 
 const PackagesModel = mongoose.connection
