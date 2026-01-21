@@ -8,6 +8,8 @@ export default interface GameServiceType {
     pattern: string,
   ): Promise<GameDocument[]>;
   getGame(id: string): Promise<GameDocument>;
+  getGames(start: number, limit: number): Promise<GameDocument[]>;
+
   updateGame(
     id: string,
     data: UpdateQueryKnownOnly<GameDocument>,

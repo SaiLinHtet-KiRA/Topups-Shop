@@ -7,5 +7,6 @@ export default interface PackageServiceType {
     pattern: string,
   ): Promise<PackageDocument[]>;
   getPackage(id: string): Promise<PackageDocument>;
+  getPackages(page: number, limit: number): Promise<PackageDocument[]>;
   updatePackage(id: string, data: PackageDocument): Promise<PackageDocument>;
 }

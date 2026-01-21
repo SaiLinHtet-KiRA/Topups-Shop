@@ -1,14 +1,12 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectFade, Autoplay } from "swiper/modules";
-import Slide1 from "./Slide1";
-import Slide2 from "./Slide2";
-import Slide3 from "./Slide3";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "./Carousel.css";
 
 export default function Carousel() {
+  const Images = ["/image/image-1.webp"];
   return (
     <Swiper
       effect={"fade"}
@@ -24,15 +22,13 @@ export default function Carousel() {
       modules={[EffectFade, Pagination, Autoplay]}
       className="Swiper"
     >
-      <SwiperSlide>
-        <Slide1 />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide2 />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Slide3 />
-      </SwiperSlide>
+      {Images.map((url, i) => (
+        <SwiperSlide key={"image-" + i}>
+          <div className="img-container">
+            <img src={url} alt={"image-" + i} />
+          </div>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

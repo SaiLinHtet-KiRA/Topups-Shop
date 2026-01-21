@@ -17,7 +17,7 @@ export default class ExpressServer {
       cors({
         origin: ["http://localhost:5173", "https://topups-shop-1.onrender.com"],
         credentials: true,
-      })
+      }),
     );
 
     this.app.use(
@@ -28,7 +28,7 @@ export default class ExpressServer {
         secure: false,
         httpOnly: true,
         sameSite: "lax",
-      })
+      }),
     );
 
     this.app.use(express.json());
@@ -36,7 +36,7 @@ export default class ExpressServer {
 
     this.app.use(HandleErrorWithLogger);
     this.app.listen(4000, () =>
-      console.log("Express server is started in port ", 4000)
+      console.log("Express server is started in port ", 4000),
     );
   }
 }

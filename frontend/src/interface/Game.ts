@@ -13,7 +13,7 @@ export interface RawGame {
   name: string;
   icon: string;
   about: string;
-  check_id_url: string | null;
+  check_id_url: string;
   palyStore: string;
   appStore: string;
   packages: [PackageType];

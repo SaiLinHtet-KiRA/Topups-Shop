@@ -8,9 +8,7 @@ export interface Game {
   check_id_url: string;
   palyStore: string;
   appStore: string;
-  packages?: mongoose.Types.ObjectId[] | PackagesDocument;
-  createdAt?: Date;
-  upatedAt?: Date;
+  packages?: mongoose.Types.ObjectId[] | PackagesDocument[];
 }
 
 export type GameDocument = HydratedDocument<Game>;

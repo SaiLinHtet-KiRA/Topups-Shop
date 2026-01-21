@@ -11,6 +11,7 @@ class Package implements PackageRepoType {
       throw error;
     }
   }
+
   async findByRegex(
     field: keyof PackageDocument,
     pattern: string,
@@ -24,6 +25,18 @@ class Package implements PackageRepoType {
       throw error;
     }
   }
+
+  async getMany(start: number, limit: number): Promise<PackageDocument[]> {
+    try {
+      return await PackageModel.find()
+        .sort({ sold: 1 })
+        .skip(start * limit)
+        .limit(limit);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async getById(id: string): Promise<PackageDocument> {
     try {
       const Package = await PackageModel.findById(id);
@@ -33,6 +46,7 @@ class Package implements PackageRepoType {
       throw error;
     }
   }
+
   async updateById(
     id: string,
     data: PackageDocument,
@@ -45,6 +59,7 @@ class Package implements PackageRepoType {
       throw error;
     }
   }
+
   async deleteById(id: string): Promise<PackageDocument> {
     try {
       const Package = await PackageModel.findByIdAndDelete(id);

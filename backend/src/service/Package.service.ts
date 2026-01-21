@@ -20,6 +20,15 @@ class PackageService implements PackageServiceType {
       throw error;
     }
   }
+
+  async getPackages(page: number, limit: number): Promise<PackageDocument[]> {
+    try {
+      return await PackageRepo.getMany(page, limit);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async getPackage(id: string): Promise<PackageDocument> {
     try {
       return await PackageRepo.getById(id);
@@ -27,6 +36,7 @@ class PackageService implements PackageServiceType {
       throw error;
     }
   }
+
   async updatePackage(
     id: string,
     data: PackageDocument,

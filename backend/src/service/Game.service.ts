@@ -29,6 +29,13 @@ class GameService implements GameServiceType {
       throw error;
     }
   }
+  async getGames(start: number, limit: number): Promise<GameDocument[]> {
+    try {
+      return await GameRepo.getMany(start, limit);
+    } catch (error) {
+      throw error;
+    }
+  }
   async updateGame(
     id: string,
     update: UpdateQueryKnownOnly<GameDocument>,

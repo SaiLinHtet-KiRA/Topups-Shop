@@ -19,8 +19,9 @@ class GameRepo implements GameRepoType {
   ): Promise<GameDocument[]> {
     try {
       const packages = await GameModel.find({
-        [field]: { $regex: pattern, $options: "i" },
+        [field]: { $regex: pattern, $options: "ui" },
       });
+
       return packages;
     } catch (error) {
       throw error;
@@ -36,7 +37,15 @@ class GameRepo implements GameRepoType {
       throw error;
     }
   }
-
+  async getMany(start: number, limit: number): Promise<GameDocument[]> {
+    try {
+      return await GameModel.find()
+        .skip((start - 1) * limit)
+        .limit(limit);
+    } catch (error) {
+      throw error;
+    }
+  }
   async updateById(
     id: string,
     update: UpdateQueryKnownOnly<GameDocument>,

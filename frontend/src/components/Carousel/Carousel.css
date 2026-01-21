@@ -1,0 +1,7 @@
+.img-container {
+  /* width: "100svw";
+  height: "40svh"; */
+  position: relative;
+  width: 100svw;
+  height: 40svh;
+}

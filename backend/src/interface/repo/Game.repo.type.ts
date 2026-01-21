@@ -8,6 +8,8 @@ export default interface GameRepoType {
     pattern: string,
   ): Promise<GameDocument[]>;
   getById(id: string): Promise<GameDocument>;
+  getMany(start: number, limit: number): Promise<GameDocument[]>;
+
   updateById(
     id: string,
     update: UpdateQueryKnownOnly<GameDocument>,

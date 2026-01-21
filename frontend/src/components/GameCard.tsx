@@ -4,7 +4,7 @@ type game = { icon: string; name: string };
 export default function GameCard({ icon, name }: game) {
   return (
     <div className="game-card">
-      <img src={icon} alt={name} />
+      <img src={"/Games" + icon} alt={name} />
       <div>
         <span>
           <h1>{name}</h1>
