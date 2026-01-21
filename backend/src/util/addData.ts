@@ -4,7 +4,7 @@ import fs from "fs";
 import PackageService from "../service/Package.service";
 import PackagesService from "../service/Packages.service";
 import { PackageDocument } from "../model/Package.model";
-import { PackagesDocument } from "../model/Packages.model";
+import { Packages, PackagesDocument } from "../model/Packages.model";
 import mongoose from "mongoose";
 import { Game } from "../model/Game.model";
 
@@ -21,7 +21,7 @@ const addData = async () => {
             if (err) {
               throw err;
             }
-            const { packages, ...game }: Game = JSON.parse(data);
+            const { packages, ...game }: any = JSON.parse(data);
             const { _id } = await GameService.createGame(game);
 
             for (const pkges of packages!) {
@@ -41,9 +41,10 @@ const addData = async () => {
                   packages: savedPackages,
                 },
               );
+              GameService.updateGame(_id.toString(), {
+                $push: { packages: savedPackagesSection._id },
+              });
             }
-
-            // GameService.createGame(game);
           },
         );
       }

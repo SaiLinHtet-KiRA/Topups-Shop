@@ -1,10 +1,10 @@
 import { UpdateQueryKnownOnly } from "mongoose";
 import PackagesServiceType from "../interface/service/Packages.service.type";
-import { PackagesDocument } from "../model/Packages.model";
+import { Packages, PackagesDocument } from "../model/Packages.model";
 import PackagesRepo from "../repo/Packages.repo";
 
 class PackagesService implements PackagesServiceType {
-  async createPackages(data: PackagesDocument): Promise<PackagesDocument> {
+  async createPackages(data: Packages): Promise<PackagesDocument> {
     try {
       return await PackagesRepo.create(data);
     } catch (error) {

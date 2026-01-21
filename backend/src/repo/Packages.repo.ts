@@ -1,10 +1,13 @@
 import { UpdateQueryKnownOnly } from "mongoose";
 import PackagesRepoType from "../interface/repo/Packages.repo.type";
-import PackagesModel, { PackagesDocument } from "../model/Packages.model";
+import PackagesModel, {
+  Packages,
+  PackagesDocument,
+} from "../model/Packages.model";
 import { NotFoundError } from "../util/error/errors";
 
 class PackagesRepo implements PackagesRepoType {
-  async create(data: PackagesDocument): Promise<PackagesDocument> {
+  async create(data: Packages): Promise<PackagesDocument> {
     try {
       const newPackages = new PackagesModel(data);
       return await newPackages.save();

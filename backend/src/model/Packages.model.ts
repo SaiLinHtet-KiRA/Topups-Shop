@@ -10,13 +10,13 @@ export type PackagesDocument = HydratedDocument<Packages>;
 const PackagsSchema = new mongoose.Schema<PackagesDocument>(
   {
     name: { type: String, require: true },
-    packages: [mongoose.Schema.Types.ObjectId],
+    packages: { type: [mongoose.Schema.Types.ObjectId], ref: "Package" },
   },
-  { timestamps: false, _id: false, versionKey: false },
+  { timestamps: false, versionKey: false },
 );
 
 const PackagesModel = mongoose.connection
-  .useDb("Packages")
-  .model<PackagesDocument>("Packages", PackagsSchema);
+  .useDb("Package")
+  .model<PackagesDocument>("PackageSection", PackagsSchema);
 
 export default PackagesModel;

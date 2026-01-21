@@ -8,7 +8,7 @@ export interface Game {
   check_id_url: string;
   palyStore: string;
   appStore: string;
-  packages?: mongoose.Types.ObjectId[];
+  packages?: mongoose.Types.ObjectId[] | PackagesDocument;
   createdAt?: Date;
   upatedAt?: Date;
 }
@@ -25,7 +25,7 @@ const GameSchema = new mongoose.Schema<GameDocument>(
     appStore: { type: String, require: true },
     packages: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "Packages",
+      ref: "PackageSection",
     },
   },
   {
