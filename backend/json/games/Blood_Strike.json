@@ -1,6 +1,6 @@
 {
   "name": "Blood Strike",
-  "icon": "/Blood Strike/icon.webpp",
+  "icon": "/Games/Blood_Strike/icon.webp",
   "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
   "chek_id_url": null,
   "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
@@ -11,39 +11,39 @@
       "packages": [
         {
           "name": "Gold x 100 +5",
-          "old_price": 3300,
-          "new_price": 3300,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 3000,
+          "new_price": 3000,
+          "icon": "/Games/Blood_Strike/gold.webp"
         },
         {
           "name": "Gold x 300 +20",
-          "old_price": 10500,
-          "new_price": 10500,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 9000,
+          "new_price": 9000,
+          "icon": "/Games/Blood_Strike/gold.webp"
         },
         {
           "name": "Gold x 500 +40",
-          "old_price": 21500,
-          "new_price": 21500,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 15000,
+          "new_price": 15000,
+          "icon": "/Games/Blood_Strike/gold.webp"
         },
         {
           "name": "Gold x 10000 +100",
-          "old_price": 36800,
-          "new_price": 36800,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 31500,
+          "new_price": 31500,
+          "icon": "/Games/Blood_Strike/gold.webp"
         },
         {
           "name": "Gold x 2000 +260",
-          "old_price": 72300,
-          "new_price": 72300,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 60000,
+          "new_price": 60000,
+          "icon": "/Games/Blood_Strike/gold.webp"
         },
         {
           "name": "Gold x 5000 +800",
-          "old_price": 166000,
-          "new_price": 166000,
-          "image": "/Blood_Strike/gold.webp"
+          "old_price": 150000,
+          "new_price": 150000,
+          "icon": "/Games/Blood_Strike/gold.webp"
         }
       ]
     },
@@ -52,25 +52,30 @@
       "packages": [
         {
           "name": "Level Up Pass",
-          "old_price": 9000,
-          "new_price": 9000,
-          "image": "/Blood_Strike/level_up_pass.webp"
+          "old_price": 8500,
+          "new_price": 8500,
+          "icon": "/Games/Blood_Strike/level_up_pass.webp"
         },
         {
           "name": "Pre Order",
-          "old_price": 9000,
-          "new_price": 9000,
-          "image": "/Blood_Strike/pre_order.webp"
+          "old_price": 8500,
+          "new_price": 8500,
+          "icon": "/Games/Blood_Strike/pre_order.webp"
         },{
           "name": "Elite Striker Pass",
-          "old_price": 15900,
-          "new_price": 15900,
-          "image": "/Blood_Strike/elite_striker_pass.webp"
+          "old_price": 15000,
+          "new_price": 15000,
+          "icon": "/Games/Blood_Strike/elite_striker_pass.webp"
         },{
           "name": "Premium Striker Pass",
-          "old_price": 33200,
-          "new_price": 33200,
-          "image": "/Blood_Strike/premium_striker_pass.webp"
+          "old_price": 34000,
+          "new_price": 34000,
+          "icon": "/Games/Blood_Strike/premium_striker_pass.webp"
+        },{
+          "name": "Ultra Lucky Skin Chest",
+          "old_price": 1800,
+          "new_price": 1800,
+          "icon": "/Games/Blood_Strike/ultra_lucky_skin_chest.webp"
         }
       ]
     }

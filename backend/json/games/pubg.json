@@ -1,6 +1,6 @@
 {
   "name": "PUBG Mobile",
-  "icon": "/PUBG/icon.webp",
+  "icon": "/Games/PUBG/icon.webp",
   "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
   "chek_id_url": null,
   "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
@@ -13,49 +13,49 @@
           "name": "Diamond x 78 +8",
           "old_price": 5,
           "new_price": 3,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 156 +16",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 234 +23",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 625 +81",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 1860 +335",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 3099 +589",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 4649 +883",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         },
         {
           "name": "Diamond x 7740 +1548",
           "old_price": 5,
           "new_price": 5,
-          "image": "/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc.webp"
         }
       ]
     }

@@ -1,25 +1,11 @@
-export interface Package {
-  name: string;
-  old_price: number;
-  new_price: number;
-  image: string;
-}
+import type { Packages } from "./Packages";
 
-export interface PackageType {
-  name: string;
-  packages: [Package];
-}
-export interface RawGame {
+export default interface Games {
   name: string;
   icon: string;
   about: string;
-  check_id_url: string;
+  check_id_url?: string;
   palyStore: string;
   appStore: string;
-  packages: [PackageType];
-}
-export default interface Game extends RawGame {
-  _id: string;
-  createdAt: Date;
-  updatedAt: Date;
+  packages?: Packages[];
 }

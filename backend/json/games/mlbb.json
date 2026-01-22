@@ -1,6 +1,6 @@
 {
   "name": "Mobile Legends: Bang Bang",
-  "icon": "/MLBB/icon.webp",
+  "icon": "/Games/MLBB/icon.webp",
   "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
   "check_id_url": "/mobilelegends",
   "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
@@ -11,51 +11,51 @@
       "packages": [
         {
           "name": "Diamond x 78 +8",
-          "old_price": 5,
-          "new_price": 3,
-          "image": "/MLBB/dia-sm.webp"
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/MLBB/dia-sm.webp"
         },
         {
           "name": "Diamond x 156 +16",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/dia-md.webp"
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/MLBB/dia-md.webp"
         },
         {
           "name": "Diamond x 234 +23",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/dia-lg.webp"
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/MLBB/dia-lg.webp"
         },
         {
           "name": "Diamond x 625 +81",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/dia-xl.webp"
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/MLBB/dia-xl.webp"
         },
         {
           "name": "Diamond x 1860 +335",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/chest-sm.webp"
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/MLBB/chest-sm.webp"
         },
         {
           "name": "Diamond x 3099 +589",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/chest-md.webp"
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/MLBB/chest-md.webp"
         },
         {
           "name": "Diamond x 4649 +883",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/chest-lg.webp"
+          "old_price": 295000,
+          "new_price": 295000,
+          "icon": "/Games/MLBB/chest-lg.webp"
         },
         {
           "name": "Diamond x 7740 +1548",
           "old_price": 5,
           "new_price": 5,
-          "image": "/MLBB/chest-xl.webp"
+          "icon": "/Games/MLBB/chest-xl.webp"
         }
       ]
     },
@@ -66,25 +66,25 @@
           "name": "Diamond x 50 +5",
           "old_price": 5,
           "new_price": 5,
-          "image": "/MLBB/dia-md.webp"
+          "icon": "/Games/MLBB/dia-md.webp"
         },
         {
           "name": "Diamond x 150 +15",
           "old_price": 5,
           "new_price": 5,
-          "image": "/MLBB/dia-lg.webp"
+          "icon": "/Games/MLBB/dia-lg.webp"
         },
         {
           "name": "Diamond x 250 +25",
           "old_price": 5,
           "new_price": 5,
-          "image": "/MLBB/dia-xl.webp"
+          "icon": "/Games/MLBB/dia-xl.webp"
         },
         {
           "name": "Diamond x 500 +65",
           "old_price": 5,
           "new_price": 5,
-          "image": "/MLBB/chest-sm.webp"
+          "icon": "/Games/MLBB/chest-sm.webp"
         }
       ]
     },
@@ -93,15 +93,15 @@
       "packages": [
         {
           "name": "Weekly Diamond Pass",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/weeklypass.webp"
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Twilight Pass",
-          "old_price": 5,
-          "new_price": 5,
-          "image": "/MLBB/twilightpass.webp"
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
         }
       ]
     }

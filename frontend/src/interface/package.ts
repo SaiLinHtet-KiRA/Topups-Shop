@@ -1,6 +1,12 @@
+import type Games from "./Game";
+
 export interface Package {
   name: string;
+  icon: string;
+  game: Games;
+  sold: number;
   old_price: number;
   new_price: number;
-  image: string;
+  createdAt?: Date;
+  upatedAt?: Date;
 }

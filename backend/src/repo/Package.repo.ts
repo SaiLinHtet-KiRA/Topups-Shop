@@ -31,7 +31,8 @@ class Package implements PackageRepoType {
       return await PackageModel.find()
         .sort({ sold: 1 })
         .skip(start * limit)
-        .limit(limit);
+        .limit(limit)
+        .populate("game");
     } catch (error) {
       throw error;
     }
