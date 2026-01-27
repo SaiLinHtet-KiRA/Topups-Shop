@@ -1,4 +1,4 @@
-import { Document, HydratedDocument, UpdateQueryKnownOnly } from "mongoose";
+import { HydratedDocument, UpdateQueryKnownOnly } from "mongoose";
 import GameRepoType from "../interface/repo/Game.repo.type";
 import GameModel, { Game, GameDocument } from "../model/Game.model";
 import { NotFoundError } from "../util/error/errors";
@@ -30,7 +30,12 @@ class GameRepo implements GameRepoType {
 
   async getById(id: string): Promise<GameDocument> {
     try {
-      const game = await GameModel.findById(id);
+      const game = await GameModel.findById(id).populate({
+        path: "packages",
+        populate: {
+          path: "packages",
+        },
+      });
       if (!game) throw new NotFoundError(`Game Id-${id} was not founded`);
       return game;
     } catch (error) {

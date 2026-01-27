@@ -1,8 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import { Fire } from "../../svg";
-import games from "@/data/games";
-import GameCard from "../GameCard";
+import GameCard from "../Card/GameCard";
 
 import "swiper/css";
 import "swiper/css/free-mode";

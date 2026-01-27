@@ -1,6 +1,5 @@
 import mongoose, { HydratedDocument } from "mongoose";
-import { GameDocument } from "./Game.model";
-import Game from "./Game.model";
+import Game, { GameDocument } from "./Game.model";
 
 export interface Package {
   name: string;
@@ -28,7 +27,7 @@ const PackageSchema = new mongoose.Schema<PackageDocument>(
     game: {
       type: mongoose.Schema.Types.ObjectId,
       require: true,
-      ref: Game,
+      ref: "Game",
     },
     sold: {
       type: Number,

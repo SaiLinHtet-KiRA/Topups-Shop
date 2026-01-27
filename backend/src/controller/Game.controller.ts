@@ -16,6 +16,19 @@ class GameController implements GameControllerType {
       throw error;
     }
   }
+  async getGame(
+    req: Request<{ id: string }, null, null, null>,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { id } = req.params;
+      const game = await GameService.getGame(id);
+
+      res.status(200).json(game);
+    } catch (error) {
+      throw error;
+    }
+  }
   async searchGames(
     req: Request<null, null, null, { s: string }>,
     res: Response,

@@ -1,0 +1,16 @@
+.game-info-container {
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  header {
+    font-size: 1.2rem;
+    font-weight: 900;
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+  }
+}
+.package-section-container {
+  padding: 0rem 1rem;
+}

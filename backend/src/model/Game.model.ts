@@ -1,29 +1,40 @@
 import mongoose, { HydratedDocument } from "mongoose";
-import { PackagesDocument } from "./Packages.model";
+import Packages, { PackagesDocument } from "./Packages.model";
 
 export interface Game {
   name: string;
   icon: string;
   about: string;
-  check_id_url: string;
+  check_id?: CheckId;
   palyStore: string;
   appStore: string;
   packages?: mongoose.Types.ObjectId[] | PackagesDocument[];
 }
+interface CheckId {
+  url: string;
+  userID: boolean;
+  zoneID: boolean;
+}
 
 export type GameDocument = HydratedDocument<Game>;
 
+const CheckIdSchema = new mongoose.Schema<CheckId>({
+  url: { type: String },
+  userID: { type: Boolean },
+  zoneID: { type: Boolean },
+});
+
 const GameSchema = new mongoose.Schema<GameDocument>(
   {
-    name: { type: String, require: true },
+    name: { type: String, require: true, index: true },
     icon: { type: String, require: true },
     about: { type: String, require: true },
-    check_id_url: { type: String },
+    check_id: CheckIdSchema,
     palyStore: { type: String, require: true },
     appStore: { type: String, require: true },
     packages: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "PackageSection",
+      ref: Packages,
     },
   },
   {

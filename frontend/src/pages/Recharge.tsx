@@ -4,7 +4,7 @@ import SelectBanking from "../components/Recharge/SelectBanking";
 import { useMemo } from "react";
 import bankings from "../data/bankings";
 import Notes from "../components/Recharge/Notes";
-import Form from "../components/form/Form";
+import Form from "../components/Form/Form";
 import "./Recharge.css";
 
 export default function Recharge() {
@@ -12,7 +12,7 @@ export default function Recharge() {
   const payment = params.get("payment") || "kpay";
   const selected = useMemo(
     () => bankings.find((banking) => banking.name.toLowerCase() == payment),
-    [params]
+    [params],
   );
   return (
     <section className="recharge-wrapper">

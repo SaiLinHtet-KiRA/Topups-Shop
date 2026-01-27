@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Currency } from "../svg";
+import { Currency } from "../../svg";
 import "./NavgiationBar.css";
 import { useAppSelector } from "@/redux/store";
 

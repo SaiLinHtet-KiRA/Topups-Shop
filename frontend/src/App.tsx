@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
-import NavgiationBar from "./components/NavgiationBar";
-import TabBar from "./components/TabBar";
+import NavgiationBar from "./components/Navgiation/NavgiationBar";
+import TabBar from "./components/Navgiation/TabBar";
 import { useEffect, useLayoutEffect } from "react";
 import Footer from "./components/Footer";
 import {

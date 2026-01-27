@@ -1,4 +1,5 @@
 .game-card {
+  display: block;
   position: relative;
   width: 160px;
   aspect-ratio: 1/1;

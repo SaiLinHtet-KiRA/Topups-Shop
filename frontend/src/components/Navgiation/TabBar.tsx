@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import "./TabBar.css";
-import { Controller, Home, User } from "../svg";
+import { Controller, Home, User } from "../../svg";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
-import useScroll from "../hook/useScrollEnd";
+import useScroll from "../../hook/useScrollEnd";
 
 export default function TabBar() {
   const { pathname } = useLocation();

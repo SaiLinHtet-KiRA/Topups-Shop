@@ -1,4 +1,5 @@
 import PackageRepoType from "../interface/repo/Package.repo.type";
+import GameModel from "../model/Game.model";
 import PackageModel, { PackageDocument } from "../model/Package.model";
 import { NotFoundError } from "../util/error/errors";
 
@@ -32,7 +33,7 @@ class Package implements PackageRepoType {
         .sort({ sold: 1 })
         .skip(start * limit)
         .limit(limit)
-        .populate("game");
+        .populate({ path: "game", model: GameModel });
     } catch (error) {
       throw error;
     }

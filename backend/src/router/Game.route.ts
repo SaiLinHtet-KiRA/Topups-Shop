@@ -5,5 +5,6 @@ const router = Router();
 
 router.get("", GameController.getGames);
 router.get("/search", GameController.searchGames);
+router.get("/:id", GameController.getGame);
 
 export default router;

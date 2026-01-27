@@ -1,0 +1,14 @@
+.breadcrumbs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  opacity: 0.9;
+  .svg {
+    width: 1rem;
+    stroke-width: 0.2rem;
+  }
+}
+.path-name {
+  font-size: 1rem;
+  font-weight: 900;
+}

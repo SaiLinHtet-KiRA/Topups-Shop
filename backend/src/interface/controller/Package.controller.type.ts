@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-export default interface GameControllerType {
+export default interface PackageControllerType {
   getPackages(
     req: Request<null, null, null, { page: number; limit: number }>,
     res: Response,

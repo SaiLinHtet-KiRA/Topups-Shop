@@ -1,0 +1,30 @@
+.payment-card {
+  background-color: #71717154;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  &:has(input:checked) {
+    background-color: #00bba8b0;
+    .check-mark-container {
+      top: -1rem;
+      right: -2.2rem;
+    }
+  }
+
+  div {
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.04rem;
+  }
+  .svg-container {
+    svg {
+      stroke-width: 0.01rem;
+    }
+  }
+}

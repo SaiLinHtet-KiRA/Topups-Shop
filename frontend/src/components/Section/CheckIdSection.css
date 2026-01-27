@@ -1,0 +1,36 @@
+.check-id-contaier {
+  display: grid;
+  grid-template-areas:
+    "big big big"
+    "small small result";
+  grid-template-columns: 1fr 1fr 30svw;
+  grid-template-rows: 3rem 3rem;
+  gap: 0.6rem;
+
+  label {
+    padding: 0.1rem 1rem;
+    border: 0.1rem solid var(--primary-color);
+    caret-color: var(--primary-color);
+    border-radius: 0.5rem;
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      background-color: transparent;
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+    }
+  }
+}
+#input-id-container {
+  grid-area: big;
+}
+#input-zone-id-container {
+  grid-area: small;
+}
+#result {
+  width: 100px;
+  height: 100px;
+  grid-area: result;
+}

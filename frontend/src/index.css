@@ -18,14 +18,11 @@ body {
   user-select: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  transition: all 0.1s linear;
 }
 *::-webkit-scrollbar {
   display: none;
 }
-
-/* .root > * {
-  transition: all 0.3s linear;
-} */
 
 /* mouse over link */
 a {
@@ -34,7 +31,7 @@ a {
 }
 
 .svg {
-  width: 28px;
+  width: 1.6rem;
   aspect-ratio: 1/1;
   cursor: pointer;
   stroke: whitesmoke;
@@ -70,4 +67,8 @@ footer {
       width: 20px;
     }
   }
+}
+input {
+  border: 0;
+  outline: none;
 }
