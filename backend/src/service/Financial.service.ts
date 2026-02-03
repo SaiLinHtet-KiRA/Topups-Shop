@@ -3,6 +3,7 @@ import FinancialServiceType from "../interface/service/Financial.service.type";
 import { DepositDocument } from "../model/Deposit.model";
 import FinancialRepo from "../repo/Financial.repo";
 import TelegramBot from "../util/TelegramBot";
+import UserService from "./User.service";
 
 class FinancialService implements FinancialServiceType {
   async createDeposit({
@@ -19,8 +20,8 @@ class FinancialService implements FinancialServiceType {
         banking,
         userID,
       } as DepositDocument);
-
-      TelegramBot.sendPhoto(process.env.ADMIN_CHAT_ID!, receipt, {
+      const Admins = await UserService.findAdmins();
+Admins.map((id)=>TelegramBot.sendPhoto(Number(id), receipt, {
         caption: `Order ID:  ${deposit.id}\nName: ${name}\nAmount: ${amount} \nBanking:  ${banking}`,
         reply_markup: {
           inline_keyboard: [
@@ -29,6 +30,7 @@ class FinancialService implements FinancialServiceType {
                 text: "✅",
                 callback_data: JSON.stringify({
                   id: deposit._id.toString(),
+                  t: "recharge",
                   status: "success",
                 }),
               },
@@ -36,13 +38,15 @@ class FinancialService implements FinancialServiceType {
                 text: "❌",
                 callback_data: JSON.stringify({
                   id: deposit._id.toString(),
+                  t: "recharge",
                   status: "fail",
                 }),
               },
             ],
           ],
         },
-      });
+      });)
+      
       return deposit;
     } catch (error) {
       throw error;
@@ -50,7 +54,7 @@ class FinancialService implements FinancialServiceType {
   }
   async updateDeposit(
     id: string,
-    deposit: DepositDocument
+    deposit: DepositDocument,
   ): Promise<DepositDocument> {
     try {
       return await FinancialRepo.updateById(id, deposit);

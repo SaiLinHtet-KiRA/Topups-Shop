@@ -367,3 +367,39 @@ export const Wallet: SvgCompontentProp = (props) => (
     <path d="M19,7H18V6a3,3,0,0,0-3-3H5A3,3,0,0,0,2,6H2V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V10A3,3,0,0,0,19,7ZM5,5H15a1,1,0,0,1,1,1V7H5A1,1,0,0,1,5,5ZM20,15H19a1,1,0,0,1,0-2h1Zm0-4H19a3,3,0,0,0,0,6h1v1a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.83A3,3,0,0,0,5,9H19a1,1,0,0,1,1,1Z" />
   </svg>
 );
+
+export const Clock: SvgCompontentProp = (props) => (
+  <svg
+    viewBox="0 0 16 16"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="current"
+    {...props}
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M13.507 12.324a7 7 0 0 0 .065-8.56A7 7 0 0 0 2 4.393V2H1v3.5l.5.5H5V5H2.811a6.008 6.008 0 1 1-.135 5.77l-.887.462a7 7 0 0 0 11.718 1.092zm-3.361-.97l.708-.707L8 7.792V4H7v4l.146.354 3 3z"
+    />
+  </svg>
+);
+export const Document: SvgCompontentProp = (props) => (
+  <svg
+    fill="currentcolor"
+    viewBox="-4 -2 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMinYMin"
+    {...props}
+  >
+    <path d="M3 0h10a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H3a3 3 0 0 1-3-3V3a3 3 0 0 1 3-3zm0 2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H3zm2 1h6a1 1 0 0 1 0 2H5a1 1 0 1 1 0-2zm0 12h2a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2zm0-4h6a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2zm0-4h6a1 1 0 0 1 0 2H5a1 1 0 1 1 0-2z" />
+  </svg>
+);
+export const Logo: SvgCompontentProp = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 650 650"
+    {...props}
+    fill="currentcolor"
+  >
+    <polygon points="444.27 257.72 366.81 257.72 339.9 257.72 312.98 257.72 286.07 257.72 259.16 257.72 243.09 284.63 227.02 311.54 210.95 338.46 178.81 392.28 205.73 392.28 237.86 338.46 253.93 311.54 270 284.63 296.92 284.63 323.83 284.63 350.74 284.63 428.2 284.63 380 365.37 275.62 365.37 264.78 338.46 232.64 392.28 259.55 392.28 390.84 392.28 406.91 365.37 455.12 284.63 471.19 257.72 444.27 257.72" />
+  </svg>
+);

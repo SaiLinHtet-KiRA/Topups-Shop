@@ -9,9 +9,9 @@
   background-color: var(--bg-color);
 }
 .logo-container {
-  width: 4rem;
-  height: 4rem;
-  background-color: blue;
+  .svg {
+    width: 4rem;
+  }
 }
 .balance-container {
   display: flex;

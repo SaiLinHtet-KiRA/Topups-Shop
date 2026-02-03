@@ -6,8 +6,8 @@ export interface Topup {
   game: mongoose.Schema.Types.ObjectId;
   package: mongoose.Schema.Types.ObjectId;
   price: number;
-  currency: string;
-  status: "pending" | "success" | "fail";
+  currency?: string;
+  status?: "pending" | "success" | "fail";
   Id: CheckId;
 }
 interface CheckId {

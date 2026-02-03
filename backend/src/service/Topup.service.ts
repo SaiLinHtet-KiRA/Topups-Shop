@@ -1,17 +1,66 @@
 import TopupServiceType from "../interface/service/Topup.service.type";
-import { Topup, TopupDocument } from "../model/Topup.model";
+import { TopupDocument, Topup } from "../model/Topup.model";
+import TopupDto from "../interface/dto/Topup.dto";
+import TopupRepo from "../repo/Topup.repo";
+import TelegramBot from "../util/TelegramBot";
+import UserService from "./User.service";
+import mongoose from "mongoose";
+import GameService from "./Game.service";
 
 class TopupService implements TopupServiceType {
-  async createTopup(data: Topup): Promise<TopupDocument> {
+  async createTopup(userId: string, data: TopupDto): Promise<TopupDocument> {
     try {
-      throw new Error("Method not implemented.");
+      const { name } = await GameService.getGame(data.game);
+      const topup = await TopupRepo.creat({
+        game: data.game as any,
+        package: data.package.id as any,
+        price: data.package.price,
+        Id: { userId: data.userId, zoneId: data.zoneId },
+      });
+      await UserService.updateUserById(userId, {
+        $inc: { balance: -data.package.price },
+        $push: { topups: topup._id },
+      });
+      const Admins = await UserService.findAdmins();
+      Admins.map((id) =>
+        TelegramBot.sendMessage(
+          Number(id),
+          `New order Arrived!!\nGame: ${name}\nPackage: ${data.package.name}\nPrice: ${data.package.price} ${topup.currency}\nUser Id: ${data.userId}\nZone Id: ${data.zoneId}`,
+          {
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  {
+                    text: "✅",
+                    callback_data: JSON.stringify({
+                      id: topup._id.toString(),
+                      t: "topup",
+                      status: "success",
+                    }),
+                  },
+                  {
+                    text: "❌",
+                    callback_data: JSON.stringify({
+                      id: topup._id.toString(),
+                      t: "topup",
+                      status: "fail",
+                    }),
+                  },
+                ],
+              ],
+            },
+          },
+        ),
+      );
+
+      return topup;
     } catch (error) {
       throw error;
     }
   }
   async getTopup(id: string): Promise<TopupDocument> {
     try {
-      throw new Error("Method not implemented.");
+      return TopupRepo.getById(id);
     } catch (error) {
       throw error;
     }
@@ -25,7 +74,7 @@ class TopupService implements TopupServiceType {
   }
   async updateTopup(id: string, data: TopupDocument): Promise<TopupDocument> {
     try {
-      throw new Error("Method not implemented.");
+      return await TopupRepo.updateById(id, data);
     } catch (error) {
       throw error;
     }

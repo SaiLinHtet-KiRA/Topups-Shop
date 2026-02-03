@@ -1,12 +1,11 @@
 import GameService from "../service/Game.service";
 import Games from "../data/game";
+import Config from "../data/config";
 import fs from "fs";
 import PackageService from "../service/Package.service";
 import PackagesService from "../service/Packages.service";
-import { PackageDocument } from "../model/Package.model";
-import { Packages, PackagesDocument } from "../model/Packages.model";
 import mongoose from "mongoose";
-import { Game } from "../model/Game.model";
+import ConfigService from "../service/Config.service";
 
 const addData = async () => {
   try {
@@ -48,6 +47,11 @@ const addData = async () => {
           },
         );
       }
+    });
+    Config.map(async ({ name, value }) => {
+      await ConfigService.findOrCreate(name, {
+        value,
+      });
     });
   } catch (error) {
     console.log(error);

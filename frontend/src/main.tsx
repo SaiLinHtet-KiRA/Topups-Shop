@@ -13,6 +13,7 @@ import Recharge from "./pages/Recharge.tsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.ts";
 import Game from "./pages/Game.tsx";
+import Profile from "./pages/Profile.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -20,9 +21,12 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/games" element={<Games />} />
       <Route path="/games/:id" element={<Game />} />
-
       <Route path="/recharge" element={<Recharge />} />
-      <Route path="/profile" element={<Home />} />
+      <Route path="/profile">
+        <Route path="" element={<Profile />} index />
+        <Route path="recharge" element={<Profile />} />
+        <Route path="topups" element={<Profile />} />
+      </Route>
     </Route>,
   ),
 );

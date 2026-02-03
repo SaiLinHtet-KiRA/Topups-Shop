@@ -6,7 +6,7 @@ import { createJwt } from "../util/createJwt";
 class AuthController implements AuthControllerType {
   async TelegramLogin(
     req: Request<null, null, null, { id: string }>,
-    res: Response
+    res: Response,
   ): Promise<void> {
     try {
       const { id } = req.query;
@@ -22,12 +22,12 @@ class AuthController implements AuthControllerType {
   }
   async getAccountInfo(
     req: Request<null, null, null, { id: string }>,
-    res: Response
+    res: Response,
   ): Promise<void> {
     try {
-      const { banned, balance } = await userService.getById(req.user.id);
+      const { banned, balance, role } = await userService.getById(req.user.id);
 
-      res.status(200).json({ banned, balance });
+      res.status(200).json({ banned, balance, role });
     } catch (error) {
       console.log(error);
       throw new Error("Method not implemented.");

@@ -4,7 +4,8 @@ import authController from "../../controller/auth.controller";
 import requireAuth from "../../middleware/requireAuth";
 const router = Router();
 
-router.get("/profile", requireAuth, authController.getAccountInfo);
+router.get("/info", requireAuth, authController.getAccountInfo);
+
 router.use(TelegramRoute);
 
 export default router;

@@ -1,6 +1,7 @@
-import UserModel, { UserDocument } from "../model/User.model";
+import UserModel, { User, UserDocument } from "../model/User.model";
 import UserRepoType from "../interface/repo/User.repo.type";
 import { NotFoundError } from "../util/error/errors";
+import { UpdateQuery } from "mongoose";
 
 class UserRepo implements UserRepoType {
   async create(id: string): Promise<UserDocument> {
@@ -11,7 +12,7 @@ class UserRepo implements UserRepoType {
       throw new Error("Method not implemented.");
     }
   }
-  async getUserByID(id: string): Promise<UserDocument> {
+  async getById(id: string): Promise<UserDocument> {
     try {
       const User = await UserModel.findById(id);
       if (!User) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
@@ -20,10 +21,18 @@ class UserRepo implements UserRepoType {
       throw new Error("Method not implemented.");
     }
   }
-  async getUsers(start: number, limit: number): Promise<UserDocument[]> {
-    throw new Error("Method not implemented.");
+  async getMany(
+    filter: Partial<User>,
+    start: number,
+    limit: number,
+  ): Promise<UserDocument[]> {
+    try {
+      return await UserModel.find(filter);
+    } catch (error) {
+      throw error;
+    }
   }
-  async getUserByFindOne(id: string): Promise<UserDocument> {
+  async getByFindOne(id: string): Promise<UserDocument> {
     try {
       const user = await UserModel.findOne({ id });
       if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
@@ -32,7 +41,10 @@ class UserRepo implements UserRepoType {
       throw error;
     }
   }
-  async updateUserById(id: string, data: UserDocument): Promise<UserDocument> {
+  async updateById(
+    id: string,
+    data: UpdateQuery<UserDocument>,
+  ): Promise<UserDocument> {
     try {
       const user = await UserModel.findByIdAndUpdate(id, data);
       if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
@@ -41,8 +53,24 @@ class UserRepo implements UserRepoType {
       throw error;
     }
   }
-  async deleteUserById(id: string): Promise<UserDocument> {
-    throw new Error("Method not implemented.");
+  async updateByFindOne(
+    { id }: Partial<User>,
+    data: UpdateQuery<UserDocument>,
+  ): Promise<UserDocument> {
+    try {
+      const user = await UserModel.findOneAndUpdate({ id }, data);
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async deleteById(id: string): Promise<UserDocument> {
+    try {
+      throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
   }
 }
 

@@ -11,12 +11,12 @@ export default function CheckIdSection() {
       </header>
       <div className="check-id-contaier">
         <InputNumberField
-          htmlFor="userID"
+          htmlFor="userId"
           id="input-id-container"
           placeHolder="User ID"
         />
         <InputNumberField
-          htmlFor="zoneID"
+          htmlFor="zoneId"
           id="input-zone-id-container"
           placeHolder="Zone ID"
         />

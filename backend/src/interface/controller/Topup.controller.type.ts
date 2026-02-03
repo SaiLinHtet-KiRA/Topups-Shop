@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { Topup } from "../../model/Topup.model";
+import Topup from "../dto/Topup.dto";
 
 export default interface TopupControllerType {
   createTopup(
-    req: Request<null, Topup, null, null>,
+    req: Request<null, null, Topup, null>,
     res: Response,
   ): Promise<void>;
   getPackages(

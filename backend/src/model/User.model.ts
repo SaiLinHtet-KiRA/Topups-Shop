@@ -1,11 +1,17 @@
-import mongoose from "mongoose";
+import mongoose, { HydratedDocument } from "mongoose";
+import TopupsModel from "./Topup.model";
+import DepositModel from "./Deposit.model";
 
-export interface UserDocument extends mongoose.Document {
+export interface User {
   id: string;
   banned: boolean;
   balance: number;
   deposits: mongoose.Schema.Types.ObjectId[];
+  topups: mongoose.Schema.Types.ObjectId[];
+  role: "user" | "admin";
 }
+
+export type UserDocument = HydratedDocument<User>;
 
 const UserSchema = new mongoose.Schema<UserDocument>(
   {
@@ -17,7 +23,12 @@ const UserSchema = new mongoose.Schema<UserDocument>(
     },
     deposits: {
       type: [mongoose.Schema.Types.ObjectId],
-      ref: "Deposit",
+      ref: DepositModel,
+      default: [],
+    },
+    topups: {
+      type: [mongoose.Schema.Types.ObjectId],
+      ref: TopupsModel,
       default: [],
     },
     banned: {
@@ -29,11 +40,17 @@ const UserSchema = new mongoose.Schema<UserDocument>(
       type: Number,
       default: 0,
     },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+      index: true,
+    },
   },
   {
     timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
 const UserModel = mongoose.connection

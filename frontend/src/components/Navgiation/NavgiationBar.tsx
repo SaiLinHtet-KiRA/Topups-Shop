@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Currency } from "../../svg";
+import { Currency, Logo } from "../../svg";
 import "./NavgiationBar.css";
 import { useAppSelector } from "@/redux/store";
 
@@ -7,7 +7,9 @@ export default function NavgiationBar() {
   return (
     <nav className="nav-container">
       <Link to="">
-        <div className="logo-container"></div>
+        <div className="logo-container">
+          <Logo className="svg" />
+        </div>
       </Link>
       <section>
         <Balance />

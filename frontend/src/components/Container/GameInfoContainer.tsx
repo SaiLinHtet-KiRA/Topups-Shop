@@ -5,8 +5,10 @@ import PackageSection from "../Section/PackageSection";
 import "./GameInfoContainer.css";
 import SelectPayment from "../Section/SelectPaymentSection";
 import { useSearchParams } from "react-router";
+import { useCreateTopupMutation } from "@/redux/api/topup";
 
 export default function GameInfoContainer({
+  _id,
   name,
   about,
   appStore,
@@ -16,20 +18,23 @@ export default function GameInfoContainer({
   check_id,
 }: Game) {
   const [getSearchParams, setSearchParams] = useSearchParams();
+  const [createTopup] = useCreateTopupMutation();
   return (
     <form
       className="game-info-container"
       onSubmit={(e) => {
         e.preventDefault();
-        const body = {
-          userID: "",
-          zoneID: "",
+        const data = {
+          game: _id,
+          userId: "",
+          zoneId: "",
           package: "",
         };
         getSearchParams.forEach(
-          (value, params) => (body[value as keyof typeof body] = params),
+          (value, params) => (data[params as keyof typeof data] = value),
         );
-        console.log(getSearchParams.entries());
+        createTopup(data);
+        // setSearchParams("", { replace: true });
       }}
     >
       <Breadcrumbs path={["Games", name]} />
