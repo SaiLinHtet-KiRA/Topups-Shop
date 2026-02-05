@@ -8,12 +8,13 @@ import {
   RouterProvider,
 } from "react-router";
 import Home from "./pages/Home.tsx";
-import Games from "./pages/Games.tsx";
+import Games from "./pages/Game/Games.tsx";
 import Recharge from "./pages/Recharge.tsx";
 import { Provider } from "react-redux";
 import store from "./redux/store.ts";
-import Game from "./pages/Game.tsx";
-import Profile from "./pages/Profile.tsx";
+import Game from "./pages/Game/Game.tsx";
+import Profile from "./pages/profile/Profile.tsx";
+import Histroy from "./pages/profile/Histroy.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
         <Route path="" element={<Profile />} index />
         <Route path="recharge" element={<Profile />} />
         <Route path="topups" element={<Profile />} />
+        <Route path="history" element={<Histroy />} />
       </Route>
     </Route>,
   ),

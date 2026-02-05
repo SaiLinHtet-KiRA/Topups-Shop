@@ -78,3 +78,7 @@ ul {
 li {
   list-style: none;
 }
+.main-page-wrapper {
+  width: 90svw;
+  margin: auto;
+}

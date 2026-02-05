@@ -40,7 +40,7 @@ export default function App() {
   return (
     <>
       <NavgiationBar />
-      <main>
+      <main className="main-page-wrapper">
         <Outlet />
       </main>
       <Footer />

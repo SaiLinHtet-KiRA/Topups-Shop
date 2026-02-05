@@ -6,7 +6,7 @@ export default interface TopupControllerType {
     req: Request<null, null, Topup, null>,
     res: Response,
   ): Promise<void>;
-  getPackages(
+  getTopups(
     req: Request<null, null, null, { page: number; limit: number }>,
     res: Response,
   ): Promise<void>;

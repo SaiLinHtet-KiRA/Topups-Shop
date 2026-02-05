@@ -67,7 +67,7 @@ class TopupService implements TopupServiceType {
   }
   async getTopups(page: number, limit: number): Promise<TopupDocument[]> {
     try {
-      throw new Error("Method not implemented.");
+      return await TopupRepo.getMany(page, limit);
     } catch (error) {
       throw error;
     }

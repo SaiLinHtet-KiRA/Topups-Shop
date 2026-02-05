@@ -1,11 +1,12 @@
 import { Clock, Document, User } from "@/svg";
 import "./Profile.css";
 import React from "react";
+import { Link } from "react-router";
 
 export default function Profile() {
   const options = [
-    { name: "history", svg: Clock },
-    { name: "document", svg: Document },
+    { to: "history", name: "history", svg: Clock },
+    { to: "document", name: "terms & policy", svg: Document },
   ];
   return (
     <main className="profile-container">
@@ -16,10 +17,12 @@ export default function Profile() {
         <span>Sai Lin Htet</span>
       </section>
       <ul className="menu-options-container">
-        {options.map(({ name, svg }) => (
+        {options.map(({ to, name, svg }) => (
           <li>
-            {React.createElement(svg, { className: "svg" })}
-            {name}
+            <Link to={to}>
+              {React.createElement(svg, { className: "svg" })}
+              {name}
+            </Link>
           </li>
         ))}
       </ul>

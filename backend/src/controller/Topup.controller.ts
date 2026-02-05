@@ -16,12 +16,14 @@ class TopupController implements TopupControllerType {
       throw error;
     }
   }
-  async getPackages(
+  async getTopups(
     req: Request<null, null, null, { page: number; limit: number }>,
     res: Response,
   ): Promise<void> {
     try {
-      throw new Error("Method not implemented.");
+      const { page, limit } = req.query;
+      const Topups = await TopupService.getTopups(page, limit);
+      res.status(200).json(Topups);
     } catch (error) {
       throw error;
     }

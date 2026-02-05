@@ -21,32 +21,34 @@ class FinancialService implements FinancialServiceType {
         userID,
       } as DepositDocument);
       const Admins = await UserService.findAdmins();
-Admins.map((id)=>TelegramBot.sendPhoto(Number(id), receipt, {
-        caption: `Order ID:  ${deposit.id}\nName: ${name}\nAmount: ${amount} \nBanking:  ${banking}`,
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: "✅",
-                callback_data: JSON.stringify({
-                  id: deposit._id.toString(),
-                  t: "recharge",
-                  status: "success",
-                }),
-              },
-              {
-                text: "❌",
-                callback_data: JSON.stringify({
-                  id: deposit._id.toString(),
-                  t: "recharge",
-                  status: "fail",
-                }),
-              },
+      Admins.map((id) =>
+        TelegramBot.sendPhoto(Number(id), receipt, {
+          caption: `Order ID:  ${deposit.id}\nName: ${name}\nAmount: ${amount} \nBanking:  ${banking}`,
+          reply_markup: {
+            inline_keyboard: [
+              [
+                {
+                  text: "✅",
+                  callback_data: JSON.stringify({
+                    id: deposit._id.toString(),
+                    t: "recharge",
+                    status: "success",
+                  }),
+                },
+                {
+                  text: "❌",
+                  callback_data: JSON.stringify({
+                    id: deposit._id.toString(),
+                    t: "recharge",
+                    status: "fail",
+                  }),
+                },
+              ],
             ],
-          ],
-        },
-      });)
-      
+          },
+        }),
+      );
+
       return deposit;
     } catch (error) {
       throw error;
