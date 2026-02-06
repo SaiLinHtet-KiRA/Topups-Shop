@@ -13,9 +13,9 @@ router.get("/", (req, res) => {
   res.json("all good").status(200);
 });
 router.use("/auth", AuthRouter);
-router.use("/deposit", DepositRouter);
+router.use(DepositRouter);
 router.use("/game", GameRouter);
 router.use("/package", PackageRouter);
-router.use("/topup", requireAuth, TopupRouter);
+router.use(TopupRouter);
 
 export default router;

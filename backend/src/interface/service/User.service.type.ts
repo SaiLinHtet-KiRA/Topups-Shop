@@ -1,9 +1,15 @@
 import { UpdateQuery } from "mongoose";
 import { User, UserDocument } from "../../model/User.model";
+import { DepositDocument } from "../../model/Deposit.model";
 
 export default interface UserService {
   findOrCreateUser(id: string): Promise<UserDocument>;
   getUsers(start: number, limit: number): Promise<UserDocument[]>;
+  getHistory(
+    type: string,
+    start: number,
+    limit: number,
+  ): Promise<DepositDocument[]>;
   findAdmins(): Promise<UserDocument[]>;
   getById(id: string): Promise<UserDocument>;
   updateUserById(

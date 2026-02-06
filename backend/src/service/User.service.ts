@@ -2,6 +2,7 @@ import UserModel, { User, UserDocument } from "../model/User.model";
 import type UserServiceType from "../interface/service/User.service.type";
 import UserRepo from "../repo/User.repo";
 import { UpdateQuery } from "mongoose";
+import { DepositDocument } from "../model/Deposit.model";
 
 class UserService implements UserServiceType {
   async findOrCreateUser(id: string): Promise<UserDocument> {
@@ -15,6 +16,17 @@ class UserService implements UserServiceType {
   getUsers(start: number, limit: number): Promise<UserDocument[]> {
     try {
       throw new Error("Method not implemented asds.");
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getHistory(
+    type: string,
+    start: number,
+    limit: number,
+  ): Promise<DepositDocument[]> {
+    try {
+      return await UserRepo.
     } catch (error) {
       throw error;
     }

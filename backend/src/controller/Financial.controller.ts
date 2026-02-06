@@ -6,7 +6,7 @@ import Receipt from "../interface/other/Receipt";
 class FinancialController implements FinancialControllerType {
   async deposit(
     req: Request<any, any, Omit<Receipt, "receipt" | "userID">>,
-    res: Response
+    res: Response,
   ): Promise<void> {
     try {
       if (req.file)
@@ -17,6 +17,18 @@ class FinancialController implements FinancialControllerType {
         });
 
       res.status(200);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getReceipts(
+    req: Request<null, null, null, { page: number; limit: number }>,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { page, limit } = req.query;
+      const receipts = await FinancialService.getReceipts(page, limit);
+      res.status(200).json(receipts);
     } catch (error) {
       throw error;
     }

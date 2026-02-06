@@ -1,6 +1,6 @@
 import Receipt from "../interface/other/Receipt";
 import FinancialServiceType from "../interface/service/Financial.service.type";
-import { DepositDocument } from "../model/Deposit.model";
+import { Deposit, DepositDocument } from "../model/Deposit.model";
 import FinancialRepo from "../repo/Financial.repo";
 import TelegramBot from "../util/TelegramBot";
 import UserService from "./User.service";
@@ -19,7 +19,7 @@ class FinancialService implements FinancialServiceType {
         amount,
         banking,
         userID,
-      } as DepositDocument);
+      } as Deposit);
       const Admins = await UserService.findAdmins();
       Admins.map((id) =>
         TelegramBot.sendPhoto(Number(id), receipt, {
@@ -67,6 +67,13 @@ class FinancialService implements FinancialServiceType {
   async getDepositById(id: string): Promise<DepositDocument> {
     try {
       return await FinancialRepo.getById(id);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getReceipts(page: number, limit: number): Promise<DepositDocument[]> {
+    try {
+      return await FinancialRepo.getMany(page, limit);
     } catch (error) {
       throw error;
     }

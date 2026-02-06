@@ -10,10 +10,11 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 },
 });
 router.post(
-  "",
+  "/deposit",
   requireAuth,
   [upload.single("receipt"), checkFileExist],
-  financialController.deposit
+  financialController.deposit,
 );
+router.get("/recharges", requireAuth, financialController.getReceipts);
 
 export default router;

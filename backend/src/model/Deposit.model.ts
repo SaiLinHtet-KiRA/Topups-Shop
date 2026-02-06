@@ -1,9 +1,8 @@
-import mongoose from "mongoose";
+import mongoose, { HydratedDocument } from "mongoose";
 import SeqModel from "./Seq.model";
-import UserService from "../service/User.service";
 import UserModel from "./User.model";
 
-export interface DepositDocument extends mongoose.Document {
+export interface Deposit {
   id: number;
   userID: mongoose.Schema.Types.ObjectId;
   amount: number;
@@ -13,6 +12,8 @@ export interface DepositDocument extends mongoose.Document {
   name: string;
   banking: string;
 }
+
+export type DepositDocument = HydratedDocument<Deposit>;
 
 const DepositSchema = new mongoose.Schema<DepositDocument>(
   {
@@ -46,24 +47,21 @@ const DepositSchema = new mongoose.Schema<DepositDocument>(
   {
     timestamps: true,
     versionKey: false,
-  }
+  },
 );
 
 DepositSchema.pre("save", async function () {
-  console.log("DepositSchema", this);
   try {
-    console.log("DepositSchema", this);
-
     if (this.isNew) {
       const newOrderID = await SeqModel.findByIdAndUpdate(
         { _id: "orderId" },
         { $inc: { seq: 1 } },
-        { new: true, upsert: true }
+        { new: true, upsert: true },
       );
 
       if (!newOrderID) throw Error("Some things wrong on getting new order id");
       await UserModel.findByIdAndUpdate(this.userID, {
-        $push: { deposits: this._id },
+        $push: { receipt: this._id },
       });
       this.id = newOrderID.seq;
     } else {

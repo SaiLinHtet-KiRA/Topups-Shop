@@ -1,10 +1,10 @@
 import Receipt from "../interface/other/Receipt";
 import FinancialRepoType from "../interface/repo/Financial.repo.type";
-import DepositModel, { DepositDocument } from "../model/Deposit.model";
+import DepositModel, { Deposit, DepositDocument } from "../model/Deposit.model";
 import { NotFoundError } from "../util/error/errors";
 
 class FinancialRepo implements FinancialRepoType {
-  async create(receipt: DepositDocument): Promise<DepositDocument> {
+  async create(receipt: Deposit): Promise<DepositDocument> {
     try {
       const deposit = new DepositModel({ ...receipt });
       return await deposit.save();
@@ -14,7 +14,7 @@ class FinancialRepo implements FinancialRepoType {
   }
   async updateById(
     id: string,
-    data: DepositDocument
+    data: DepositDocument,
   ): Promise<DepositDocument> {
     try {
       const updated = await DepositModel.findByIdAndUpdate(id, data, {
@@ -24,6 +24,15 @@ class FinancialRepo implements FinancialRepoType {
         throw new NotFoundError(`Order-${id} wasn't found in data base`);
       }
       return updated;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getMany(start: number, limit: number): Promise<DepositDocument[]> {
+    try {
+      return await DepositModel.find()
+        .skip((start - 1) * limit)
+        .limit(limit);
     } catch (error) {
       throw error;
     }

@@ -26,11 +26,27 @@ class AuthController implements AuthControllerType {
   ): Promise<void> {
     try {
       const { banned, balance, role } = await userService.getById(req.user.id);
-
       res.status(200).json({ banned, balance, role });
     } catch (error) {
-      console.log(error);
       throw new Error("Method not implemented.");
+    }
+  }
+  async getHistory(
+    req: Request<
+      null,
+      null,
+      null,
+      { type: string; page: number; limit: number }
+    >,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { id } = req.user;
+      const { type, page, limit } = req.query;
+      const History = await userService.get;
+      res.status(200);
+    } catch (error) {
+      throw error;
     }
   }
 }

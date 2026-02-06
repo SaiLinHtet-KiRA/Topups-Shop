@@ -6,7 +6,7 @@ export interface User {
   id: string;
   banned: boolean;
   balance: number;
-  deposits: mongoose.Schema.Types.ObjectId[];
+  receipt: mongoose.Schema.Types.ObjectId[];
   topups: mongoose.Schema.Types.ObjectId[];
   role: "user" | "admin";
 }
@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema<UserDocument>(
       index: true,
       unique: true,
     },
-    deposits: {
+    receipt: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: DepositModel,
       default: [],

@@ -8,6 +8,14 @@ export default interface UserRepo {
     start: number,
     limit: number,
   ): Promise<UserDocument[]>;
+
+  getPopulate(
+    id: string,
+    type: string,
+    start: number,
+    limit: number,
+  ): Promise<UserDocument[]>;
+
   getByFindOne(id: string): Promise<UserDocument>;
   getById(id: string): Promise<UserDocument>;
   updateById(

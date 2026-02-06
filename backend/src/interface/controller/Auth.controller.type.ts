@@ -9,4 +9,13 @@ export default interface AuthControllerType {
     req: Request<null, null, null, { id: string }>,
     res: Response,
   ): Promise<void>;
+  getHistory(
+    req: Request<
+      null,
+      null,
+      null,
+      { type: string; page: number; limit: number }
+    >,
+    res: Response,
+  ): Promise<void>;
 }

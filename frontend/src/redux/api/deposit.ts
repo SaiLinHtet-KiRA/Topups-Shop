@@ -1,6 +1,7 @@
 import type { AccountInfo } from "@/interface/User";
 import { apiSlice } from "./apiSlice";
 import type Receipt from "@/interface/Receipt";
+import type { Query } from "@/interface/other";
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
@@ -8,7 +9,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: (receipt) => {
         const formData = new FormData();
         Object.keys(receipt).map((key) =>
-          formData.append(key, receipt[key as keyof Receipt] as string | Blob)
+          formData.append(key, receipt[key as keyof Receipt] as string | Blob),
         );
 
         return {
@@ -18,7 +19,10 @@ export const authApiSlice = apiSlice.injectEndpoints({
         };
       },
     }),
+    getReceipts: builder.query<any, Query>({
+      query: ({ start, limit }) => `/receipts?start=${start}&limit=${limit}`,
+    }),
   }),
 });
 
-export const { useDepositMutation } = authApiSlice;
+export const { useDepositMutation, useGetReceiptsQuery } = authApiSlice;
