@@ -11,14 +11,14 @@ export interface Topup {
   Id: CheckId;
 }
 interface CheckId {
-  userId: string;
-  zoneId: string;
+  userID: string;
+  zoneID: string;
 }
 
 export type TopupDocument = HydratedDocument<Topup>;
 
 const IdSchema = new mongoose.Schema<CheckId>(
-  { userId: { type: String }, zoneId: { type: String } },
+  { userID: { type: String }, zoneID: { type: String } },
   { _id: false, versionKey: false },
 );
 

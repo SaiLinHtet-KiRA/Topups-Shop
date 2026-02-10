@@ -1,5 +1,5 @@
 import { HydratedDocument, UpdateQueryKnownOnly } from "mongoose";
-import { GameDocument } from "../../model/Game.model";
+import { Game, GameDocument } from "../../model/Game.model";
 
 export default interface GameServiceType {
   createGame(info: GameDocument): Promise<HydratedDocument<GameDocument>>;
@@ -10,8 +10,9 @@ export default interface GameServiceType {
   getGame(id: string): Promise<GameDocument>;
   getGames(start: number, limit: number): Promise<GameDocument[]>;
 
-  updateGame(
+  updateGameInfo(
     id: string,
-    data: UpdateQueryKnownOnly<GameDocument>,
+    data: UpdateQueryKnownOnly<Game>,
   ): Promise<GameDocument>;
+  updateGame(id: string, data: GameDocument): Promise<GameDocument>;
 }

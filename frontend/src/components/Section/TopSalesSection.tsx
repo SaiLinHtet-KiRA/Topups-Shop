@@ -1,15 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
-import { ArrowRightCircle, AwardRibbon, BankNote, Box } from "../../svg";
+import { ArrowRightCircle, AwardRibbon, Box } from "../../svg";
 import numberToText from "../../helper/numberToText";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./TopSalesSection.css";
 import { useGetPackagesQuery } from "@/redux/api/package";
+import PriceBadge from "../Badge/PriceBadge";
 
 export default function TopSalesSection() {
-  const { data } = useGetPackagesQuery({ start: 1, limit: 10 });
+  const { data } = useGetPackagesQuery({ page: 1, limit: 10 });
 
   return (
     <section className="section">
@@ -33,12 +34,9 @@ export default function TopSalesSection() {
                 </div>
                 <div className="top-sales-info">
                   <header>{name}</header>
-                  <div className="top-sales-badge-wrapper">
-                    <span className="top-sales-badge">
-                      <BankNote className="svg" />
-                      {new_price.toLocaleString()} MMK
-                    </span>
-                    <span className="top-sales-badge">
+                  <div className="badge-wrapper">
+                    <PriceBadge value={new_price} />
+                    <span className="badge">
                       <Box className="svg" />
                       {numberToText(sold)}
                     </span>

@@ -21,12 +21,13 @@ class UserService implements UserServiceType {
     }
   }
   async getHistory(
+    id: string,
     type: string,
     start: number,
     limit: number,
   ): Promise<DepositDocument[]> {
     try {
-      return await UserRepo.
+      return await UserRepo.getPopulate(id, type, start, limit);
     } catch (error) {
       throw error;
     }

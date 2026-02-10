@@ -54,7 +54,10 @@ class Package implements PackageRepoType {
     data: PackageDocument,
   ): Promise<PackageDocument> {
     try {
-      const Package = await PackageModel.findByIdAndUpdate(id, data);
+      const Package = await PackageModel.findByIdAndUpdate(id, data, {
+        new: true,
+        upsert: true,
+      });
       if (!Package) throw new NotFoundError(`Package Id-${id} was not founded`);
       return Package;
     } catch (error) {

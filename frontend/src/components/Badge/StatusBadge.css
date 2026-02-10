@@ -1,0 +1,19 @@
+.status {
+  background-color: red;
+  padding: 0.6rem 0.8rem;
+  height: fit-content;
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: capitalize;
+  border-radius: 0.6rem;
+  letter-spacing: 0.1rem;
+}
+.success {
+  background-color: oklch(62.7% 0.194 149.214);
+}
+.pending {
+  background-color: oklch(66.6% 0.179 58.318);
+}
+.fail {
+  background-color: oklch(57.7% 0.245 27.325);
+}

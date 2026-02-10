@@ -48,22 +48,28 @@ class UserRepo implements UserRepoType {
     type: string,
     start: number,
     limit: number,
-  ): Promise<DepositDocument[] | TopupDocument[]> {
+  ): Promise<any> {
     try {
+      const filer = {};
       const user = await UserModel.findById(id, {
-        receipt: 1,
+        receipts: 1,
         topups: 1,
+        numReceipts: 1,
+        numTopups: 1,
       }).populate({
         path: type,
         options: {
           limit,
           skip: start,
           sort: { createdAt: -1 },
+          populate: type == "recharges" ? [] : ["game", "package"],
         },
       });
+
       if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
-      if (user.receipt) return user.receipt;
-      if (user.topups) return user.topups;
+      if (type == "recharges")
+        return { size: user.numRecharges, data: user.recharges };
+      if (type == "topups") return { size: user.numTopups, data: user.topups };
     } catch (error) {
       throw error;
     }

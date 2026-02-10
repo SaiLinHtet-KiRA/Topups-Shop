@@ -10,49 +10,108 @@
       "name": "main",
       "packages": [
         {
-          "name": "Diamond x 78 +8",
+          "name": "UC x 60",
           "old_price": 5,
           "new_price": 3,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 156 +16",
+          "name": "UC x 325",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 234 +23",
+          "name": "UC x 600 +60",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 625 +81",
+          "name": "UC x 1500 +300",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 1860 +335",
+          "name": "UC x 3000 +850",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 3099 +589",
+          "name": "UC 8100",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "packages": [
+        {
+          "name": "Weekly Deal Pack 1",
+          "old_price": 5,
+          "new_price": 3,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Upgradable Firearm Materials Pack",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 4649 +883",
+          "name": "Weekly Mythic Emblem Value Pack",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"
         },
         {
-          "name": "Diamond x 7740 +1548",
+          "name": "Weekly Deal Pack 2",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Mythic Emblem Pack",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime 6 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime Plus 1 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime 12 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime 3 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime Plus 6 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/uc.webp"
+        },
+        {
+          "name": "Prime plus 12 Month",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/PUBG/uc.webp"

@@ -43,8 +43,8 @@ class AuthController implements AuthControllerType {
     try {
       const { id } = req.user;
       const { type, page, limit } = req.query;
-      const History = await userService.get;
-      res.status(200);
+      const History = await userService.getHistory(id, type, page, limit);
+      res.status(200).json(History);
     } catch (error) {
       throw error;
     }

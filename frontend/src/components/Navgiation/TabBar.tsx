@@ -8,7 +8,7 @@ import useScroll from "../../hook/useScrollEnd";
 export default function TabBar() {
   const { pathname } = useLocation();
   const tabBar = useRef<null | HTMLDivElement>(null);
-  const Tabs = ["/", "/games", "/profile"];
+  const Tabs = ["/", "/games", "/dashborad"];
   const TabIcons = [Home, Controller, User];
 
   useScroll(tabBar);

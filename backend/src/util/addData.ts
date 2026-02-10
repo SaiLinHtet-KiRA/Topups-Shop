@@ -40,7 +40,7 @@ const addData = async () => {
                   packages: savedPackages,
                 },
               );
-              GameService.updateGame(_id.toString(), {
+              GameService.updateGameInfo(_id.toString(), {
                 $push: { packages: savedPackagesSection._id },
               });
             }

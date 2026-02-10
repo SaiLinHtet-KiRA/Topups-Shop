@@ -9,8 +9,7 @@ import "./PopularGameSection.css";
 import { useGetGamesQuery } from "@/redux/api/game";
 
 export default function PopularGameSection() {
-  const { data } = useGetGamesQuery({ start: 1, limit: 8 });
-  console.log(data);
+  const { data } = useGetGamesQuery({ page: 1, limit: 8 });
   return (
     <section className="section">
       <header className="section-header">
@@ -25,9 +24,9 @@ export default function PopularGameSection() {
           modules={[FreeMode]}
           className="section-swiper"
         >
-          {data?.map((game) => (
+          {data?.map(({ _id, ...game }) => (
             <SwiperSlide key={game.name}>
-              <GameCard {...game} />
+              <GameCard _id={"games/" + _id} {...game} />
             </SwiperSlide>
           ))}
         </Swiper>

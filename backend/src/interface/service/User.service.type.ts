@@ -6,6 +6,7 @@ export default interface UserService {
   findOrCreateUser(id: string): Promise<UserDocument>;
   getUsers(start: number, limit: number): Promise<UserDocument[]>;
   getHistory(
+    id: string,
     type: string,
     start: number,
     limit: number,

@@ -1,5 +1,6 @@
 export interface Query {
-  start: number;
+  type?: string;
+  page: number;
   limit: number;
 }
 

@@ -35,6 +35,7 @@ a {
   aspect-ratio: 1/1;
   cursor: pointer;
   stroke: whitesmoke;
+  stroke-width: 0.1rem;
 }
 .svg-lg {
   width: 32px;
@@ -78,7 +79,7 @@ ul {
 li {
   list-style: none;
 }
-.main-page-wrapper {
+.wrapper {
   width: 90svw;
   margin: auto;
 }

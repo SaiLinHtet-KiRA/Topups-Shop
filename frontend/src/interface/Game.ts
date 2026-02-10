@@ -8,7 +8,7 @@ export default interface Game {
   check_id?: CheckId;
   palyStore: string;
   appStore: string;
-  packages?: Packages[];
+  packages: Packages[];
 }
 interface CheckId {
   url: string;

@@ -61,7 +61,8 @@ DepositSchema.pre("save", async function () {
 
       if (!newOrderID) throw Error("Some things wrong on getting new order id");
       await UserModel.findByIdAndUpdate(this.userID, {
-        $push: { receipt: this._id },
+        $push: { receipts: this._id },
+        $inc: { numReceipts: 1 },
       });
       this.id = newOrderID.seq;
     } else {

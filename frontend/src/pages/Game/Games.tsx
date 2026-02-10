@@ -4,9 +4,9 @@ import "./games.css";
 import { useGetGamesQuery } from "@/redux/api/game";
 
 export default function Games() {
-  const { data } = useGetGamesQuery({ start: 1, limit: 10 });
+  const { data } = useGetGamesQuery({ page: 1, limit: 10 });
   return (
-    <section className="games-wrapper">
+    <section className="games-wrapper wrapper">
       <header>Games</header>
       <section className="game-cards-wrapper">
         {data?.map((game) => (

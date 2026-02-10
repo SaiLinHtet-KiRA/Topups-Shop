@@ -57,19 +57,19 @@
           "icon": "/Games/Blood_Strike/level-up-pass.webp"
         },
         {
-          "name": "Pre Order",
+          "name": "Lucky Bag Week",
           "old_price": 8500,
           "new_price": 8500,
           "icon": "/Games/Blood_Strike/level-up-pass.webp"
         },
         {
-          "name": "Elite Striker Pass",
+          "name": "Strike Pass Elite",
           "old_price": 15000,
           "new_price": 15000,
           "icon": "/Games/Blood_Strike/elite-pass.webp"
         },
         {
-          "name": "Premium Striker Pass",
+          "name": "Strike Pass Premiun",
           "old_price": 34000,
           "new_price": 34000,
           "icon": "/Games/Blood_Strike/premium-pass.webp"

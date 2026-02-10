@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { GameDocument } from "../../model/Game.model";
 
 export default interface GameControllerType {
   getGames(
@@ -7,6 +8,10 @@ export default interface GameControllerType {
   ): Promise<void>;
   getGame(
     req: Request<{ id: string }, null, null, null>,
+    res: Response,
+  ): Promise<void>;
+  updateGame(
+    req: Request<{ id: string }, null, GameDocument, null>,
     res: Response,
   ): Promise<void>;
   searchGames(

@@ -6,15 +6,19 @@ import Config from "../data/config";
 import UserService from "../service/User.service";
 
 TelegramBot.on("message", async (msg) => {
-  const admin_password = await ConfigService.getConfigById(Config[0].name);
-  if (admin_password.value == msg.text) {
-    await UserService.updateByFindOne(
-      { id: msg.chat.id.toString() },
-      {
-        role: "admin",
-      },
-    );
-    TelegramBot.sendMessage(msg.chat.id, `Now you are admin!!`);
+  try {
+    const admin_password = await ConfigService.getConfigById(Config[0].name);
+    if (admin_password.value == msg.text) {
+      await UserService.updateByFindOne(
+        { id: msg.chat.id.toString() },
+        {
+          role: "admin",
+        },
+      );
+      TelegramBot.sendMessage(msg.chat.id, `Now you are admin!!`);
+    }
+  } catch (error) {
+    TelegramBot.clearReplyListeners();
   }
 });
 
@@ -25,7 +29,7 @@ TelegramBot.on("callback_query", async (query) => {
     const data: {
       status: "pending" | "success" | "fail";
       id: string;
-      t: "topup" | "recharge";
+      t: "topup" | "r";
     } = JSON.parse(query.data);
     if (data.t == "topup") {
       const topup = await TopupService.getTopup(data.id);
@@ -37,7 +41,7 @@ TelegramBot.on("callback_query", async (query) => {
       }
 
       TopupService.updateTopup(data.id, { status: data.status } as any);
-    } else if (data.t == "recharge") {
+    } else if (data.t == "r") {
       const deposit = await FinancialService.getDepositById(data.id);
       if (deposit.status == data.status) {
         TelegramBot.sendMessage(

@@ -4,7 +4,6 @@ import TopupDto from "../interface/dto/Topup.dto";
 import TopupRepo from "../repo/Topup.repo";
 import TelegramBot from "../util/TelegramBot";
 import UserService from "./User.service";
-import mongoose from "mongoose";
 import GameService from "./Game.service";
 
 class TopupService implements TopupServiceType {
@@ -15,14 +14,14 @@ class TopupService implements TopupServiceType {
         game: data.game as any,
         package: data.package.id as any,
         price: data.package.price,
-        Id: { userId: data.userId, zoneId: data.zoneId },
+        Id: { userID: data.userId, zoneID: data.zoneId },
       });
       await UserService.updateUserById(userId, {
-        $inc: { balance: -data.package.price },
+        $inc: { balance: -data.package.price, numTopups: 1 },
         $push: { topups: topup._id },
       });
       const Admins = await UserService.findAdmins();
-      Admins.map((id) =>
+      Admins.map(({ id }) =>
         TelegramBot.sendMessage(
           Number(id),
           `New order Arrived!!\nGame: ${name}\nPackage: ${data.package.name}\nPrice: ${data.package.price} ${topup.currency}\nUser Id: ${data.userId}\nZone Id: ${data.zoneId}`,

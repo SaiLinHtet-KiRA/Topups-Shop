@@ -6,8 +6,10 @@ export interface User {
   id: string;
   banned: boolean;
   balance: number;
-  receipt: mongoose.Schema.Types.ObjectId[];
+  recharges: mongoose.Schema.Types.ObjectId[];
   topups: mongoose.Schema.Types.ObjectId[];
+  numRecharges: number;
+  numTopups: number;
   role: "user" | "admin";
 }
 
@@ -21,15 +23,23 @@ const UserSchema = new mongoose.Schema<UserDocument>(
       index: true,
       unique: true,
     },
-    receipt: {
+    recharges: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: DepositModel,
       default: [],
+    },
+    numRecharges: {
+      type: Number,
+      default: 0,
     },
     topups: {
       type: [mongoose.Schema.Types.ObjectId],
       ref: TopupsModel,
       default: [],
+    },
+    numTopups: {
+      type: Number,
+      default: 0,
     },
     banned: {
       type: Boolean,

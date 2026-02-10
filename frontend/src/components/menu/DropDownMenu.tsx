@@ -6,7 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 export default function DropDownMenu() {
   const query = [
     { name: "topups", svg: Box },
-    { name: "recharge", svg: Receipt },
+    { name: "recharges", svg: Receipt },
   ];
   const [show, setShow] = useState<boolean>();
   const ref = useRef<HTMLDivElement>(null);
@@ -14,26 +14,35 @@ export default function DropDownMenu() {
   const type = getSearchParams.get("type");
   const onClick = (name: string) =>
     setSearchParams({ type: name }, { replace: true });
-  const selectedIndex = type == "recharge" ? 1 : 0;
+  const selectedIndex = type == "recharges" ? 1 : 0;
   useEffect(() => {
-    window.addEventListener("click", (e: MouseEvent) => {
-      if (!(e.target as HTMLElement).contains(ref.current)) {
+    const Handler = (e: MouseEvent) => {
+      if (ref.current && ref.current.contains(e.target as Node)) {
         setShow(true);
       } else {
         setShow(false);
       }
-    });
+    };
+    window.addEventListener("click", Handler);
+    return () => window.removeEventListener("click", Handler);
   }, []);
   return (
-    <div className="drop-down-menu" ref={ref}>
-      <ValueContainer
-        name={query[selectedIndex].name}
-        svg={query[selectedIndex].svg}
-      />
+    <div className="drop-down-menu">
+      <span ref={ref}>
+        <ValueContainer
+          name={query[selectedIndex].name}
+          svg={query[selectedIndex].svg}
+        />
+      </span>
       {show && (
         <ul className="drop-down-menu-options-container">
           {query.map(({ name, svg }) => (
-            <OpctionContainer name={name} svg={svg} onClick={onClick} />
+            <OpctionContainer
+              name={name}
+              svg={svg}
+              onClick={onClick}
+              key={name}
+            />
           ))}
         </ul>
       )}

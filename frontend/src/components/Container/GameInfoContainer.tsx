@@ -21,7 +21,7 @@ export default function GameInfoContainer({
   const [createTopup] = useCreateTopupMutation();
   return (
     <form
-      className="game-info-container"
+      className="game-info-container wrapper"
       onSubmit={(e) => {
         e.preventDefault();
         const data = {
@@ -40,7 +40,7 @@ export default function GameInfoContainer({
       <Breadcrumbs path={["Games", name]} />
       {check_id && <CheckIdSection />}
 
-      <section className="">
+      <section>
         <header>
           <span>{check_id ? "2" : "1"}</span>
           <span>Select Package</span>
