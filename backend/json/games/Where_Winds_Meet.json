@@ -1,0 +1,92 @@
+{
+  "name": "Where Winds Meet",
+  "icon": "/Games/Where Winds Meet/icon.webp",
+  "about": "Where Winds Meet is an epic open-world action-adventure RPG inspired by the rich legacy of the Wuxia genre.\n\nSet in the turbulent era of 10th-century China, you take on the role of a young Master Swordsman, uncovering forgotten truths and the mysteries of your own identity.\n\nJust as the wind stirs mountains and rivers, so too will its legend emerge.",
+  "check_id": { "url": "/wherewindsmeet", "userID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.netease.yysls&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/where-winds-meet/id6472396866",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "60 Echo Beads",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Where Winds Meet/Echo-60.webp"
+        },
+        {
+          "name": "180 Echo Beads",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Where Winds Meet/Echo-180.webp"
+        },
+        {
+          "name": "300 Echo Beads",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Where Winds Meet/Echo-300.webp"
+        },
+        {
+          "name": "600 Echo Beads",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Where Winds Meet/Echo-600.webp"
+        },
+        {
+          "name": "900 Echo Beads",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Where Winds Meet/chest-900.webp"
+        },
+        {
+          "name": "1800 Echo Beads",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Where Winds Meet/chest-1800.webp"
+        },
+        {
+          "name": "3000 Echo Beads",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Where Winds Meet/chest-3000.webp"
+        },
+        {
+          "name": "6000 Echo Beads",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Where Winds Meet/chest-6000.webp"
+        },
+        {
+          "name": "12000 Echo Beads",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Where Winds Meet/chest-12000.webp"
+        }
+      ]
+    },
+    {
+      "name": "Pass",
+      "packages": [
+        {
+          "name": "Monthly Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Where Winds Meet/Monthly_Pass.webp"
+        },
+        {
+          "name": "Elite Battle Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Where Winds Meet/Elite_Battle_Pass.webp"
+        },
+        {
+          "name": "Premium Battle Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Where Winds Meet/Premium_Battle_Pass.webp"
+        }
+      ]
+    }
+  ]
+}

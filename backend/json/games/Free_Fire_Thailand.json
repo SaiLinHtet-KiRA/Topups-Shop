@@ -1,0 +1,116 @@
+{
+  "name": "Free Fire Thailand",
+  "icon": "/Games/Free Fire/icon_th.webp",
+  "about": "Free Fire – Battlegrounds is one of the best shooting and survival games available for mobile!\nEach game lasts about 10 minutes and places you on a remote island where 50 players face off, and only one emerges victorious.",
+  "check_id": { "url": "/freefire", "userID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.dts.freefireth&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/free-fire-x-jujutsu-kaisen/id1300146617",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "33 Diamonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Free Fire/dia-sm.webp"
+        },
+        {
+          "name": "172 Diamonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Free Fire/dia-sm.webp"
+        },
+        {
+          "name": "310 Diamonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Free Fire/dia-md.webp"
+        },
+        {
+          "name": "517 Diamonds",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Free Fire/dia-md.webp"
+        },
+        {
+          "name": "690 Diamonds",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Free Fire/dia-lg.webp"
+        },
+        {
+          "name": "1052 Diamonds",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Free Fire/dia-lg.webp"
+        },
+        {
+          "name": "1801 Diamonds",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Free Fire/dia-xl.webp"
+        },
+        {
+          "name": "3698 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Free Fire/dia-xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "packages": [
+        {
+          "name": "Growth Pack - Level 6",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Growth Pack - Level 10",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Growth Pack - Level 15",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Growth Pack - Level 20",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Growth Pack - Level 25",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Growth Pack - Level 30",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Growth_Pack.webp"
+        },
+        {
+          "name": "Weekly",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Weekly_Membership.webp"
+        },
+        {
+          "name": "Monthly Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Free Fire/Monthly_Membership.webp"
+        }
+      ]
+    }
+  ]
+}

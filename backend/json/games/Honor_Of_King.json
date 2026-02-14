@@ -1,0 +1,121 @@
+{
+  "name": "Honor Of King",
+  "icon": "/Games/Honor Of King/icon.webp",
+  "about": "Honor of Kings is the world's most-played mobile 5v5 MOBA, developed by TiMi Studio Group and published by Level Infinite, offering fast-paced 15-20 minute matches. It features a vast roster of heroes, diverse battle modes, and requires strategic team coordination. The game has achieved massive global popularity, particularly with its international release expanding from its original Chinese market.",
+  "check_id": { "url": "/honorofking", "userID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.levelinfinite.sgameGlobal&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/honor-of-kings/id1619254071",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "16 Tokens",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Honor Of King/t-xs.png"
+        },
+        {
+          "name": "80 Tokens",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Honor Of King/t-sm.png"
+        },
+        {
+          "name": "240 Tokens",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Honor Of King/t-lg.png"
+        },
+        {
+          "name": "400 Tokens",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Honor Of King/t-xl.png"
+        },
+        {
+          "name": "560 Tokens",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Honor Of King/t-xl.png"
+        },
+        {
+          "name": "800 + 30 Tokens",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Honor Of King/t-2xl.png"
+        },
+        {
+          "name": "1200 + 45 Tokens",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Honor Of King/t-2xl.png"
+        },
+        {
+          "name": "2400 + 108 Tokens",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Honor Of King/chest-md.png"
+        },
+        {
+          "name": "4000 + 180 Tokens",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Honor Of King/chest-md.png"
+        },
+        {
+          "name": "8000 + 360 Tokens",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Honor Of King/chest-lg.png"
+        }
+      ]
+    },
+    {
+      "name": "Limited",
+      "packages": [
+        {
+          "name": "Double Token Lucky Bag",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Double_Token_Lucky_Bag.png"
+        },
+        {
+          "name": "Standard Purchase Rebate Pack",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Standard_Purchase_Rebate_Pack.png"
+        },
+        {
+          "name": "Honor Point Value Pack",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Honor_Point_Value_Pack.png"
+        },
+        {
+          "name": "Premium Purchase Rebate Pack",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Premium_Purchase_Rebate_Pack.png"
+        }
+      ]
+    },
+    {
+      "name": "Weekly Pack",
+      "packages": [
+        {
+          "name": "Weekly Card",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Weekly_Card.png"
+        },
+        {
+          "name": "Weekly Card Plus",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Honor Of King/Weekly_Card_Plus.png"
+        }
+      ]
+    }
+  ]
+}

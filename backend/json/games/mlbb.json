@@ -10,49 +10,294 @@
       "name": "main",
       "packages": [
         {
-          "name": "Diamond x 78 +8",
+          "name": "5 Diamonds",
           "old_price": 4750,
           "new_price": 4750,
           "icon": "/Games/MLBB/dia-sm.webp"
         },
         {
-          "name": "Diamond x 156 +16",
+          "name": "78 + 8 Diamonds",
           "old_price": 9200,
           "new_price": 9200,
+          "icon": "/Games/MLBB/dia-sm.webp"
+        },
+        {
+          "name": "156 + 16 Diamonds",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/MLBB/dia-sm.webp"
+        },
+        {
+          "name": "234 + 23 Diamonds",
+          "old_price": 37000,
+          "new_price": 37000,
           "icon": "/Games/MLBB/dia-md.webp"
         },
         {
-          "name": "Diamond x 234 +23",
-          "old_price": 13300,
-          "new_price": 13300,
+          "name": "312 + 32 Diamonds",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/MLBB/dia-md.webp"
+        },
+        {
+          "name": "390 + 40 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/MLBB/dia-md.webp"
+        },
+        {
+          "name": "468 + 46 Diamonds",
+          "old_price": 295000,
+          "new_price": 295000,
           "icon": "/Games/MLBB/dia-lg.webp"
         },
         {
-          "name": "Diamond x 625 +81",
-          "old_price": 37000,
-          "new_price": 37000,
+          "name": "625 + 81 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/dia-lg.webp"
+        },
+        {
+          "name": "859 + 104 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/dia-lg.webp"
+        },
+        {
+          "name": "937 + 113 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
           "icon": "/Games/MLBB/dia-xl.webp"
         },
         {
-          "name": "Diamond x 1860 +335",
-          "old_price": 113000,
-          "new_price": 113000,
+          "name": "1296 + 150 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/dia-xl.webp"
+        },
+        {
+          "name": "1589 + 113 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
           "icon": "/Games/MLBB/chest-sm.webp"
         },
         {
-          "name": "Diamond x 3099 +589",
-          "old_price": 188000,
-          "new_price": 188000,
+          "name": "1860 + 335 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "2172 + 367 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "2485 + 416 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "2665 + 321 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
           "icon": "/Games/MLBB/chest-md.webp"
         },
         {
-          "name": "Diamond x 4649 +883",
-          "old_price": 295000,
-          "new_price": 295000,
+          "name": "3099 + 589 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "3527 + 635 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "3724 + 670 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "4649 + 883 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "5117 + 929 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
           "icon": "/Games/MLBB/chest-lg.webp"
         },
         {
-          "name": "Diamond x 7740 +1548",
+          "name": "5274 + 964 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "6132 + 1050 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "6429 + 1073 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "6509 + 1218 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "7740 + 1548 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "10225 + 1964 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "10839 + 2137 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "12389 + 2431 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "15483 + 3096 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "Other Diamonds",
+      "packages": [
+        {
+          "name": "10 + 1 Diamonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/MLBB/dia-sm.webp"
+        },
+        {
+          "name": "13 + 1 Diamonds",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/MLBB/dia-sm.webp"
+        },
+        {
+          "name": "20 + 2 Diamonds",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/MLBB/dia-md.webp"
+        },
+        {
+          "name": "26 + 2 Diamonds",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/MLBB/dia-md.webp"
+        },
+        {
+          "name": "38 + 4 Diamonds",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/MLBB/dia-lg.webp"
+        },
+        {
+          "name": "51 + 5 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/MLBB/dia-lg.webp"
+        },
+        {
+          "name": "64 + 6 Diamonds",
+          "old_price": 295000,
+          "new_price": 295000,
+          "icon": "/Games/MLBB/dia-xl.webp"
+        },
+        {
+          "name": "102 + 10 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/dia-xl.webp"
+        },
+        {
+          "name": "140 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "203 + 20 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "284 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-sm.webp"
+        },
+        {
+          "name": "303 + 33 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "355 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-md.webp"
+        },
+        {
+          "name": "504 + 66 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "716 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-lg.webp"
+        },
+        {
+          "name": "1007 + 156 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "1084 Diamonds",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/MLBB/chest-xl.webp"
+        },
+        {
+          "name": "2015 + 383 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-xl.webp"
@@ -63,25 +308,25 @@
       "name": "double change",
       "packages": [
         {
-          "name": "Diamond x 50 +5",
+          "name": "50 + 50 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/dia-md.webp"
         },
         {
-          "name": "Diamond x 150 +15",
+          "name": "150 + 150 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/dia-lg.webp"
         },
         {
-          "name": "Diamond x 250 +25",
+          "name": "250 + 250 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/dia-xl.webp"
         },
         {
-          "name": "Diamond x 500 +65",
+          "name": "500 + 500 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-sm.webp"
@@ -89,13 +334,66 @@
       ]
     },
     {
-      "name": "other",
+      "name": "Weekly Pass",
       "packages": [
         {
-          "name": "Weekly Diamond Pass",
+          "name": "Weekly Pass",
           "old_price": 6000,
           "new_price": 6000,
           "icon": "/Games/MLBB/weeklypass.webp"
+        },
+        {
+          "name": "Weekly Pass x2",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        },
+        {
+          "name": "Weekly Pass x2",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        },
+        {
+          "name": "Weekly Pass x3",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        },
+        {
+          "name": "Weekly Pass x4",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        },
+        {
+          "name": "Weekly Pass x5",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        },
+        {
+          "name": "Weekly Pass x6",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
+        }
+      ]
+    },
+    {
+      "name": "Other",
+      "packages": [
+        {
+          "name": "Weekly Elite Bundle \n(Available Once a Week)",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/MLBB/weeklypass.webp"
+        },
+        {
+          "name": "Monthly Epic Bundle \n(Available Once a Week)",
+          "old_price": 32000,
+          "new_price": 32000,
+          "icon": "/Games/MLBB/twilightpass.webp"
         },
         {
           "name": "Twilight Pass",

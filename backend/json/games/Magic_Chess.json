@@ -1,0 +1,193 @@
+{
+  "name": "Magic Chess: Go Go",
+  "icon": "/Games/Magic Chess Go Go/icon.webp",
+  "about": "Magic Chess: Go Go (MCGG) is a standalone mobile auto-battler strategy game developed by Moonton and derived from Mobile Legends: Bang Bang. Released in 2025, it features 8-player tactical combat where players recruit heroes, activate synergies, and use unique commander skills to defeat opponents. The game offers a fast-paced, 3D experience with casual, strategic gameplay, featuring, as of February 2026, Season 5: Neon Guardians.",
+  "check_id": { "url": "/magicchess:gogo", "userID": true, "zoneID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.mobilechess.gp&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/magic-chess-go-go-us/id6746391290",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "12 Diamonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
+        },
+        {
+          "name": "19 Diamonds",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
+        },
+        {
+          "name": "78 +8 Diamonds",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
+        },
+        {
+          "name": "85 Diamonds",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
+        },
+        {
+          "name": "156 +23 Diamonds",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
+        },
+        {
+          "name": "240 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
+        },
+        {
+          "name": "234 +23 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
+        },
+        {
+          "name": "296 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
+        },
+        {
+          "name": "344 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-md.webp"
+        },
+        {
+          "name": "408 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-md.webp"
+        },
+        {
+          "name": "514 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-md.webp"
+        },
+        {
+          "name": "516 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "568 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "625 +81 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "875 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "1346 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "1825 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-xl.webp"
+        },
+        {
+          "name": "1860 +335 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-xl.webp"
+        },
+        {
+          "name": "2010 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-xl.webp"
+        },
+        {
+          "name": "3099 +589 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-2xl.webp"
+        },
+        {
+          "name": "4830 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-2xl.webp"
+        },
+        {
+          "name": "4649 +883 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-3xl.webp"
+        },
+        {
+          "name": "7740 +1548 Diamonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Magic Chess Go Go/dia-3xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "First Purchase",
+      "packages": [
+        {
+          "name": "50 + 5 Diamonds (First Top-up Bonous)",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
+        },
+        {
+          "name": "150 + 15 Diamonds (First Top-up Bonous)",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Magic Chess Go Go/dia-md.webp"
+        },
+        {
+          "name": "250 + 25 Diamonds (First Top-up Bonous)",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
+        },
+        {
+          "name": "500 + 65 Diamonds (First Top-up Bonous)",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Magic Chess Go Go/dia-xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "Weekly Pass",
+      "packages": [
+        {
+          "name": "Weekly Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Magic Chess Go Go/Weekly Pass.webp"
+        }
+      ]
+    }
+  ]
+}

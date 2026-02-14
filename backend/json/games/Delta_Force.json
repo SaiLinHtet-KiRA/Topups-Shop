@@ -1,0 +1,104 @@
+{
+  "name": "Delta Force",
+  "icon": "/Games/Delta Force/icon.webp",
+  "about": "Delta Force (1st Special Forces Operational Detachment-Delta) is a premier U.S. Army Tier 1 special missions unit under Joint Special Operations Command (JSOC), specializing in counterterrorism, hostage rescue, and high-risk direct action. Known as 'The Unit. or 'CAG,' it is a highly selective force designed for rapid, surgical operations against high-value targets worldwide.",
+  "check_id": { "url": "/deltaforce", "userID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.garena.game.df&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/delta-force/id6451399876",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "18 Delta Coins",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Delta Force/dc-xs.webp"
+        },
+        {
+          "name": "30 Delta Coins",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Delta Force/dc-xs.webp"
+        },
+        {
+          "name": "60 Delta Coins",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Delta Force/dc-xs.webp"
+        },
+        {
+          "name": "300+20 Delta Coins",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Delta Force/dc-sm.webp"
+        },
+        {
+          "name": "420+40 Delta Coins",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Delta Force/dc-sm.webp"
+        },
+        {
+          "name": "680+70 Delta Coins",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Delta Force/dc-sm.webp"
+        },
+        {
+          "name": "1280+200 Delta Coins",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Delta Force/dc-lg.webp"
+        },
+        {
+          "name": "1680+300 Delta Coins",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Delta Force/dc-lg.webp"
+        },
+        {
+          "name": "3280+670 Delta Coins",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Delta Force/dc-xl.webp"
+        },
+        {
+          "name": "6480+1620 Delta Coins",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Delta Force/dc-xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "other",
+      "packages": [
+        {
+          "name": "Morphosis Supplies",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Delta Force/Morphosis_Supplies.webp"
+        },
+        {
+          "name": "Morphosis Supplies - Advanced",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Delta Force/Morphosis_Supplies_Advanced.webp"
+        },
+        {
+          "name": "Operation Special",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Delta Force/Operation_Special.webp"
+        },
+        {
+          "name": "Warfare Special",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Delta Force/Warfare_Special.webp"
+        }
+      ]
+    }
+  ]
+}

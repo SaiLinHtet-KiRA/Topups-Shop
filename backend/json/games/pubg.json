@@ -1,10 +1,13 @@
 {
   "name": "PUBG Mobile",
   "icon": "/Games/PUBG/icon.webp",
-  "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
-  "chek_id": null,
-  "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
-  "appStore": "https://apps.apple.com/ph/app/mobile-legends-bang-bang/id1160056295",
+  "about": "PlayerUnknown's Battlegrounds (PUBG) Mobile is a battle royale game where players are dropped onto a giant island with other players. The goal is to be the last person or last team standing, doing whatever it takes to survive enemy attacks. PUBG Mobile is the most intense free-to-play multiplayer action game for mobile devices. Land, gear up, and compete. Survival is key, and the last one standing wins. When the time comes, fire away!",
+  "check_id": {
+    "url": "/pubgmobile",
+    "userID": true
+  },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.tencent.ig&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/pubg-mobile/id1330123889",
   "packages": [
     {
       "name": "main",
@@ -13,37 +16,37 @@
           "name": "UC x 60",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-sm.png"
         },
         {
           "name": "UC x 325",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-md.png"
         },
         {
           "name": "UC x 600 +60",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-lg.png"
         },
         {
           "name": "UC x 1500 +300",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-xl.png"
         },
         {
           "name": "UC x 3000 +850",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-2xl.png"
         },
         {
           "name": "UC 8100",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/uc-3xl.png"
         }
       ]
     },
@@ -54,67 +57,67 @@
           "name": "Weekly Deal Pack 1",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
-        },
-        {
-          "name": "Upgradable Firearm Materials Pack",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
-        },
-        {
-          "name": "Weekly Mythic Emblem Value Pack",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Weekly_Deal_Pack_1.jpg"
         },
         {
           "name": "Weekly Deal Pack 2",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Weekly_Deal_Pack_2.jpg"
+        },
+        {
+          "name": "Weekly Mythic Emblem Value Pack",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/Weekly_Mythic_Emblem_Value_Pack.jpg"
         },
         {
           "name": "Mythic Emblem Pack",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Mythic_Emblem_Pack.jpg"
         },
         {
-          "name": "Prime 6 Month",
+          "name": "Upgradable Firearm Materials Pack",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
-        },
-        {
-          "name": "Prime Plus 1 Month",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
-        },
-        {
-          "name": "Prime 12 Month",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Upgradable_Firearm_Materials_Pack.jpg"
         },
         {
           "name": "Prime 3 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Prime_3_Month.jpg"
+        },
+        {
+          "name": "Prime 6 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/Prime_6_Month.jpg"
+        },
+        {
+          "name": "Prime 12 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/Prime_12_Month.jpg"
+        },
+        {
+          "name": "Prime Plus 1 Month",
+          "old_price": 5,
+          "new_price": 5,
+          "icon": "/Games/PUBG/Prime_Plus_1_Month.jpg"
         },
         {
           "name": "Prime Plus 6 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Prime_Plus_6_Month.jpg"
         },
         {
-          "name": "Prime plus 12 Month",
+          "name": "Prime Plus 12 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/PUBG/Prime_Plus_12_Month.jpg"
         }
       ]
     }

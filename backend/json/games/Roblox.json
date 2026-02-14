@@ -1,90 +1,49 @@
 {
   "name": "Roblox",
-  "icon": "/Games/MLBB/icon.webp",
-  "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
+  "icon": "/Games/Roblox/icon.webp",
+  "about": "Roblox is a massive online, free-to-play, user-generated game creation platform and social hub launched in 2006. Users can play, build, and share 3D, often block-style, experiences or 'worlds' using Roblox Studio. It has over 200 million monthly active users, allowing them to customize avatars, chat, and spend a virtual currency called 'Robux'.",
   "check_id": { "url": "/mobilelegends", "userID": true, "zoneID": true },
-  "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
-  "appStore": "https://apps.apple.com/ph/app/mobile-legends-bang-bang/id1160056295",
+  "palyStore": "https://play.google.com/store/apps/details?id=com.roblox.client&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/roblox/id431946152",
   "packages": [
     {
       "name": "main",
       "packages": [
         {
-          "name": "Diamond x 78 +8",
+          "name": "500 Robux",
           "old_price": 4750,
           "new_price": 4750,
-          "icon": "/Games/MLBB/dia-sm.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         },
         {
-          "name": "Diamond x 156 +16",
+          "name": "1000 Robux",
           "old_price": 9200,
           "new_price": 9200,
-          "icon": "/Games/MLBB/dia-md.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         },
         {
-          "name": "Diamond x 234 +23",
+          "name": "2000 Robux",
           "old_price": 13300,
           "new_price": 13300,
-          "icon": "/Games/MLBB/dia-lg.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         },
         {
-          "name": "Diamond x 625 +81",
+          "name": "5000 Robux",
           "old_price": 37000,
           "new_price": 37000,
-          "icon": "/Games/MLBB/dia-xl.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         },
         {
-          "name": "Diamond x 1860 +335",
+          "name": "10000 Robux",
           "old_price": 113000,
           "new_price": 113000,
-          "icon": "/Games/MLBB/chest-sm.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         },
         {
-          "name": "Diamond x 3099 +589",
+          "name": "22500 Robux",
           "old_price": 188000,
           "new_price": 188000,
-          "icon": "/Games/MLBB/chest-md.webp"
-        },
-        {
-          "name": "Diamond x 4649 +883",
-          "old_price": 295000,
-          "new_price": 295000,
-          "icon": "/Games/MLBB/chest-lg.webp"
-        },
-        {
-          "name": "Diamond x 7740 +1548",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-xl.webp"
-        }
-      ]
-    },
-    {
-      "name": "double change",
-      "packages": [
-        {
-          "name": "Diamond x 50 +5",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/dia-md.webp"
-        },
-        {
-          "name": "Diamond x 150 +15",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/dia-lg.webp"
-        },
-        {
-          "name": "Diamond x 250 +25",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/dia-xl.webp"
-        },
-        {
-          "name": "Diamond x 500 +65",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-sm.webp"
+          "icon": "/Games/Roblox/Robux.webp"
         }
       ]
     },
@@ -92,16 +51,10 @@
       "name": "other",
       "packages": [
         {
-          "name": "Weekly Diamond Pass",
+          "name": "450 Robux + Premium",
           "old_price": 6000,
           "new_price": 6000,
-          "icon": "/Games/MLBB/weeklypass.webp"
-        },
-        {
-          "name": "Twilight Pass",
-          "old_price": 32000,
-          "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/Roblox/weeklypass.webp"
         }
       ]
     }

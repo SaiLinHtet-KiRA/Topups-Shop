@@ -1,0 +1,103 @@
+{
+  "name": "Arena Breakout",
+  "icon": "/Games/Arena Breakout/icon.webp",
+  "about": "Arena Breakout is an immersive next-generation tactical FPS and innovative exfiltration looter shooter that pushes the boundaries of war simulation on mobile devices. Choose a faction and engage in tactical team-based combat to eliminate new bosses and experience intense firefights across classic maps and modes.",
+  "check_id": { "url": "/arenabreakout", "userID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.proximabeta.mf.uamo&pcampaignid=web_share",
+  "appStore": "hhttps://apps.apple.com/us/app/arena-breakout-realistic-fps/id1560765304",
+  "packages": [
+    {
+      "name": "main",
+      "packages": [
+        {
+          "name": "60 + 6 Bonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Arena Breakout/bond-xs.webp"
+        },
+        {
+          "name": "310 + 25 Bonds",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Arena Breakout/bond-sm.webp"
+        },
+        {
+          "name": "630 + 45 Bonds",
+          "old_price": 13300,
+          "new_price": 13300,
+          "icon": "/Games/Arena Breakout/bond-md.webp"
+        },
+        {
+          "name": "1580 + 110 Bonds",
+          "old_price": 37000,
+          "new_price": 37000,
+          "icon": "/Games/Arena Breakout/bond-lg.webp"
+        },
+        {
+          "name": "3200 + 200 Bonds",
+          "old_price": 113000,
+          "new_price": 113000,
+          "icon": "/Games/Arena Breakout/bond-xl.webp"
+        },
+        {
+          "name": "6500 + 320 Bonds",
+          "old_price": 188000,
+          "new_price": 188000,
+          "icon": "/Games/Arena Breakout/bond-xl.webp"
+        }
+      ]
+    },
+    {
+      "name": "Slow Process",
+      "packages": [
+        {
+          "name": "60 + 6 Bonds",
+          "old_price": 4750,
+          "new_price": 4750,
+          "icon": "/Games/Arena Breakout/bond-xs.webp"
+        },
+        {
+          "name": "310 + 25 Bonds",
+          "old_price": 9200,
+          "new_price": 9200,
+          "icon": "/Games/Arena Breakout/bond-sm.webp"
+        }
+      ]
+    },
+    {
+      "name": "Package",
+      "packages": [
+        {
+          "name": "Beginners Select",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Arena Breakout/Beginners_Select.webp"
+        },
+        {
+          "name": "Bulletproof Case Privileges",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Arena Breakout/Bulletproof_Case_Privileges.webp"
+        },
+        {
+          "name": "Advanced Battle Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Arena Breakout/Advanced_Battle_Pass.webp"
+        },
+        {
+          "name": "Composite Case Privileges",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Arena Breakout/Composite_Case_Privileges.webp"
+        },
+        {
+          "name": "Premium Battle Pass",
+          "old_price": 6000,
+          "new_price": 6000,
+          "icon": "/Games/Arena Breakout/Premium_Battle_Pass.webp"
+        }
+      ]
+    }
+  ]
+}

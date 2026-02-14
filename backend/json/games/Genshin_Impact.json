@@ -1,10 +1,10 @@
 {
   "name": "Genshin Impact",
-  "icon": "/Games/PUBG/icon.webp",
-  "about": "Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game for iOS and Android devices developed and published by Shanghai Moonton Technology. First released in 2016, the game has become popular in Southeast Asia and was among the games chosen for the first medal event esports competition at the 2019 Southeast Asian Games in the Philippines. The main objective of the game is to destroy the opponent's base.",
-  "chek_id": null,
-  "palyStore": "https://play.google.com/store/apps/details?id=com.mobile.legends&pcampaignid=web_share",
-  "appStore": "https://apps.apple.com/ph/app/mobile-legends-bang-bang/id1160056295",
+  "icon": "/Games/Genshin Impact/icon.webp",
+  "about": "Genshin Impact is a free-to-play, open-world action RPG by HoYoverse that features fast-paced, element-based combat and a vast, ever-evolving world named Teyvat. Players control a 'Traveler' searching for their lost sibling, switching between four characters to battle, explore, and solve puzzles. It is available on PC, PS4/PS5, and mobile devices, focusing on single-player exploration with optional co-op.",
+  "chek_id": { "url": "/genshinimpact", "userID": true, "zoneID": true },
+  "palyStore": "https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact&pcampaignid=web_share",
+  "appStore": "https://apps.apple.com/us/app/genshin-impact/id15177836975",
   "packages": [
     {
       "name": "main",
@@ -13,43 +13,43 @@
           "name": "60 Crystals",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-xs.webp"
         },
         {
           "name": "300+30 Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-sm.webp"
         },
         {
           "name": "980+110 Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-sm.webp"
         },
         {
           "name": "1980+280 Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-md.webp"
         },
         {
           "name": "3280+600 Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-lg.webp"
         },
         {
           "name": "6480+1600 Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-xl.webp"
         },
         {
           "name": "All Pack Genesis Crystals",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-chest.webp"
         }
       ]
     },
@@ -60,37 +60,37 @@
           "name": "60 Chronal Nexus",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-xs.webp"
         },
         {
           "name": "300+30 Chronal Nexus",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-sm.webp"
         },
         {
           "name": "980+110 Chronal Nexus",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-md.webp"
         },
         {
           "name": "1980+260 Chronal Nexus",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-lg.webp"
         },
         {
           "name": "3280+600 Chronal Nexus",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-xl.webp"
         },
         {
           "name": "6480+1600 Chronal Nexus",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/cn-2xl.webp"
         }
       ]
     },
@@ -101,31 +101,31 @@
           "name": "Blessing Welkin Moon",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/Blessing.webp"
         },
         {
           "name": "Blessing Welkin Moon x 2",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/Blessing-2.webp"
         },
         {
           "name": "Blessing Welkin Moon x 3",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/Blessing-3.webp"
         },
         {
           "name": "Blessing Welkin Moon x 4",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/Blessing-4.webp"
         },
         {
           "name": "Blessing Welkin Moon x 5",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/Blessing-5.webp"
         }
       ]
     },
@@ -136,37 +136,37 @@
           "name": "6480 + 1600 Crystals x 2",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-md.webp"
         },
         {
           "name": "6480 + 1600 Crystals x 3",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-md.webp"
         },
         {
           "name": "6480 + 1600 Crystals x 4",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-lg.webp"
         },
         {
           "name": "6480 + 1600 Crystals x 5",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-lg.webp"
         },
         {
           "name": "6480 + 1600 Crystals x 8",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-xl.webp"
         },
         {
           "name": "6480 + 1600 Crystals x 10",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc.webp"
+          "icon": "/Games/Genshin Impact/ct-xl.webp"
         }
       ]
     }
