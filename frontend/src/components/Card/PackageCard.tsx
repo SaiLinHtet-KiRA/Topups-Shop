@@ -1,4 +1,4 @@
-import type { Package } from "@/interface/package";
+import type { Package } from "@/interface/Package";
 import "./PackageCard.css";
 import { CheckMark } from "@/svg";
 import { useSearchParams } from "react-router";
@@ -33,7 +33,7 @@ export default function PackageCard(props: Package) {
         <span>{props.name}</span>
       </div>
       <span className="package-img-container">
-        <img src={props.icon} alt="" />
+        {props.icon && <img src={props.icon} alt="" />}
       </span>
     </label>
   );

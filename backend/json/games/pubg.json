@@ -16,37 +16,37 @@
           "name": "UC x 60",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/uc-sm.png"
+          "icon": "/Games/PUBG/uc-sm.webp"
         },
         {
           "name": "UC x 325",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc-md.png"
+          "icon": "/Games/PUBG/uc-md.webp"
         },
         {
           "name": "UC x 600 +60",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc-lg.png"
+          "icon": "/Games/PUBG/uc-lg.webp"
         },
         {
           "name": "UC x 1500 +300",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc-xl.png"
+          "icon": "/Games/PUBG/uc-xl.webp"
         },
         {
           "name": "UC x 3000 +850",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc-2xl.png"
+          "icon": "/Games/PUBG/uc-2xl.webp"
         },
         {
           "name": "UC 8100",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/uc-3xl.png"
+          "icon": "/Games/PUBG/uc-3xl.webp"
         }
       ]
     },
@@ -57,67 +57,67 @@
           "name": "Weekly Deal Pack 1",
           "old_price": 5,
           "new_price": 3,
-          "icon": "/Games/PUBG/Weekly_Deal_Pack_1.jpg"
+          "icon": "/Games/PUBG/Weekly_Deal_Pack_1.webp"
         },
         {
           "name": "Weekly Deal Pack 2",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Weekly_Deal_Pack_2.jpg"
+          "icon": "/Games/PUBG/Weekly_Deal_Pack_2.webp"
         },
         {
           "name": "Weekly Mythic Emblem Value Pack",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Weekly_Mythic_Emblem_Value_Pack.jpg"
+          "icon": "/Games/PUBG/Weekly_Mythic_Emblem_Value_Pack.webp"
         },
         {
           "name": "Mythic Emblem Pack",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Mythic_Emblem_Pack.jpg"
+          "icon": "/Games/PUBG/Mythic_Emblem_Pack.webp"
         },
         {
           "name": "Upgradable Firearm Materials Pack",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Upgradable_Firearm_Materials_Pack.jpg"
+          "icon": "/Games/PUBG/Upgradable_Firearm_Materials_Pack.webp"
         },
         {
           "name": "Prime 3 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_3_Month.jpg"
+          "icon": "/Games/PUBG/Prime_3_Month.webp"
         },
         {
           "name": "Prime 6 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_6_Month.jpg"
+          "icon": "/Games/PUBG/Prime_6_Month.webp"
         },
         {
           "name": "Prime 12 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_12_Month.jpg"
+          "icon": "/Games/PUBG/Prime_12_Month.webp"
         },
         {
           "name": "Prime Plus 1 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_Plus_1_Month.jpg"
+          "icon": "/Games/PUBG/Prime_Plus_1_Month.webp"
         },
         {
           "name": "Prime Plus 6 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_Plus_6_Month.jpg"
+          "icon": "/Games/PUBG/Prime_Plus_6_Month.webp"
         },
         {
           "name": "Prime Plus 12 Month",
           "old_price": 5,
           "new_price": 5,
-          "icon": "/Games/PUBG/Prime_Plus_12_Month.jpg"
+          "icon": "/Games/PUBG/Prime_Plus_12_Month.webp"
         }
       ]
     }

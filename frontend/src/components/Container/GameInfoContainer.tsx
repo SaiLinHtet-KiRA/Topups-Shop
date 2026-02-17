@@ -38,7 +38,7 @@ export default function GameInfoContainer({
       }}
     >
       <Breadcrumbs path={["Games", name]} />
-      {check_id && <CheckIdSection />}
+      {check_id && <CheckIdSection {...check_id} />}
 
       <section>
         <header>

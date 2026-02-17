@@ -8,6 +8,7 @@ import "swiper/css/free-mode";
 import "./TopSalesSection.css";
 import { useGetPackagesQuery } from "@/redux/api/package";
 import PriceBadge from "../Badge/PriceBadge";
+import { Link } from "react-router";
 
 export default function TopSalesSection() {
   const { data } = useGetPackagesQuery({ page: 1, limit: 10 });
@@ -26,7 +27,7 @@ export default function TopSalesSection() {
           modules={[FreeMode]}
           className="section-swiper"
         >
-          {data?.map(({ icon, name, game, new_price, sold }) => (
+          {data?.map(({ icon, name, game, new_price, sold, _id }) => (
             <SwiperSlide>
               <div className="top-sales-card">
                 <div className="top-sales-image">
@@ -41,16 +42,19 @@ export default function TopSalesSection() {
                       {numberToText(sold)}
                     </span>
                   </div>
-                  <div className="game-badge">
+                  <Link to={"/games/" + game._id} className="game-badge">
                     <span className="">
                       <img src={game.icon} alt="" />
                     </span>
                     <header className="">{game.name}</header>
-                  </div>
-                  <button className="topup-btn">
+                  </Link>
+                  <Link
+                    to={"/games/" + game._id + "?package=" + _id}
+                    className="topup-btn"
+                  >
                     Top Up
                     <ArrowRightCircle className="svg" />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

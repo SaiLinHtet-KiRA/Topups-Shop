@@ -1,0 +1,48 @@
+.drop-down-menu {
+  position: relative;
+  margin-left: auto;
+  z-index: 3;
+  width: fit-content;
+  .svg {
+    padding-top: 0.3rem;
+    stroke-width: 0.15rem;
+  }
+}
+
+.drop-down-menu-value-container {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.8rem;
+  width: fit-content;
+  cursor: pointer;
+}
+.value {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+.drop-down-menu-options-container {
+  position: absolute;
+  width: 100%;
+  top: 80%;
+  background-color: var(--primary-color);
+  border-radius: 0.4rem;
+}
+.menu-options {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: capitalize;
+
+  .svg {
+    stroke-width: 0.01rem;
+  }
+}

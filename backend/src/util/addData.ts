@@ -10,43 +10,42 @@ import ConfigService from "../service/Config.service";
 const addData = async () => {
   try {
     Games.map(async ({ name, data }) => {
-      const exist = await GameService.searchByField("name", name);
-
-      if (!exist.length) {
-        fs.readFile(
-          process.cwd() + "/json/games" + data,
-          "utf8",
-          async (err, data) => {
-            if (err) {
-              throw err;
-            }
-            const { packages, ...game }: any = JSON.parse(data);
-            const { _id } = await GameService.createGame(game);
-
-            for (const pkges of packages!) {
-              const savedPackages: mongoose.Types.ObjectId[] = [];
-
-              for (const Package of pkges.packages) {
-                const savedPackage = await PackageService.createPackage({
-                  ...Package,
-                  game: _id,
-                });
-
-                savedPackages.push(savedPackage._id);
+      GameService.searchByField("name", name).then((game) => {
+        if (!game.length) {
+          fs.readFile(
+            process.cwd() + "/json/games" + data,
+            "utf8",
+            async (err, data) => {
+              if (err) {
+                throw err;
               }
-              const savedPackagesSection = await PackagesService.createPackages(
-                {
-                  name: pkges.name,
-                  packages: savedPackages,
-                },
-              );
-              GameService.updateGameInfo(_id.toString(), {
-                $push: { packages: savedPackagesSection._id },
-              });
-            }
-          },
-        );
-      }
+              const { packages, ...game }: any = JSON.parse(data);
+              const { _id } = await GameService.createGame(game);
+
+              for (const pkges of packages!) {
+                const savedPackages: mongoose.Types.ObjectId[] = [];
+
+                for (const Package of pkges.packages) {
+                  const savedPackage = await PackageService.createPackage({
+                    ...Package,
+                    game: _id,
+                  });
+
+                  savedPackages.push(savedPackage._id);
+                }
+                const savedPackagesSection =
+                  await PackagesService.createPackages({
+                    name: pkges.name,
+                    packages: savedPackages,
+                  });
+                GameService.updateGameInfo(_id.toString(), {
+                  $push: { packages: savedPackagesSection._id },
+                });
+              }
+            },
+          );
+        }
+      });
     });
     Config.map(async ({ name, value }) => {
       await ConfigService.findOrCreate(name, {

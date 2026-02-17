@@ -3,6 +3,6 @@ self.addEventListener("push", (event) => {
   console.log("notification", data);
   self.registration.showNotification(data.title, {
     body: data.body,
-    icon: "/icon.png",
+    icon: "/icon.webp",
   });
 });

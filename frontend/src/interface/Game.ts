@@ -10,8 +10,9 @@ export default interface Game {
   appStore: string;
   packages: Packages[];
 }
-interface CheckId {
+export interface CheckId {
   url: string;
   userID: boolean;
   zoneID: boolean;
+  server: string[];
 }

@@ -2,7 +2,11 @@
   "name": "Genshin Impact",
   "icon": "/Games/Genshin Impact/icon.webp",
   "about": "Genshin Impact is a free-to-play, open-world action RPG by HoYoverse that features fast-paced, element-based combat and a vast, ever-evolving world named Teyvat. Players control a 'Traveler' searching for their lost sibling, switching between four characters to battle, explore, and solve puzzles. It is available on PC, PS4/PS5, and mobile devices, focusing on single-player exploration with optional co-op.",
-  "chek_id": { "url": "/genshinimpact", "userID": true, "zoneID": true },
+  "check_id": {
+    "url": "/genshinimpact",
+    "userID": true,
+    "server": ["Asia", "America", "Eurpoe", "TW, HK, MO"]
+  },
   "palyStore": "https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact&pcampaignid=web_share",
   "appStore": "https://apps.apple.com/us/app/genshin-impact/id15177836975",
   "packages": [

@@ -37,31 +37,31 @@
           "name": "900 Echo Beads",
           "old_price": 113000,
           "new_price": 113000,
-          "icon": "/Games/Where Winds Meet/chest-900.webp"
+          "icon": "/Games/Where Winds Meet/Echo-900.webp"
         },
         {
           "name": "1800 Echo Beads",
           "old_price": 188000,
           "new_price": 188000,
-          "icon": "/Games/Where Winds Meet/chest-1800.webp"
+          "icon": "/Games/Where Winds Meet/Echo-1800.webp"
         },
         {
           "name": "3000 Echo Beads",
           "old_price": 188000,
           "new_price": 188000,
-          "icon": "/Games/Where Winds Meet/chest-3000.webp"
+          "icon": "/Games/Where Winds Meet/Echo-3000.webp"
         },
         {
           "name": "6000 Echo Beads",
           "old_price": 188000,
           "new_price": 188000,
-          "icon": "/Games/Where Winds Meet/chest-6000.webp"
+          "icon": "/Games/Where Winds Meet/Echo-6000.webp"
         },
         {
           "name": "12000 Echo Beads",
           "old_price": 188000,
           "new_price": 188000,
-          "icon": "/Games/Where Winds Meet/chest-12000.webp"
+          "icon": "/Games/Where Winds Meet/Echo-12000.webp"
         }
       ]
     },

@@ -346,37 +346,37 @@
           "name": "Weekly Pass x2",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Weekly Pass x2",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Weekly Pass x3",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Weekly Pass x4",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Weekly Pass x5",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         },
         {
           "name": "Weekly Pass x6",
           "old_price": 32000,
           "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "icon": "/Games/MLBB/weeklypass.webp"
         }
       ]
     },
@@ -386,14 +386,12 @@
         {
           "name": "Weekly Elite Bundle \n(Available Once a Week)",
           "old_price": 6000,
-          "new_price": 6000,
-          "icon": "/Games/MLBB/weeklypass.webp"
+          "new_price": 6000
         },
         {
           "name": "Monthly Epic Bundle \n(Available Once a Week)",
           "old_price": 32000,
-          "new_price": 32000,
-          "icon": "/Games/MLBB/twilightpass.webp"
+          "new_price": 32000
         },
         {
           "name": "Twilight Pass",

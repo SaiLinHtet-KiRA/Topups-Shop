@@ -1,8 +1,23 @@
 import type { FunctionComponent } from "react";
 import "./CheckIdSection.css";
 import { useSearchParams } from "react-router";
+import type { CheckId } from "@/interface/Game";
+import Selector from "../ui/Selector";
 
-export default function CheckIdSection() {
+export default function CheckIdSection({
+  url,
+  userID,
+  zoneID,
+  server,
+}: CheckId) {
+  const [getSearchParams, setSearchParams] = useSearchParams();
+  const value = getSearchParams.get("t");
+  const setParams = (queryName: string, value: string) => {
+    setSearchParams((prevParams) => {
+      prevParams.set(`${queryName}`, value);
+      return prevParams;
+    });
+  };
   return (
     <section>
       <header>
@@ -10,17 +25,31 @@ export default function CheckIdSection() {
         <span>ENTER YOUR ID FOR DELIVERY</span>
       </header>
       <div className="check-id-contaier">
-        <InputNumberField
-          htmlFor="userId"
-          id="input-id-container"
-          placeHolder="User ID"
-        />
-        <InputNumberField
-          htmlFor="zoneId"
-          id="input-zone-id-container"
-          placeHolder="Zone ID"
-        />
-
+        {server.length ? (
+          <Selector
+            options={server.map((str) => ({
+              value: str,
+            }))}
+            value={value!}
+            onClick={setParams}
+          />
+        ) : (
+          <></>
+        )}
+        {userID && (
+          <InputNumberField
+            htmlFor="userId"
+            id="input-id-container"
+            placeHolder="User ID"
+          />
+        )}
+        {zoneID && (
+          <InputNumberField
+            htmlFor="zoneId"
+            id="input-zone-id-container"
+            placeHolder="Zone ID"
+          />
+        )}
         <span className="result"></span>
       </div>
     </section>

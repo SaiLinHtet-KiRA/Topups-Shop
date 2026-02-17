@@ -2,8 +2,14 @@ import { ExclamationTriangle } from "../../svg";
 import "./Notes.css";
 
 export default function Notes() {
-  const notes = ["dadasdasdas", "asdasdasdas", "asdadasda", "asdasdas"];
-  const warining = "dadasdas";
+  const notes = [
+    "ငွေအစွန်းအထွက်မလွှပါနဲ့",
+    "Note ကို shopping ပဲရေးပါ။",
+    "လွှပြီး 3နာရီအတွင်း ငွေဖြည့်သွင်းမှုများသာ လက်ခံပါသည်။",
+    "လွှပြီး 3နာရီကျော်မှ တင်သော orderများ cancelပါမယ်။ ငွေပြန်မအမ်းပါ။",
+  ];
+  const warining =
+    "စည်းကမ်းနဲ့မညီပါ၍ ပြဿနာတစ်စုံတရာဖြစ်ပါက ငွေလုံးဝ ပြန်မအမ်းပါ";
   return (
     <section className="note-wrapper">
       <header>Need To Know</header>

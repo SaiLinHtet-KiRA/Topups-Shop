@@ -2,7 +2,11 @@
   "name": "Wuthering Wave",
   "icon": "/Games/Wuthering Wave/icon.webp",
   "about": "Wuthering Waves is a free-to-play, open-world action RPG developed by Kuro Games. Set in a post-apocalyptic world called Solaris-3, players take on the role of the 'Rover,' exploring a vast, devastated landscape while fighting Tacet Discords with a team of characters known as Resonators. The game features fast-paced combat, parkour-like traversal, and a gacha system, offering a high degree of freedom.",
-  "check_id": { "url": "/wutheringwave", "userID": true, "region": true },
+  "check_id": {
+    "url": "/wutheringwave",
+    "userID": true,
+    "server": ["SEA", "Asia", "America", "Eurpoe", "TW, HK, MO"]
+  },
   "palyStore": "https://play.google.com/store/apps/details?id=com.kurogame.wutheringwaves.global&pcampaignid=web_share",
   "appStore": "https://apps.apple.com/us/app/wuthering-waves/id6475033368",
   "packages": [

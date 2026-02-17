@@ -14,6 +14,7 @@ interface CheckId {
   url: string;
   userID: boolean;
   zoneID: boolean;
+  server: string[];
 }
 
 export type GameDocument = HydratedDocument<Game>;
@@ -22,6 +23,7 @@ const CheckIdSchema = new mongoose.Schema<CheckId>({
   url: { type: String },
   userID: { type: Boolean },
   zoneID: { type: Boolean },
+  server: { type: [String] },
 });
 
 const GameSchema = new mongoose.Schema<GameDocument>(
