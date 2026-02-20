@@ -1,7 +1,7 @@
 import { Outlet } from "react-router";
 import NavgiationBar from "./components/Navgiation/NavgiationBar";
 import TabBar from "./components/Navgiation/TabBar";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Footer from "./components/Footer";
 import {
   useGetAccountInfoQuery,
@@ -10,33 +10,21 @@ import {
 
 export default function App() {
   const [telegramLogin] = useTelegramLoginMutation();
-  const { data, isError, isFetching, isLoading } = useGetAccountInfoQuery();
-  console.log("app");
-  // useEffect(() => {
-  //   if (window.Telegram?.WebApp) {
-  //     const tg = window.Telegram.WebApp;
-  //     tg.ready(); // tells Telegram the app is ready
-  //     console.log(tg.initDataUnsafe);
-  //   }
-  // }, []);
-  // useEffect(() => {
-  //   if (window.Telegram?.WebApp) {
-  //     const tg = window.Telegram.WebApp;
-  //     tg.ready();
+  const { data } = useGetAccountInfoQuery();
 
-  //     telegramLogin(tg.initDataUnsafe?.user.id);
-
-  //   }
-  // }, []);
-  useLayoutEffect(() => {
-    console.log("data", data);
-    console.log("isFetching", isFetching);
-
-    if (!data && !isFetching) {
-      console.log("featch");
-      telegramLogin("7253314643");
+  useEffect(() => {
+    if (window.Telegram?.WebApp) {
+      const tg = window.Telegram.WebApp;
+      tg.ready();
+      const initData = tg.initData;
+      console.log(initData);
+      telegramLogin(initData);
     }
-  }, [data, isFetching]);
+  }, []);
+
+  if (!data) {
+    return <>this app is only work on telegram</>;
+  }
   return (
     <>
       <NavgiationBar />

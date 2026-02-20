@@ -15,12 +15,7 @@ export default class ExpressServer {
     this.app.set("trust proxy", 1);
     this.app.use(
       cors({
-        origin: [
-          "http://localhost:5173",
-          "http://172.20.10.3:5173",
-          "https://topups-shop-1.onrender.com",
-          "https://unmetalised-elna-nonstrategical.ngrok-free.dev",
-        ],
+        origin: ["https://collectorparadise.xyz"],
         credentials: true,
       }),
     );
@@ -32,7 +27,7 @@ export default class ExpressServer {
         maxAge: 24 * 60 * 60 * 1000, // 1 day
         secure: false,
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "lax",
       }),
     );
 

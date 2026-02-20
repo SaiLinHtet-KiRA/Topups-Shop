@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import TgInitData from "../other/TginitData";
 
 export default interface AuthControllerType {
   TelegramLogin(
-    req: Request<null, null, null, { id: string }>,
+    req: Request<null, null, { initData: string; user: TgInitData }, null>,
     res: Response,
   ): Promise<void>;
   getAccountInfo(

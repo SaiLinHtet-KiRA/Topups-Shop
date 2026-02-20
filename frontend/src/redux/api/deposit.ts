@@ -20,7 +20,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
       },
     }),
     getReceipts: builder.query<any, Query>({
-      query: ({ start, limit }) => `/receipts?start=${start}&limit=${limit}`,
+      query: ({ page, limit }) => `/receipts?page=${page}&limit=${limit}`,
     }),
   }),
 });

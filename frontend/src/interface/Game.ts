@@ -6,6 +6,7 @@ export default interface Game {
   icon: string;
   about: string;
   check_id?: CheckId;
+  login?: Login;
   palyStore: string;
   appStore: string;
   packages: Packages[];
@@ -15,4 +16,9 @@ export interface CheckId {
   userID: boolean;
   zoneID: boolean;
   server: string[];
+}
+export interface Login {
+  username: string;
+  password: string;
+  backupCode: string;
 }

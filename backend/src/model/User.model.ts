@@ -4,13 +4,15 @@ import DepositModel from "./Deposit.model";
 
 export interface User {
   id: string;
+  username: string;
   banned: boolean;
   balance: number;
+  totalBalance: number;
   recharges: mongoose.Schema.Types.ObjectId[];
   topups: mongoose.Schema.Types.ObjectId[];
   numRecharges: number;
   numTopups: number;
-  role: "user" | "admin";
+  role: "user" | "admin" | "owner";
 }
 
 export type UserDocument = HydratedDocument<User>;
@@ -22,6 +24,11 @@ const UserSchema = new mongoose.Schema<UserDocument>(
       require: true,
       index: true,
       unique: true,
+    },
+    username: {
+      type: String,
+      require: true,
+      default: "User Name",
     },
     recharges: {
       type: [mongoose.Schema.Types.ObjectId],
@@ -50,9 +57,13 @@ const UserSchema = new mongoose.Schema<UserDocument>(
       type: Number,
       default: 0,
     },
+    totalBalance: {
+      type: Number,
+      default: 0,
+    },
     role: {
       type: String,
-      enum: ["user", "admin"],
+      enum: ["user", "admin", "owner"],
       default: "user",
       index: true,
     },

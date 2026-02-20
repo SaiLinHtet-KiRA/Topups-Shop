@@ -5,7 +5,7 @@ import { authApiSlice } from "../api/auth";
 const initialState = {} as AccountInfo;
 
 const topupSlice = createSlice({
-  name: "AccountInfo",
+  name: "Telegram User",
   initialState,
   reducers: {},
   extraReducers(builder) {

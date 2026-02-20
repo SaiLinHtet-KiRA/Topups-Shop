@@ -7,13 +7,14 @@ import userReducer from "./features/user";
 // import gameReducer from "./features/game";
 // import statusRechargeReducer from "./features/statusRecharge";
 // import topupAdapter from "./features/adapter/Topup";
-// import RechargeAdapter from "./features/adapter/Recharge";
+import HistroyAdapter from "./features/adapter/history";
 
 import { type TypedUseSelectorHook, useSelector } from "react-redux";
 const store = configureStore({
   reducer: {
     [apiSlice.reducerPath]: apiSlice.reducer,
     user: userReducer,
+    histroy: HistroyAdapter,
   },
   preloadedState: {},
   middleware: (getDefaultMiddleware) =>

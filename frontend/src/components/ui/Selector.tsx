@@ -69,7 +69,11 @@ const ValueContainer = ({ name, svg }: Omit<ValueContainer, "onClick">) => {
 
 const OpctionContainer = ({ name, svg, onClick }: ValueContainer) => {
   return (
-    <li className="menu-options" key={name} onClick={() => onClick("t", name)}>
+    <li
+      className="menu-options"
+      key={name}
+      onClick={() => onClick("server", name)}
+    >
       {svg && React.createElement(svg, { className: "svg" })}
       {name}
     </li>

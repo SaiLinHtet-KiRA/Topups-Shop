@@ -61,7 +61,7 @@ DepositSchema.pre("save", async function () {
 
       if (!newOrderID) throw Error("Some things wrong on getting new order id");
       await UserModel.findByIdAndUpdate(this.userID, {
-        $push: { receipts: this._id },
+        $push: { recharges: this._id },
         $inc: { numReceipts: 1 },
       });
       this.id = newOrderID.seq;
@@ -78,12 +78,11 @@ DepositSchema.pre("findOneAndUpdate", async function (doc) {
     if (update && deposit) {
       if (update.status === "success") {
         await UserModel.findByIdAndUpdate(deposit.userID, {
-          $inc: { balance: deposit.amount },
+          $inc: { balance: deposit.amount, totalBalance: deposit.amount },
         });
-      }
-      if (update.status === "fail") {
+      } else if (update.status === "fail") {
         await UserModel.findByIdAndUpdate(deposit.userID, {
-          $inc: { balance: -deposit.amount },
+          $inc: { balance: -deposit.amount, totalBalance: -deposit.amount },
         });
       }
     }

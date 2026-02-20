@@ -15,13 +15,3 @@
     list-style: disc;
   }
 }
-.warning {
-  font-weight: 600;
-  color: var(--warning-color);
-  .svg {
-    width: 1.4rem;
-    float: left;
-    margin: 0.4rem;
-    stroke: var(--warning-color);
-  }
-}

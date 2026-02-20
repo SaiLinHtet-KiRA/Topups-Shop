@@ -1,5 +1,4 @@
 import { BankNote } from "@/svg";
-import React from "react";
 
 export default function PriceBadge({ value }: { value: number }) {
   return (

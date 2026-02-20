@@ -1,15 +1,15 @@
-import { ExclamationTriangle } from "../../svg";
+import Warining from "../ui/Warining";
 import "./Notes.css";
 
 export default function Notes() {
   const notes = [
-    "ငွေအစွန်းအထွက်မလွှပါနဲ့",
+    "ငွေအစွန်းအထွက်မလွှဲပါနဲ့။",
     "Note ကို shopping ပဲရေးပါ။",
-    "လွှပြီး 3နာရီအတွင်း ငွေဖြည့်သွင်းမှုများသာ လက်ခံပါသည်။",
-    "လွှပြီး 3နာရီကျော်မှ တင်သော orderများ cancelပါမယ်။ ငွေပြန်မအမ်းပါ။",
+    "လွှဲပြီး 3နာရီအတွင်း ငွေဖြည့်သွင်းမှုများသာ လက်ခံပါသည်။",
+    "လွှဲပြီး 3နာရီကျော်မှ တင်သော orderများ cancelပါမယ်။ ငွေပြန်မအမ်းပါ။",
   ];
   const warining =
-    "စည်းကမ်းနဲ့မညီပါ၍ ပြဿနာတစ်စုံတရာဖြစ်ပါက ငွေလုံးဝ ပြန်မအမ်းပါ";
+    "စည်းကမ်းနဲ့မညီပါ၍ ပြဿနာတစ်စုံတရာဖြစ်ပါက ငွေလုံးဝ ပြန်မအမ်းပါ။";
   return (
     <section className="note-wrapper">
       <header>Need To Know</header>
@@ -18,10 +18,7 @@ export default function Notes() {
           <li className={"note" + i}>{note}</li>
         ))}
       </ul>
-      <span className="warning">
-        <ExclamationTriangle className="svg" />
-        {warining}
-      </span>
+      <Warining text={warining} />
     </section>
   );
 }

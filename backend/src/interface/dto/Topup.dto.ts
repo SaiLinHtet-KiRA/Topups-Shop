@@ -1,3 +1,5 @@
+import { CheckId, Login } from "../../model/Topup.model";
+
 export default interface Topup {
   game: string;
   package: {
@@ -5,6 +7,6 @@ export default interface Topup {
     name: string;
     price: number;
   };
-  userId: string;
-  zoneId: string;
+  checkId: CheckId;
+  login: Login;
 }

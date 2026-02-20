@@ -2,7 +2,8 @@ export default async function CopyToClipboard(text: string) {
   try {
     await navigator.clipboard.writeText(text);
     alert("Copied to clipboard!");
-  } catch {
+  } catch (err) {
+    console.log(err);
     alert("Error");
   }
 }

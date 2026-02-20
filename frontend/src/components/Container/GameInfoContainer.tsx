@@ -6,19 +6,23 @@ import "./GameInfoContainer.css";
 import SelectPayment from "../Section/SelectPaymentSection";
 import { useSearchParams } from "react-router";
 import { useCreateTopupMutation } from "@/redux/api/topup";
+import Warining from "../ui/Warining";
+import LoginSection from "../Section/LoginSection";
 
 export default function GameInfoContainer({
   _id,
   name,
-  about,
-  appStore,
+
   packages,
-  icon,
-  palyStore,
+
   check_id,
+  login,
 }: Game) {
-  const [getSearchParams, setSearchParams] = useSearchParams();
+  const [getSearchParams, _] = useSearchParams();
   const [createTopup] = useCreateTopupMutation();
+
+  const warining =
+    "တစ်ကောင့်ကိုတစ်ခါသာဝယ်လိုရမည့် pass and itemများ ဝယ်ပြီးသားကိုထပ်ဝယ်ပါက refundမပေးပါ။";
   return (
     <form
       className="game-info-container wrapper"
@@ -26,20 +30,31 @@ export default function GameInfoContainer({
         e.preventDefault();
         const data = {
           game: _id,
-          userId: "",
-          zoneId: "",
-          package: "",
+          checkId: {
+            userID: getSearchParams.get("userID") || "",
+            zoneID: getSearchParams.get("zoneID") || "",
+            server: getSearchParams.get("server") || "",
+          },
+          login: {
+            username: getSearchParams.get("username") || "",
+            password: getSearchParams.get("password") || "",
+            backupCode: getSearchParams.get("backupCode") || "",
+          },
+          package: getSearchParams.get("package") || "",
         };
-        getSearchParams.forEach(
-          (value, params) => (data[params as keyof typeof data] = value),
-        );
+
+        if (check_id && !data.checkId.server) {
+          data.checkId.server = check_id?.server[0];
+        }
         createTopup(data);
         // setSearchParams("", { replace: true });
       }}
     >
       <Breadcrumbs path={["Games", name]} />
       {check_id && <CheckIdSection {...check_id} />}
+      {login && <LoginSection {...login} />}
 
+      <Warining text={warining} />
       <section>
         <header>
           <span>{check_id ? "2" : "1"}</span>

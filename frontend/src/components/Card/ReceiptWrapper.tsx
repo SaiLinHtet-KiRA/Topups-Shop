@@ -2,34 +2,78 @@ import type Topup from "@/interface/Topup";
 import { useGetHistoryQuery } from "@/redux/api/auth";
 import { useSearchParams } from "react-router";
 import TopupCard from "./ReceiptCard/TopupCard";
-import "./ReceiptWrapper.css";
 import ReceiptCard from "./ReceiptCard/ReceiptCard";
 import type ReceiptDTO from "@/interface/ReceiptDTO";
+import { useEffect } from "react";
+import { histroySelectors } from "@/redux/features/adapter/history";
+import { useSelector } from "react-redux";
+import { motion } from "motion/react";
+import "./ReceiptWrapper.css";
 
 export default function ReceiptWrapper() {
   const [getSearchParams, setSearchParams] = useSearchParams();
-  const type = getSearchParams.get("type") || "topups";
+
+  const type = getSearchParams.get("t") || "topups";
   const page = Number(getSearchParams.get("page")) || 1;
 
   const { data, isFetching } = useGetHistoryQuery(
-    { type: type, page, limit: 8 },
+    {
+      type: type,
+      page,
+      limit: 8,
+    },
     { refetchOnMountOrArgChange: true },
   );
-  console.log(data);
+  const histroy = useSelector(histroySelectors.selectAll);
+  useEffect(() => {
+    setSearchParams(
+      (prev) => {
+        prev.set("page", "1");
+        return prev;
+      },
+      { replace: true },
+    );
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      if (data?.data.length && !isFetching) {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+          setSearchParams(
+            (prev) => {
+              prev.set("page", String(page + 1));
+              return prev;
+            },
+            { replace: true },
+          );
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [data, isFetching]);
+
   return (
-    <section className="receipt-wrapper">
-      {data && !isFetching && (
-        <>
-          {type == "topups" &&
-            (data?.data as Topup[]).map((topup) => (
-              <TopupCard {...topup} key={topup._id} />
-            ))}
-          {type == "recharges" &&
-            (data?.data as ReceiptDTO[]).map((receipt) => (
-              <ReceiptCard {...receipt} key={receipt.id} />
-            ))}
-        </>
-      )}
-    </section>
+    <>
+      <motion.section className="receipt-wrapper">
+        {histroy.length && (
+          <>
+            {type == "topups" &&
+              (histroy as Topup[]).map((topup) => (
+                <TopupCard {...topup} key={topup._id} />
+              ))}
+            {type == "recharges" &&
+              (histroy as ReceiptDTO[]).map((receipt) => (
+                <ReceiptCard {...receipt} key={receipt.id} />
+              ))}
+          </>
+        )}
+      </motion.section>
+      {isFetching && <>Loading</>}
+    </>
   );
 }

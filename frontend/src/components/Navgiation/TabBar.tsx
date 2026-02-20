@@ -12,7 +12,7 @@ export default function TabBar() {
   const TabIcons = [Home, Controller, User];
 
   useScroll(tabBar);
-
+  console.log(pathname.split("/")[1]);
   return (
     <nav className="tab-bar-wrapper" ref={tabBar}>
       {Tabs.map((tab, i) => (
@@ -20,11 +20,17 @@ export default function TabBar() {
           {React.createElement(TabIcons[i], {
             className: "svg",
             style: {
-              stroke: pathname == tab ? "var(--primary-color)" : "white",
-              fill: pathname == tab ? "var(--primary-color)" : "white",
+              stroke:
+                pathname.split("/")[1] == tab.replace("/", "")
+                  ? "var(--primary-color)"
+                  : "white",
+              fill:
+                pathname.split("/")[1] == tab.replace("/", "")
+                  ? "var(--primary-color)"
+                  : "white",
             },
           })}
-          {pathname == tab && (
+          {pathname.split("/")[1] == tab.replace("/", "") && (
             <motion.span layoutId="tab-active" className="tab-active" />
           )}
         </Link>

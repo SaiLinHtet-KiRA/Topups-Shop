@@ -1,17 +1,12 @@
-import type { FunctionComponent } from "react";
 import "./CheckIdSection.css";
 import { useSearchParams } from "react-router";
 import type { CheckId } from "@/interface/Game";
 import Selector from "../ui/Selector";
+import InputField from "../ui/InputField";
 
-export default function CheckIdSection({
-  url,
-  userID,
-  zoneID,
-  server,
-}: CheckId) {
+export default function CheckIdSection({ userID, zoneID, server }: CheckId) {
   const [getSearchParams, setSearchParams] = useSearchParams();
-  const value = getSearchParams.get("t");
+  const value = getSearchParams.get("server");
   const setParams = (queryName: string, value: string) => {
     setSearchParams((prevParams) => {
       prevParams.set(`${queryName}`, value);
@@ -37,15 +32,17 @@ export default function CheckIdSection({
           <></>
         )}
         {userID && (
-          <InputNumberField
-            htmlFor="userId"
+          <InputField
+            type="number"
+            htmlFor="userID"
             id="input-id-container"
             placeHolder="User ID"
           />
         )}
         {zoneID && (
-          <InputNumberField
-            htmlFor="zoneId"
+          <InputField
+            type="number"
+            htmlFor="zoneID"
             id="input-zone-id-container"
             placeHolder="Zone ID"
           />
@@ -55,31 +52,3 @@ export default function CheckIdSection({
     </section>
   );
 }
-
-export type InputProps = FunctionComponent<{
-  htmlFor: string;
-  id: string;
-  placeHolder: string;
-}>;
-
-const InputNumberField: InputProps = ({ htmlFor, id, placeHolder }) => {
-  const [getSearchParams, setSearchParams] = useSearchParams();
-  const value = getSearchParams.get(htmlFor);
-  return (
-    <label htmlFor={htmlFor} id={id} className="input-container">
-      <input
-        type="number"
-        id={htmlFor}
-        placeholder={placeHolder}
-        required
-        value={value || ""}
-        onChange={(e) =>
-          setSearchParams((prevParams) => {
-            prevParams.set(`${htmlFor}`, e.target.value);
-            return prevParams;
-          })
-        }
-      />
-    </label>
-  );
-};

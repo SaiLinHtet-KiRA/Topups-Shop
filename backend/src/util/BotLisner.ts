@@ -38,9 +38,9 @@ TelegramBot.on("callback_query", async (query) => {
           query.message!.chat.id,
           "That order is already updated",
         );
+      } else {
+        TopupService.updateTopup(data.id, { status: data.status } as any);
       }
-
-      TopupService.updateTopup(data.id, { status: data.status } as any);
     } else if (data.t == "r") {
       const deposit = await FinancialService.getDepositById(data.id);
       if (deposit.status == data.status) {
@@ -48,8 +48,9 @@ TelegramBot.on("callback_query", async (query) => {
           query.message!.chat.id,
           "That order is already updated",
         );
+      } else {
+        FinancialService.updateDeposit(data.id, { status: data.status } as any);
       }
-      FinancialService.updateDeposit(data.id, { status: data.status } as any);
     }
   }
   TelegramBot.answerCallbackQuery(query.id);

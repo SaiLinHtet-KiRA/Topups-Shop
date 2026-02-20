@@ -9,14 +9,14 @@ export default function Dashboard() {
     { to: "history", name: "history", svg: Clock },
     { to: "document", name: "terms & policy", svg: Document },
   ];
-  const { role } = useAppSelector(({ user }) => user);
+  const { role, username } = useAppSelector(({ user }) => user);
   return (
     <main className="profile-container">
       <section className="info-cotaienr">
         <span className="svg-container">
           <User className="svg" />
         </span>
-        <span>Sai Lin Htet</span>
+        <span>{username}</span>
       </section>
       <ul className="menu-options-container">
         {role == "admin" && (

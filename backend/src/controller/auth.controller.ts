@@ -2,16 +2,21 @@ import AuthControllerType from "../interface/controller/Auth.controller.type";
 import userService from "../service/User.service";
 import { Request, Response } from "express";
 import { createJwt } from "../util/createJwt";
+import TgInitData from "../interface/other/TginitData";
 
 class AuthController implements AuthControllerType {
   async TelegramLogin(
-    req: Request<null, null, null, { id: string }>,
+    req: Request<null, null, { initData: string; user: TgInitData }, null>,
     res: Response,
   ): Promise<void> {
     try {
-      const { id } = req.query;
-      const user = await userService.findOrCreateUser(id);
-      const token = createJwt({ id: user._id.toString() });
+      const { user } = req.body;
+
+      const existUser = await userService.findOrCreateUser(
+        String(user.user.id),
+      );
+
+      const token = createJwt({ id: existUser._id.toString() });
       req.session = { token };
 
       res.json({ message: "Logged in successfully" });
@@ -25,8 +30,10 @@ class AuthController implements AuthControllerType {
     res: Response,
   ): Promise<void> {
     try {
-      const { banned, balance, role } = await userService.getById(req.user.id);
-      res.status(200).json({ banned, balance, role });
+      const { banned, balance, role, username } = await userService.getById(
+        req.user.id,
+      );
+      res.status(200).json({ banned, balance, role, username });
     } catch (error) {
       throw new Error("Method not implemented.");
     }

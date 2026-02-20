@@ -2,7 +2,7 @@
   "name": "Blood Strike Mena",
   "icon": "/Games/Blood_Strike/icon.webp",
   "about": "Blood Strike: Tactical combat and customization in a mobile FPS with unique heroes and exciting modes.",
-  "chek_id": { "url": "/bloodstrike", "userID": true },
+  "check_id": { "url": "/bloodstrike", "userID": true },
   "palyStore": "https://play.google.com/store/apps/details?id=com.netease.newspike&pcampaignid=web_share",
   "appStore": "https://apps.apple.com/us/app/blood-strike-fps-for-all/id1637059453",
   "packages": [

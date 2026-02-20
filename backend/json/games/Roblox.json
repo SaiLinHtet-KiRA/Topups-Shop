@@ -2,7 +2,7 @@
   "name": "Roblox",
   "icon": "/Games/Roblox/icon.webp",
   "about": "Roblox is a massive online, free-to-play, user-generated game creation platform and social hub launched in 2006. Users can play, build, and share 3D, often block-style, experiences or 'worlds' using Roblox Studio. It has over 200 million monthly active users, allowing them to customize avatars, chat, and spend a virtual currency called 'Robux'.",
-  "check_id": { "url": "/mobilelegends", "userID": true, "zoneID": true },
+  "login": { "username": true, "password": true, "backupCode": true },
   "palyStore": "https://play.google.com/store/apps/details?id=com.roblox.client&pcampaignid=web_share",
   "appStore": "https://apps.apple.com/us/app/roblox/id431946152",
   "packages": [

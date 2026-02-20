@@ -50,7 +50,6 @@ class UserRepo implements UserRepoType {
     limit: number,
   ): Promise<any> {
     try {
-      const filer = {};
       const user = await UserModel.findById(id, {
         receipts: 1,
         topups: 1,
@@ -60,7 +59,7 @@ class UserRepo implements UserRepoType {
         path: type,
         options: {
           limit,
-          skip: start,
+          skip: (start - 1) * limit,
           sort: { createdAt: -1 },
           populate: type == "recharges" ? [] : ["game", "package"],
         },

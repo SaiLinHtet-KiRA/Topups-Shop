@@ -1,0 +1,14 @@
+#input-username-container {
+  flex: 1 1 200px;
+}
+#input-password-container {
+  flex: 1 1 2;
+}
+#input-backup-code-container {
+  flex: 2;
+}
+.note-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}

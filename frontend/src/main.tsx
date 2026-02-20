@@ -17,6 +17,7 @@ import GameAdamin from "./pages/Dashborad/Game.tsx";
 
 import Dashboard from "./pages/Dashborad/Dashboard.tsx";
 import Histroy from "./pages/Dashborad/Histroy.tsx";
+import Document from "./pages/Document.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
           <Route path=":id" element={<GameAdamin />} />
         </Route>
         <Route path="history" element={<Histroy />} />
+        <Route path="document" element={<Document />} />
       </Route>
     </Route>,
   ),

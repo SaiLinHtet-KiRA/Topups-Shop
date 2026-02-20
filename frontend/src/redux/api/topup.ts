@@ -1,11 +1,20 @@
 import type { Query } from "@/interface/other";
 import { apiSlice } from "./apiSlice";
-import type { Package } from "@/interface/package";
+import type { Package } from "@/interface/Package";
 
 interface Body {
-  userId: string;
-  zoneId: string;
+  game: string;
   package: string;
+  checkId: {
+    userID: string;
+    zoneID: string;
+    server?: string;
+  };
+  login: {
+    username: string;
+    password: string;
+    backupCode: string;
+  };
 }
 
 export const authApiSlice = apiSlice.injectEndpoints({
@@ -16,9 +25,10 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: data,
       }),
+      invalidatesTags: ["AccountInfo"],
     }),
     getTopups: builder.query<any, Query>({
-      query: ({ start, limit }) => `/topups?start=${start}&limit=${limit}`,
+      query: ({ page, limit }) => `/topups?page=${page}&limit=${limit}`,
     }),
   }),
 });

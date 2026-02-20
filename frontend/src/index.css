@@ -18,7 +18,7 @@ body {
   user-select: none;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  transition: all 0.1s linear;
+  /* transition: all 0.1s linear; */
 }
 *::-webkit-scrollbar {
   display: none;
@@ -39,6 +39,12 @@ a {
 }
 .svg-lg {
   width: 32px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  stroke: whitesmoke;
+}
+.svg-xl {
+  width: 38px;
   aspect-ratio: 1/1;
   cursor: pointer;
   stroke: whitesmoke;
