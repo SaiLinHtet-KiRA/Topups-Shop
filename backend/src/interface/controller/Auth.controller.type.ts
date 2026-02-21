@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import TgInitData from "../other/TginitData";
+import TgInitData from "../other/TgInitData";
 
 export default interface AuthControllerType {
   TelegramLogin(

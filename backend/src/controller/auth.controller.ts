@@ -2,7 +2,7 @@ import AuthControllerType from "../interface/controller/Auth.controller.type";
 import userService from "../service/User.service";
 import { Request, Response } from "express";
 import { createJwt } from "../util/createJwt";
-import TgInitData from "../interface/other/TginitData";
+import TgInitData from "../interface/other/TgInitData";
 
 class AuthController implements AuthControllerType {
   async TelegramLogin(
