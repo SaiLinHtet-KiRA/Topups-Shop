@@ -12,7 +12,7 @@ export default function TabBar() {
   const TabIcons = [Home, Controller, User];
 
   useScroll(tabBar);
-  console.log(pathname.split("/")[1]);
+
   return (
     <nav className="tab-bar-wrapper" ref={tabBar}>
       {Tabs.map((tab, i) => (

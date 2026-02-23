@@ -8,6 +8,8 @@ import { useSearchParams } from "react-router";
 import { useCreateTopupMutation } from "@/redux/api/topup";
 import Warining from "../ui/Warining";
 import LoginSection from "../Section/LoginSection";
+import ShowToast from "@/helper/ShowToast";
+import type { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 
 export default function GameInfoContainer({
   _id,
@@ -18,7 +20,7 @@ export default function GameInfoContainer({
   check_id,
   login,
 }: Game) {
-  const [getSearchParams, _] = useSearchParams();
+  const [getSearchParams, setSearchParams] = useSearchParams();
   const [createTopup] = useCreateTopupMutation();
 
   const warining =
@@ -26,7 +28,7 @@ export default function GameInfoContainer({
   return (
     <form
       className="game-info-container wrapper"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
         const data = {
           game: _id,
@@ -46,8 +48,18 @@ export default function GameInfoContainer({
         if (check_id && !data.checkId.server) {
           data.checkId.server = check_id?.server[0];
         }
-        createTopup(data);
-        // setSearchParams("", { replace: true });
+        try {
+          const res = await createTopup(data).unwrap();
+          console.log("res", res);
+          ShowToast("success", "Your order is successfully placed");
+          setSearchParams("", { replace: true });
+        } catch (error) {
+          const err = error as FetchBaseQueryError;
+          if ("data" in err && err.data) {
+            const message = (err.data as { data: string }).data;
+            ShowToast("error", message);
+          }
+        }
       }}
     >
       <Breadcrumbs path={["Games", name]} />

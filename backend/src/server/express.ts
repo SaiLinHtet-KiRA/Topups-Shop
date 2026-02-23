@@ -15,7 +15,11 @@ export default class ExpressServer {
     this.app.set("trust proxy", 1);
     this.app.use(
       cors({
-        origin: ["https://collectorparadise.xyz"],
+        origin: [
+          "https://collectorparadise.xyz",
+          "http://172.20.10.3:5173",
+          "https://unmetalised-elna-nonstrategical.ngrok-free.dev",
+        ],
         credentials: true,
       }),
     );

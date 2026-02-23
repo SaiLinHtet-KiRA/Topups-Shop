@@ -1,6 +1,6 @@
 import type Game from "./Game";
 import type Id from "./Id";
-import type { Package } from "./Package";
+import type { Package } from "./package";
 
 export default interface Topup {
   _id: string;

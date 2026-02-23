@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import crypto from "crypto";
 import { BOT_TOKEN } from "../config/config";
 import { ValidationError } from "../util/error/errors";
-import TgInitData from "../interface/other/TginitData";
+import TgInitData from "../interface/other/TgInitData";
 
 export default function CheckTgDataValidation(
   req: Request<null, null, { initData: string; user: TgInitData }, null>,

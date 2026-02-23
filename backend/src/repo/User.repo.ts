@@ -54,7 +54,6 @@ class UserRepo implements UserRepoType {
         receipts: 1,
         topups: 1,
         numReceipts: 1,
-        numTopups: 1,
       }).populate({
         path: type,
         options: {

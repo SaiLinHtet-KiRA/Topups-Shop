@@ -1,6 +1,6 @@
 import type { Query } from "@/interface/other";
 import { apiSlice } from "./apiSlice";
-import type { Package } from "@/interface/Package";
+import type { Package } from "@/interface/package";
 
 interface Body {
   game: string;

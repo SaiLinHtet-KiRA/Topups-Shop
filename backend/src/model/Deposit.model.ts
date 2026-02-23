@@ -62,7 +62,7 @@ DepositSchema.pre("save", async function () {
       if (!newOrderID) throw Error("Some things wrong on getting new order id");
       await UserModel.findByIdAndUpdate(this.userID, {
         $push: { recharges: this._id },
-        $inc: { numReceipts: 1 },
+        $inc: { numRecharges: 1 },
       });
       this.id = newOrderID.seq;
     } else {
@@ -82,7 +82,10 @@ DepositSchema.pre("findOneAndUpdate", async function (doc) {
         });
       } else if (update.status === "fail") {
         await UserModel.findByIdAndUpdate(deposit.userID, {
-          $inc: { balance: -deposit.amount, totalBalance: -deposit.amount },
+          $inc: {
+            balance: deposit.status == "pending" ? 0 : -deposit.amount,
+            totalBalance: deposit.status == "pending" ? 0 : -deposit.amount,
+          },
         });
       }
     }

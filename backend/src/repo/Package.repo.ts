@@ -30,8 +30,8 @@ class Package implements PackageRepoType {
   async getMany(start: number, limit: number): Promise<PackageDocument[]> {
     try {
       return await PackageModel.find()
-        .sort({ sold: 1 })
-        .skip(start * limit)
+        .sort({ sold: -1 })
+        .skip((start - 1) * limit)
         .limit(limit)
         .populate({ path: "game", model: GameModel });
     } catch (error) {

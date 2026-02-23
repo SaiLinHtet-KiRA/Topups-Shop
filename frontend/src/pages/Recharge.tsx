@@ -4,7 +4,7 @@ import SelectBanking from "../components/Recharge/SelectBanking";
 import { useMemo } from "react";
 import bankings from "../data/bankings";
 import Notes from "../components/Recharge/Notes";
-import Form from "../components/Form/Form";
+import Form from "@/components/form/Form";
 import "./Recharge.css";
 
 export default function Recharge() {

@@ -2,9 +2,11 @@ import mongoose, { HydratedDocument } from "mongoose";
 import GameModel from "./Game.model";
 import PackageModel from "./Package.model";
 import UserModel from "./User.model";
+import SeqModel from "./Seq.model";
 
 export interface Topup {
   game: mongoose.Types.ObjectId;
+
   package: mongoose.Types.ObjectId;
   price: number;
   currency?: string;
@@ -24,7 +26,7 @@ export interface Login {
   backupCode: string;
 }
 
-export type TopupDocument = HydratedDocument<Topup>;
+export type TopupDocument = HydratedDocument<Topup, { id: number }>;
 
 const IdSchema = new mongoose.Schema<CheckId>(
   {
@@ -44,6 +46,11 @@ const LoginSchema = new mongoose.Schema<Login>(
 );
 const TopupSchema = new mongoose.Schema<TopupDocument>(
   {
+    id: {
+      type: Number,
+      unique: true,
+      index: true,
+    },
     game: {
       type: mongoose.Schema.Types.ObjectId,
       require: true,
@@ -81,6 +88,31 @@ const TopupSchema = new mongoose.Schema<TopupDocument>(
     versionKey: false,
   },
 );
+
+TopupSchema.pre("save", async function () {
+  try {
+    if (this.isNew) {
+      const newID = await SeqModel.findByIdAndUpdate(
+        { _id: "TopupId" },
+        { $inc: { seq: 1 } },
+        { new: true, upsert: true },
+      );
+
+      if (!newID) throw Error("Some things wrong on getting new order id");
+      await PackageModel.findByIdAndUpdate(this.package, {
+        $inc: { sold: 1 },
+      });
+      await GameModel.findByIdAndUpdate(this.game, {
+        $inc: { sold: 1 },
+      });
+      this.id = newID.seq;
+    } else {
+    }
+  } catch (error) {
+    throw error;
+  }
+});
+
 TopupSchema.pre("findOneAndUpdate", async function (doc) {
   try {
     const update = this.getUpdate() as { status: string };

@@ -1,4 +1,3 @@
-// import { AddCoins } from "./util/addCoin";
 import { connectDB } from "./config/DB/mongoose";
 import { express } from "./server/index";
 import "./util/BotLisner";

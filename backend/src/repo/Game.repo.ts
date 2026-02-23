@@ -46,7 +46,8 @@ class GameRepo implements GameRepoType {
     try {
       return await GameModel.find()
         .skip((start - 1) * limit)
-        .limit(limit);
+        .limit(limit)
+        .sort({ sold: -1 });
     } catch (error) {
       throw error;
     }

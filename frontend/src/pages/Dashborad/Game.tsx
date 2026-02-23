@@ -1,4 +1,4 @@
-import GameForm from "@/components/Form/GameForm";
+import GameForm from "@/components/form/GameForm";
 import { useGetGameQuery } from "@/redux/api/game";
 import { useParams } from "react-router";
 

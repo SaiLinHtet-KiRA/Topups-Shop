@@ -3,6 +3,7 @@ import Packages, { PackagesDocument } from "./Packages.model";
 
 export interface Game {
   name: string;
+
   icon: string;
   about: string;
   check_id?: CheckId;
@@ -23,7 +24,7 @@ export interface Login {
   password: string;
   backupCode: string;
 }
-export type GameDocument = HydratedDocument<Game>;
+export type GameDocument = HydratedDocument<Game, { sold: number }>;
 
 const CheckIdSchema = new mongoose.Schema<CheckId>({
   url: { type: String },
@@ -42,6 +43,10 @@ const GameSchema = new mongoose.Schema<GameDocument>(
   {
     name: { type: String, require: true, index: true },
     icon: { type: String, require: true },
+    sold: {
+      type: Number,
+      default: 0,
+    },
     about: { type: String, require: true },
     check_id: CheckIdSchema,
     login: LoginSchema,

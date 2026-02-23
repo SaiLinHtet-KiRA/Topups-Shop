@@ -1,4 +1,5 @@
 :root {
+  --toastify-color-dark: #121212;
   --bg-color: #121212;
   --primary-color: #00bba7;
   --gray-color: #717171;
@@ -88,4 +89,23 @@ li {
 .wrapper {
   width: 90svw;
   margin: auto;
+}
+.Toastify__toast-container {
+  top: 15svh;
+  width: fit-content;
+  margin-left: 0.3rem;
+}
+.Toastify__toast {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(0.2rem);
+  border-radius: 0.3rem;
+  padding: 1rem 2rem 1rem 1rem;
+}
+.Loader-container {
+  width: 100svw;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

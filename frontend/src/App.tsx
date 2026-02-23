@@ -7,6 +7,8 @@ import {
   useGetAccountInfoQuery,
   useTelegramLoginMutation,
 } from "@/redux/api/auth";
+import { ToastContainer } from "react-toastify";
+import Loader from "./components/loading/Loader";
 
 export default function App() {
   const [telegramLogin] = useTelegramLoginMutation();
@@ -22,8 +24,12 @@ export default function App() {
     }
   }, []);
 
-  if (!data) {
-    return <>this app is only work on telegram</>;
+  if (true) {
+    return (
+      <section className="Loader-container">
+        <Loader />
+      </section>
+    );
   }
   return (
     <>
@@ -33,6 +39,7 @@ export default function App() {
       </main>
       <Footer />
       <TabBar />
+      <ToastContainer />
     </>
   );
 }

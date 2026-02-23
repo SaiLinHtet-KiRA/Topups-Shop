@@ -24,7 +24,8 @@ class TopupRepo implements TopupRepoType {
     try {
       return await TopupsModel.find()
         .skip((start - 1) * limit)
-        .limit(limit);
+        .limit(limit)
+        .sort();
     } catch (error) {
       throw error;
     }

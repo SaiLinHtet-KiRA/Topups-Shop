@@ -1,16 +1,16 @@
-import ConfigRepoType from "../interface/repo/Config.repo.type";
-import ConfigModel, { ConfigDocument, Config } from "../model/Config.model";
+import UtilRepoType from "../interface/repo/Util.repo.type";
+import ConfigModel, { UtilDocument, Util } from "../model/Util.model";
 import { NotFoundError } from "../util/error/errors";
 
-class ConfigRepo implements ConfigRepoType {
-  async create(id: string): Promise<ConfigDocument> {
+class UtilRepo implements UtilRepoType {
+  async create(id: string): Promise<UtilDocument> {
     try {
       throw new Error("Method not implemented.");
     } catch (error) {
       throw error;
     }
   }
-  async getById(id: string): Promise<ConfigDocument> {
+  async getById(id: string): Promise<UtilDocument> {
     try {
       const config = await ConfigModel.findById(id);
       if (!config) throw new NotFoundError(`Config id-${id} is not found`);
@@ -19,7 +19,7 @@ class ConfigRepo implements ConfigRepoType {
       throw error;
     }
   }
-  async updateById(id: string, data: Config): Promise<ConfigDocument> {
+  async updateById(id: string, data: Util): Promise<UtilDocument> {
     try {
       return await ConfigModel.findByIdAndUpdate(id, data, {
         new: true,
@@ -29,7 +29,7 @@ class ConfigRepo implements ConfigRepoType {
       throw error;
     }
   }
-  async deleteById(id: string): Promise<ConfigDocument> {
+  async deleteById(id: string): Promise<UtilDocument> {
     try {
       throw new Error("Method not implemented.");
     } catch (error) {
@@ -38,4 +38,4 @@ class ConfigRepo implements ConfigRepoType {
   }
 }
 
-export default new ConfigRepo();
+export default new UtilRepo();

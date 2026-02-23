@@ -3,6 +3,9 @@ import { ArrowUpTray, BankNote, User, type SvgCompontentProp } from "@/svg";
 import "./Form.css";
 import { useDepositMutation } from "@/redux/api/deposit";
 import type Receipt from "@/interface/Receipt";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router";
+import ShowToast from "@/helper/ShowToast";
 
 interface InputField {
   id: keyof Receipt;
@@ -13,6 +16,7 @@ interface InputField {
 }
 
 export default function Form({ payment }: { payment: string }) {
+  const router = useNavigate();
   const [receipt, setReceipt] = useState<Receipt>({
     name: "",
     banking: payment,
@@ -20,8 +24,6 @@ export default function Form({ payment }: { payment: string }) {
     receipt: null,
   });
   const [deposit] = useDepositMutation();
-  console.log("payment", payment);
-  console.log("receipt", receipt);
 
   const setValue = (field: keyof Receipt, value: string | number | File) => {
     setReceipt((prev) => ({
@@ -51,7 +53,15 @@ export default function Form({ payment }: { payment: string }) {
       className="form-container"
       onSubmit={(e) => {
         e.preventDefault();
-        if (receipt) deposit(receipt);
+        try {
+          if (receipt) {
+            deposit(receipt);
+            ShowToast("Your order is suceessfully placed!!");
+            router(-1);
+          }
+        } catch (error) {
+          toast.error("Something worng");
+        }
       }}
     >
       {inputFiled.map((info) => (

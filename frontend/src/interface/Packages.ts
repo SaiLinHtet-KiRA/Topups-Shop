@@ -1,4 +1,4 @@
-import type { Package } from "./Package";
+import type { Package } from "./package";
 
 export interface Packages {
   name: string;

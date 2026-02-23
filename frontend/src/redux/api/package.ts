@@ -1,6 +1,6 @@
 import { apiSlice } from "./apiSlice";
 import type { Query } from "@/interface/other";
-import type { Package } from "@/interface/Package";
+import type { Package } from "@/interface/package";
 
 export const authApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({

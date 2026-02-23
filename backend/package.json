@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsc-watch -p tsconfig.json --onSuccess \"npm run start\"",
     "copy-json": "cpx src/**/*.json dist",
-    "start": "node /dist/server.js",
+    "start": "node dist/server.js",
     "build": "tsc -p .",
     "test": "jest"
   },

@@ -1,4 +1,4 @@
-import ConfigService from "../service/Config.service";
+import ConfigService from "../service/Util.service";
 import FinancialService from "../service/Financial.service";
 import TopupService from "../service/Topup.service";
 import TelegramBot from "./TelegramBot";

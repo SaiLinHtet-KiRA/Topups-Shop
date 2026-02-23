@@ -5,7 +5,7 @@ import fs from "fs";
 import PackageService from "../service/Package.service";
 import PackagesService from "../service/Packages.service";
 import mongoose from "mongoose";
-import ConfigService from "../service/Config.service";
+import ConfigService from "../service/Util.service";
 
 const addData = async () => {
   try {
