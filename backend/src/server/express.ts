@@ -15,7 +15,7 @@ export default class ExpressServer {
     this.app.set("trust proxy", 1);
     this.app.use(
       cors({
-        origin: ["https://collectorparadise.xyz"],
+        origin: ["https://www.collectorparadise.xyz"],
         credentials: true,
       }),
     );

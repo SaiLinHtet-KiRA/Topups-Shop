@@ -7,7 +7,7 @@ import { useGetGamesQuery } from "@/redux/api/game";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./PopularGameSection.css";
-import GameCardsLoading from "../ui/loading/GameCardsLoading";
+import CardLoader from "../ui/loader/GameCardLoader";
 
 export default function PopularGameSection() {
   const { data, isLoading } = useGetGamesQuery({ page: 1, limit: 8 });
@@ -25,7 +25,14 @@ export default function PopularGameSection() {
           modules={[FreeMode]}
           className="section-swiper"
         >
-          {isLoading && <GameCardsLoading />}
+          {isLoading &&
+            Array(8)
+              .fill(0)
+              .map((_, i) => (
+                <SwiperSlide key={i}>
+                  <CardLoader />
+                </SwiperSlide>
+              ))}
           {data &&
             data.map(({ _id, ...game }) => (
               <SwiperSlide key={game.name}>

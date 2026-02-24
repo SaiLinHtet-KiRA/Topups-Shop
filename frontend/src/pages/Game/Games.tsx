@@ -2,7 +2,7 @@ import GameCard from "@/components/Card/GameCard";
 
 import "./games.css";
 import { useGetGamesQuery } from "@/redux/api/game";
-import GameCardsLoading from "@/components/ui/loading/GameCardsLoading";
+import CardLoader from "@/components/ui/loader/GameCardLoader";
 
 export default function Games() {
   const { data, isLoading } = useGetGamesQuery({ page: 1, limit: 20 });
@@ -13,7 +13,10 @@ export default function Games() {
         {data?.map((game) => (
           <GameCard {...game} />
         ))}
-        {isLoading && <GameCardsLoading />}
+        {isLoading &&
+          Array(8)
+            .fill(0)
+            .map((_, i) => <CardLoader key={i} />)}
       </section>
     </section>
   );

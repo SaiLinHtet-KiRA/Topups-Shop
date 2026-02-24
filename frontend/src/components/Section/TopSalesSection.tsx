@@ -3,7 +3,7 @@ import { FreeMode } from "swiper/modules";
 import { AwardRibbon } from "../../svg";
 import { useGetPackagesQuery } from "@/redux/api/package";
 import TopSalePackageCard from "../Card/TopSalePackageCard";
-import TopSalesLoading from "../ui/loading/TopSalesLoading";
+import TopsaleCard from "../ui/loader/Skeleton/TopsaleCard";
 import "swiper/css";
 import "swiper/css/free-mode";
 
@@ -30,7 +30,14 @@ export default function TopSalesSection() {
                 <TopSalePackageCard {...data} />
               </SwiperSlide>
             ))}
-          {isLoading && <TopSalesLoading />}
+          {isLoading &&
+            Array(10)
+              .fill(0)
+              .map((_, i) => (
+                <SwiperSlide key={"topsale-" + i}>
+                  <TopsaleCard />
+                </SwiperSlide>
+              ))}
         </Swiper>
       </section>
     </section>
