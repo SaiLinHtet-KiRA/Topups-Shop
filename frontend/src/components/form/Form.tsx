@@ -56,7 +56,7 @@ export default function Form({ payment }: { payment: string }) {
         try {
           if (receipt) {
             deposit(receipt);
-            ShowToast("Your order is suceessfully placed!!");
+            ShowToast("success", "Your order is suceessfully placed!!");
             router(-1);
           }
         } catch (error) {

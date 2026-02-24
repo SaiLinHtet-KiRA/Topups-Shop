@@ -11,7 +11,6 @@ import { motion } from "motion/react";
 import "./ReceiptWrapper.css";
 import EmptyList from "../ui/error/EmptyList";
 import { useAppSelector } from "@/redux/store";
-import HistoryCard from "../ui/loader/Skeleton/HistoryCard";
 import HistroyLoading from "../ui/loading/HistroyLoading";
 
 export default function ReceiptWrapper() {

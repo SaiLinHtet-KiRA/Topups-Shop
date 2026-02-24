@@ -3,7 +3,6 @@ import { FreeMode } from "swiper/modules";
 import { Fire } from "../../svg";
 import GameCard from "../Card/GameCard";
 import { useGetGamesQuery } from "@/redux/api/game";
-import CardLoader from "../ui/loader/GameCardLoader";
 
 import "swiper/css";
 import "swiper/css/free-mode";
