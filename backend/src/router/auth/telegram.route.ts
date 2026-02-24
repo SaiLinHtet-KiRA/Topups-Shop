@@ -4,6 +4,6 @@ import CheckTgDataValidation from "../../middleware/CheckTgDataValidation";
 
 const router = Router();
 
-router.post("/telegram", AuthController.TelegramLogin);
+router.post("/telegram", CheckTgDataValidation, AuthController.TelegramLogin);
 
 export default router;

@@ -10,26 +10,8 @@ class AuthController implements AuthControllerType {
     res: Response,
   ): Promise<void> {
     try {
-      // const { user } = req.body;
-      // console.log("user", user);
-      const user = {
-        user: {
-          id: 1665560632,
-          first_name: "Kira",
-          last_name: "",
-          username: "kira16ok",
-          language_code: "en",
-          allows_write_to_pm: true,
-          photo_url:
-            "https://t.me/i/userpic/320/Ktkayo1PFBb6iZlY3fTsG7IAncjkmQHmMfyyZVWAckc.svg",
-        },
-        chat_instance: "-7776823432591278099",
-        chat_type: "sender",
-        auth_date: "1771852561",
-        signature:
-          "jNwTF9MDCe9Wtg8PxQ9_W1OMaIhnVc-2wBRvw6s4vj9kmiGv-4X7uAn0MJr2yjHaefbEEy8syCC_ZFQl7EGUBQ",
-        hash: "f9727b5d82f90cf313c02d49d0234a0edfb0f70a06e0d13082288048c5b4fc6b",
-      };
+      const { user } = req.body;
+
       const existUser = await userService.findOrCreateUser(
         String(user.user.id),
       );
