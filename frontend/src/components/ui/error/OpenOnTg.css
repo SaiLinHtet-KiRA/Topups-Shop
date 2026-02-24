@@ -1,0 +1,24 @@
+.open-on-tg-wrapper {
+  width: 100svw;
+  height: 100svh;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  .img-container {
+    position: relative;
+    width: 50svw;
+    height: 50svw;
+    aspect-ratio: 1/1;
+  }
+  p {
+    text-align: center;
+    width: 60svw;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    a {
+      color: var(--primary-color);
+    }
+  }
+}

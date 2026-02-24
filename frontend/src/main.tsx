@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import "./index.css";
+
 import App from "./App.tsx";
 import {
   createBrowserRouter,
@@ -14,10 +14,11 @@ import { Provider } from "react-redux";
 import store from "./redux/store.ts";
 import Game from "./pages/Game/Game.tsx";
 import GameAdamin from "./pages/Dashborad/Game.tsx";
-
 import Dashboard from "./pages/Dashborad/Dashboard.tsx";
-import Histroy from "./pages/Dashborad/Histroy.tsx";
+import History from "./pages/Dashborad/History.tsx";
 import Document from "./pages/Document.tsx";
+import "./index.css";
+import "./animate.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,7 +33,7 @@ const router = createBrowserRouter(
           <Route element={<Games />} index />
           <Route path=":id" element={<GameAdamin />} />
         </Route>
-        <Route path="history" element={<Histroy />} />
+        <Route path="history" element={<History />} />
         <Route path="document" element={<Document />} />
       </Route>
     </Route>,

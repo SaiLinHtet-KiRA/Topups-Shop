@@ -1,0 +1,23 @@
+.history-card-loader {
+  * {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .img-container {
+    border-radius: 0.2rem;
+    background-color: rgba(245, 245, 245, 0.164);
+  }
+  header {
+    width: 90%;
+    height: 2rem;
+    background-color: rgba(245, 245, 245, 0.164);
+  }
+  .badge {
+    height: 1rem;
+  }
+  .badge:nth-child(1) {
+    width: 30%;
+  }
+  .badge:nth-child(2) {
+    width: 20%;
+  }
+}

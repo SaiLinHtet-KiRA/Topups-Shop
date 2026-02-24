@@ -1,0 +1,27 @@
+.skeleton-topsales-loader {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton-topsales-loader .top-sales-image {
+  border-radius: 0.5rem;
+  background-color: rgba(245, 245, 245, 0.164);
+}
+.skeleton-topsales-loader header {
+  background-color: rgba(245, 245, 245, 0.164);
+  border-radius: 0.5rem;
+  height: 2rem;
+  width: 90%;
+}
+.skeleton-topsales-loader .badge {
+  height: 1rem;
+}
+.skeleton-topsales-loader .badge:nth-child(1) {
+  width: 40%;
+}
+.skeleton-topsales-loader .badge:nth-child(2) {
+  width: 15%;
+}
+.skeleton-topsales-loader .game-badge {
+  width: 60%;
+  height: 1.6rem;
+}

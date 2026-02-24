@@ -9,6 +9,10 @@ import { histroySelectors } from "@/redux/features/adapter/history";
 import { useSelector } from "react-redux";
 import { motion } from "motion/react";
 import "./ReceiptWrapper.css";
+import EmptyList from "../ui/error/EmptyList";
+import { useAppSelector } from "@/redux/store";
+import HistoryCard from "../ui/loader/Skeleton/HistoryCard";
+import HistroyLoading from "../ui/loading/HistroyLoading";
 
 export default function ReceiptWrapper() {
   const [getSearchParams, setSearchParams] = useSearchParams();
@@ -25,6 +29,7 @@ export default function ReceiptWrapper() {
     { refetchOnMountOrArgChange: true },
   );
   const histroy = useSelector(histroySelectors.selectAll);
+  const { isLoading } = useAppSelector(({ histroy }) => histroy);
   useEffect(() => {
     setSearchParams(
       (prev) => {
@@ -60,7 +65,7 @@ export default function ReceiptWrapper() {
   return (
     <>
       <motion.section className="receipt-wrapper">
-        {histroy.length && (
+        {histroy.length ? (
           <>
             {type == "topups" &&
               (histroy as Topup[]).map((topup) => (
@@ -71,9 +76,12 @@ export default function ReceiptWrapper() {
                 <ReceiptCard {...receipt} key={receipt.id} />
               ))}
           </>
+        ) : (
+          <></>
         )}
+        {isLoading && <HistroyLoading />}
       </motion.section>
-      {isFetching && <>Loading</>}
+      {!histroy.length ? <EmptyList /> : <></>}
     </>
   );
 }

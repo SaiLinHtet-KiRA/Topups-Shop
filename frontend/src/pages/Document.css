@@ -1,0 +1,15 @@
+.Document-wrapper {
+  padding: 1rem;
+  header {
+    display: flex;
+    text-wrap: balance;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  p {
+    text-align: justify;
+    white-space: pre-line;
+    line-height: 1.4rem;
+    opacity: 0.9;
+  }
+}

@@ -15,7 +15,7 @@ export default function TopupCard({ package: Package, price, status }: Topup) {
           <PriceBadge value={price} />
           <StatusBadge value={status} />
         </div>
-        <button>Report</button>
+        {/* <button>Report</button> */}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export default function ReceiptCard({
           <PriceBadge value={amount} />
           <StatusBadge value={status} />
         </div>
-        <button>Report</button>
+        {/* <button>Report</button> */}
       </div>
     </div>
   );

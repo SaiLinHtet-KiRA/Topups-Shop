@@ -2,14 +2,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 import { Fire } from "../../svg";
 import GameCard from "../Card/GameCard";
+import { useGetGamesQuery } from "@/redux/api/game";
+import CardLoader from "../ui/loader/GameCardLoader";
 
 import "swiper/css";
 import "swiper/css/free-mode";
 import "./PopularGameSection.css";
-import { useGetGamesQuery } from "@/redux/api/game";
+import GameCardsLoading from "../ui/loading/GameCardsLoading";
 
 export default function PopularGameSection() {
-  const { data } = useGetGamesQuery({ page: 1, limit: 8 });
+  const { data, isLoading } = useGetGamesQuery({ page: 1, limit: 8 });
   return (
     <section className="section">
       <header className="section-header">
@@ -24,11 +26,13 @@ export default function PopularGameSection() {
           modules={[FreeMode]}
           className="section-swiper"
         >
-          {data?.map(({ _id, ...game }) => (
-            <SwiperSlide key={game.name}>
-              <GameCard _id={"games/" + _id} {...game} />
-            </SwiperSlide>
-          ))}
+          {isLoading && <GameCardsLoading />}
+          {data &&
+            data.map(({ _id, ...game }) => (
+              <SwiperSlide key={game.name}>
+                <GameCard _id={"games/" + _id} {...game} />
+              </SwiperSlide>
+            ))}
         </Swiper>
       </section>
     </section>

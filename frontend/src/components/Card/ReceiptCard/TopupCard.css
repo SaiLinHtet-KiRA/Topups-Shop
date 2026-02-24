@@ -3,7 +3,7 @@
   padding: 1rem;
   border-radius: 0.8rem;
   display: flex;
-  gap: 0.4rem;
+  gap: 0.8rem;
   align-items: center;
   .img-container {
     position: relative;
@@ -12,6 +12,7 @@
   }
   .info-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 0.4rem;
     header {

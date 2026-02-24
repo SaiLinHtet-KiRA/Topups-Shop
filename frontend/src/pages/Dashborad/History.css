@@ -1,0 +1,6 @@
+.history-wrapper {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}

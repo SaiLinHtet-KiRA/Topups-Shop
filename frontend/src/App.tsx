@@ -8,11 +8,12 @@ import {
   useTelegramLoginMutation,
 } from "@/redux/api/auth";
 import { ToastContainer } from "react-toastify";
-import Loader from "./components/loading/Loader";
+import WholePageLoader from "./components/ui/loading/WholePageLoader";
+import OpenOnTg from "./components/ui/error/OpenOnTg";
 
 export default function App() {
   const [telegramLogin] = useTelegramLoginMutation();
-  const { data } = useGetAccountInfoQuery();
+  const { data, isLoading } = useGetAccountInfoQuery();
 
   useEffect(() => {
     if (window.Telegram?.WebApp) {
@@ -24,12 +25,11 @@ export default function App() {
     }
   }, []);
 
-  if (true) {
-    return (
-      <section className="Loader-container">
-        <Loader />
-      </section>
-    );
+  if (isLoading) {
+    return <WholePageLoader />;
+  }
+  if (!data) {
+    return <OpenOnTg />;
   }
   return (
     <>
