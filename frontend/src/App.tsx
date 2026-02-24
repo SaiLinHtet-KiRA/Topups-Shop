@@ -20,7 +20,6 @@ export default function App() {
       const tg = window.Telegram.WebApp;
       tg.ready();
       const initData = tg.initData;
-      console.log(initData);
       telegramLogin(initData);
     }
   }, []);
