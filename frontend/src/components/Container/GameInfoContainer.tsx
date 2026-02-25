@@ -4,7 +4,7 @@ import CheckIdSection from "../Section/CheckIdSection";
 import PackageSection from "../Section/PackageSection";
 import "./GameInfoContainer.css";
 import SelectPayment from "../Section/SelectPaymentSection";
-import { useSearchParams } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import { useCreateTopupMutation } from "@/redux/api/topup";
 import Warining from "../ui/Warining";
 import LoginSection from "../Section/LoginSection";
@@ -20,6 +20,7 @@ export default function GameInfoContainer({
   check_id,
   login,
 }: Game) {
+  const router = useNavigate();
   const [getSearchParams, setSearchParams] = useSearchParams();
   const [createTopup] = useCreateTopupMutation();
 
@@ -49,9 +50,9 @@ export default function GameInfoContainer({
           data.checkId.server = check_id?.server[0];
         }
         try {
-          const res = await createTopup(data).unwrap();
-          console.log("res", res);
+          await createTopup(data).unwrap();
           ShowToast("success", "Your order is successfully placed");
+          router(-1);
           setSearchParams("", { replace: true });
         } catch (error) {
           const err = error as FetchBaseQueryError;
