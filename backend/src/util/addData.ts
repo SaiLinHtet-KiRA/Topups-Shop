@@ -13,7 +13,7 @@ const addData = async () => {
       GameService.searchByField("name", name).then((game) => {
         if (!game.length) {
           fs.readFile(
-            process.cwd() + "../json/games" + data,
+            process.cwd() + "/json/games" + data,
             "utf8",
             async (err, data) => {
               if (err) {
