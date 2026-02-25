@@ -21,7 +21,7 @@ export default function GameInfoContainer({
   login,
 }: Game) {
   const router = useNavigate();
-  const [getSearchParams, setSearchParams] = useSearchParams();
+  const [getSearchParams, _] = useSearchParams();
   const [createTopup] = useCreateTopupMutation();
 
   const warining =
@@ -52,14 +52,10 @@ export default function GameInfoContainer({
         try {
           await createTopup(data).unwrap();
           ShowToast("success", "Your order is successfully placed");
-          router(-1);
-          setSearchParams("", { replace: true });
+          router("/");
         } catch (error) {
           const err = error as FetchBaseQueryError;
-          if ("data" in err && err.data) {
-            const message = (err.data as { data: string }).data;
-            ShowToast("error", message);
-          }
+          ShowToast("error", err.data as string);
         }
       }}
     >
