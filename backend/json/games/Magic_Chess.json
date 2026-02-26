@@ -16,33 +16,15 @@
           "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
         },
         {
-          "name": "19 Diamonds",
-          "old_price": 9200,
-          "new_price": 9200,
-          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
-        },
-        {
           "name": "78 +8 Diamonds",
           "old_price": 13300,
           "new_price": 13300,
           "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
         },
         {
-          "name": "85 Diamonds",
-          "old_price": 37000,
-          "new_price": 37000,
-          "icon": "/Games/Magic Chess Go Go/dia-xs.webp"
-        },
-        {
-          "name": "156 +23 Diamonds",
+          "name": "156 +16 Diamonds",
           "old_price": 113000,
           "new_price": 113000,
-          "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
-        },
-        {
-          "name": "240 Diamonds",
-          "old_price": 188000,
-          "new_price": 188000,
           "icon": "/Games/Magic Chess Go Go/dia-sm.webp"
         },
         {
@@ -74,12 +56,6 @@
           "old_price": 188000,
           "new_price": 188000,
           "icon": "/Games/Magic Chess Go Go/dia-md.webp"
-        },
-        {
-          "name": "516 Diamonds",
-          "old_price": 188000,
-          "new_price": 188000,
-          "icon": "/Games/Magic Chess Go Go/dia-lg.webp"
         },
         {
           "name": "568 Diamonds",

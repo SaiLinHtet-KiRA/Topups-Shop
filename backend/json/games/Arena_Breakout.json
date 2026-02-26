@@ -48,23 +48,6 @@
       ]
     },
     {
-      "name": "Slow Process",
-      "packages": [
-        {
-          "name": "60 + 6 Bonds",
-          "old_price": 4750,
-          "new_price": 4750,
-          "icon": "/Games/Arena Breakout/bond-xs.webp"
-        },
-        {
-          "name": "310 + 25 Bonds",
-          "old_price": 9200,
-          "new_price": 9200,
-          "icon": "/Games/Arena Breakout/bond-sm.webp"
-        }
-      ]
-    },
-    {
       "name": "Package",
       "packages": [
         {

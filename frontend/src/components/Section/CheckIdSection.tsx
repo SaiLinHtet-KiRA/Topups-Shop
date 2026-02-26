@@ -44,7 +44,7 @@ export default function CheckIdSection({ userID, zoneID, server }: CheckId) {
             type="number"
             htmlFor="zoneID"
             id="input-zone-id-container"
-            placeHolder="Zone ID"
+            placeHolder="Zone ID or Server ID"
           />
         )}
         <span className="result"></span>

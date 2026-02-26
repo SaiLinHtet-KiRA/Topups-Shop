@@ -88,37 +88,13 @@
           "icon": "/Games/MLBB/chest-sm.webp"
         },
         {
-          "name": "2172 + 367 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-sm.webp"
-        },
-        {
           "name": "2485 + 416 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-sm.webp"
         },
         {
-          "name": "2665 + 321 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-md.webp"
-        },
-        {
           "name": "3099 + 589 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-md.webp"
-        },
-        {
-          "name": "3527 + 635 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-md.webp"
-        },
-        {
-          "name": "3724 + 670 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-md.webp"
@@ -136,40 +112,10 @@
           "icon": "/Games/MLBB/chest-lg.webp"
         },
         {
-          "name": "5274 + 964 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-lg.webp"
-        },
-        {
-          "name": "6132 + 1050 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-lg.webp"
-        },
-        {
-          "name": "6429 + 1073 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-lg.webp"
-        },
-        {
           "name": "6509 + 1218 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-lg.webp"
-        },
-        {
-          "name": "7740 + 1548 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-xl.webp"
-        },
-        {
-          "name": "10225 + 1964 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-xl.webp"
         },
         {
           "name": "10839 + 2137 Diamonds",
@@ -201,21 +147,9 @@
           "icon": "/Games/MLBB/dia-sm.webp"
         },
         {
-          "name": "13 + 1 Diamonds",
-          "old_price": 9200,
-          "new_price": 9200,
-          "icon": "/Games/MLBB/dia-sm.webp"
-        },
-        {
           "name": "20 + 2 Diamonds",
           "old_price": 13300,
           "new_price": 13300,
-          "icon": "/Games/MLBB/dia-md.webp"
-        },
-        {
-          "name": "26 + 2 Diamonds",
-          "old_price": 37000,
-          "new_price": 37000,
           "icon": "/Games/MLBB/dia-md.webp"
         },
         {
@@ -231,28 +165,10 @@
           "icon": "/Games/MLBB/dia-lg.webp"
         },
         {
-          "name": "64 + 6 Diamonds",
-          "old_price": 295000,
-          "new_price": 295000,
-          "icon": "/Games/MLBB/dia-xl.webp"
-        },
-        {
           "name": "102 + 10 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/dia-xl.webp"
-        },
-        {
-          "name": "140 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-sm.webp"
-        },
-        {
-          "name": "203 + 20 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-sm.webp"
         },
         {
           "name": "284 Diamonds",
@@ -286,12 +202,6 @@
         },
         {
           "name": "1007 + 156 Diamonds",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/MLBB/chest-xl.webp"
-        },
-        {
-          "name": "1084 Diamonds",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/MLBB/chest-xl.webp"

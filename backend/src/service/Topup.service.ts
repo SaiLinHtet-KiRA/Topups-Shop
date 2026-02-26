@@ -40,7 +40,7 @@ class TopupService implements TopupServiceType {
       Admins.map(({ id }) =>
         TelegramBot.sendMessage(
           Number(id),
-          `New order Arrived!!\nGame: ${name}\nPackage: ${data.package.name}\nPrice: ${data.package.price} ${topup.currency}${data.checkId.userID ? "\nUser Id: " + data.checkId.userID : ""} ${data.checkId.zoneID ? "\nZone Id: " + data.checkId.zoneID : ""} ${data.checkId.server ? "\nServer:" + data.checkId.server : ""}${data.login.username ? "\nUsername:" + data.login.username : ""}${data.login.password ? "\nPassword:" + data.login.password : ""}${data.login.backupCode ? "\nBackup Code:" + data.login.backupCode : ""}`,
+          `New order Arrived!!\nGame: ${name}\nPackage: ${data.package.name}\nPrice: ${data.package.price} ${topup.currency}${data.checkId.userID ? "\nUser ID: " + data.checkId.userID : ""} ${data.checkId.zoneID ? "\nZone ID or Server ID: " + data.checkId.zoneID : ""} ${data.checkId.server ? "\nServer:" + data.checkId.server : ""}${data.login.username ? "\nUsername:" + data.login.username : ""}${data.login.password ? "\nPassword:" + data.login.password : ""}${data.login.backupCode ? "\nBackup Code:" + data.login.backupCode : ""}`,
           {
             reply_markup: {
               inline_keyboard: [

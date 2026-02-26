@@ -46,12 +46,6 @@
           "icon": "/Games/Honor Of King/t-2xl.webp"
         },
         {
-          "name": "1200 + 45 Tokens",
-          "old_price": 188000,
-          "new_price": 188000,
-          "icon": "/Games/Honor Of King/t-2xl.webp"
-        },
-        {
           "name": "2400 + 108 Tokens",
           "old_price": 188000,
           "new_price": 188000,
@@ -59,12 +53,6 @@
         },
         {
           "name": "4000 + 180 Tokens",
-          "old_price": 188000,
-          "new_price": 188000,
-          "icon": "/Games/Honor Of King/chest-md.webp"
-        },
-        {
-          "name": "8000 + 360 Tokens",
           "old_price": 188000,
           "new_price": 188000,
           "icon": "/Games/Honor Of King/chest-lg.webp"
