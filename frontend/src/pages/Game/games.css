@@ -6,7 +6,7 @@
 }
 .game-cards-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 160px);
+  grid-template-columns: repeat(auto-fit, 30svw);
   justify-content: center;
-  gap: 1rem;
+  gap: 0.4rem;
 }

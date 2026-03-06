@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import "./GameCard.css";
 type game = { icon: string; name: string; _id: string };
+import "./GameCard.css";
 
 export default function GameCard({ icon, name, _id }: game) {
   return (

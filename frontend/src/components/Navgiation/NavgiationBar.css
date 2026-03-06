@@ -25,3 +25,8 @@
     width: 26px;
   }
 }
+.icon-cotainer {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}

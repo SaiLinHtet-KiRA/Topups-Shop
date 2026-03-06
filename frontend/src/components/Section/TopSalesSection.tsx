@@ -13,8 +13,10 @@ export default function TopSalesSection() {
   return (
     <section className="section">
       <header className="section-header">
-        <span>Top Sales </span>
-        <AwardRibbon className="svg-lg" />
+        <section className="section-title flex-center">
+          <span>Top Sales </span>
+          <AwardRibbon className="svg-lg" />
+        </section>
       </header>
       <section className="section-cards-container">
         <Swiper

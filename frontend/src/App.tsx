@@ -33,7 +33,6 @@ export default function App() {
   }
   return (
     <>
-      <CustomerService />
       <NavgiationBar />
       <main className="main-page-wrapper">
         <Outlet />

@@ -1,6 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
-import { Fire } from "../../svg";
+import { ArrowRightCircle, Fire } from "../../svg";
 import GameCard from "../Card/GameCard";
 import { useGetGamesQuery } from "@/redux/api/game";
 
@@ -8,14 +8,22 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "./PopularGameSection.css";
 import CardLoader from "../ui/loader/GameCardLoader";
+import { Link } from "react-router";
 
 export default function PopularGameSection() {
   const { data, isLoading } = useGetGamesQuery({ page: 1, limit: 8 });
   return (
     <section className="section">
       <header className="section-header">
-        <span>Popular Games </span>
-        <Fire className="svg-lg" />
+        <section className="section-title">
+          <span>Popular Games </span>
+          <Fire className="svg-sm" />
+        </section>
+        <aside>
+          <Link to={"/games"} className="flex-center">
+            All Games <ArrowRightCircle className="svg-sm" />
+          </Link>
+        </aside>
       </header>
       <section className="section-cards-container">
         <Swiper

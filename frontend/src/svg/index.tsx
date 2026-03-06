@@ -29,6 +29,7 @@ export const Controller: SvgCompontentProp = (props) => (
     xmlnsXlink="http://www.w3.org/1999/xlink"
     viewBox="0 0 32 32"
     xmlSpace="preserve"
+    fill="currentColor"
     {...props}
   >
     <style type="text/css">{"\n\t.sketchy_een{fill:#111918;}\n"}</style>

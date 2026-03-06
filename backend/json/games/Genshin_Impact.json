@@ -32,7 +32,7 @@
           "icon": "/Games/Genshin Impact/ct-sm.webp"
         },
         {
-          "name": "1980+280 Crystals",
+          "name": "1980+260 Crystals",
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/Genshin Impact/ct-md.webp"
@@ -130,47 +130,6 @@
           "old_price": 5,
           "new_price": 5,
           "icon": "/Games/Genshin Impact/Blessing-5.webp"
-        }
-      ]
-    },
-    {
-      "name": "Bulk Purchases",
-      "packages": [
-        {
-          "name": "6480 + 1600 Crystals x 2",
-          "old_price": 5,
-          "new_price": 3,
-          "icon": "/Games/Genshin Impact/ct-md.webp"
-        },
-        {
-          "name": "6480 + 1600 Crystals x 3",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/Genshin Impact/ct-md.webp"
-        },
-        {
-          "name": "6480 + 1600 Crystals x 4",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/Genshin Impact/ct-lg.webp"
-        },
-        {
-          "name": "6480 + 1600 Crystals x 5",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/Genshin Impact/ct-lg.webp"
-        },
-        {
-          "name": "6480 + 1600 Crystals x 8",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/Genshin Impact/ct-xl.webp"
-        },
-        {
-          "name": "6480 + 1600 Crystals x 10",
-          "old_price": 5,
-          "new_price": 5,
-          "icon": "/Games/Genshin Impact/ct-xl.webp"
         }
       ]
     }

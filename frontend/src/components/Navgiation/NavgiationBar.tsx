@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { Currency, Logo } from "../../svg";
 import "./NavgiationBar.css";
 import { useAppSelector } from "@/redux/store";
+import CustomerService from "../CustomerService";
 
 export default function NavgiationBar() {
   return (
@@ -11,8 +12,9 @@ export default function NavgiationBar() {
           <Logo className="svg" />
         </div>
       </Link>
-      <section>
+      <section className="icon-cotainer">
         <Balance />
+        <CustomerService />
       </section>
     </nav>
   );

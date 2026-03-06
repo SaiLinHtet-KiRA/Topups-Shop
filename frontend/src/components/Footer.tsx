@@ -3,11 +3,11 @@ import { CopyRight } from "../svg";
 export default function Footer() {
   return (
     <footer>
-      <span className="copyright">
-        <CopyRight className="svg" />
+      <span className="flex-center">
+        <CopyRight className="svg-sm" />
         {new Date().getFullYear()}
       </span>
-      <span>version 1.0.0</span>
+      <span>version 1.0.1</span>
     </footer>
   );
 }

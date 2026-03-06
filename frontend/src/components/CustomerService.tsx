@@ -7,13 +7,13 @@ export default function CustomerService() {
       to="https://t.me/lucius_playz"
       target="_blank"
       style={{
-        position: "fixed",
+        display: "flex",
+        alignContent: "center",
+        justifyContent: "center",
         backgroundColor: "var(--primary-color)",
-        top: "26svw",
-        right: "1rem",
-        zIndex: 100,
-        padding: "0.6rem",
-        borderRadius: "100%",
+        width: "3rem",
+        height: "3rem",
+        borderRadius: "100% 68% 100% 68% / 71% 100% 66% 88% ",
       }}
     >
       <Service className="svg" />
