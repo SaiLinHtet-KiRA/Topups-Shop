@@ -10,7 +10,6 @@ import {
 import { ToastContainer } from "react-toastify";
 import WholePageLoader from "./components/ui/loading/WholePageLoader";
 import OpenOnTg from "./components/ui/error/OpenOnTg";
-import CustomerService from "./components/CustomerService";
 
 export default function App() {
   const [telegramLogin] = useTelegramLoginMutation();
