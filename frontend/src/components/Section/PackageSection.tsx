@@ -5,7 +5,7 @@ import PackageCard from "../Card/PackageCard";
 export default function PackageSection({ name, packages }: Packages) {
   return (
     <section className="package-container">
-      <header>
+      <header className="section-title">
         <span>{name}</span>
       </header>
       <section className="package-wrapper">

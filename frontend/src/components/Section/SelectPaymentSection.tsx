@@ -6,7 +6,7 @@ export default function SelectPayment() {
   const Payment = [{ name: "Wallet", icon: Wallet }];
   return (
     <section className="payment-container">
-      <header>
+      <header className="section-title">
         <span>3</span>
         <span>Select Payment</span>
       </header>

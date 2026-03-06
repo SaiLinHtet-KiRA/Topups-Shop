@@ -1,20 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./TabBar.css";
 import { Controller, Home, User } from "../../svg";
 import { Link, useLocation } from "react-router";
 import { motion } from "motion/react";
-import useScroll from "../../hook/useScrollEnd";
 
 export default function TabBar() {
   const { pathname } = useLocation();
-  const tabBar = useRef<null | HTMLDivElement>(null);
   const Tabs = ["/", "/games", "/dashborad"];
   const TabIcons = [Home, Controller, User];
 
-  useScroll(tabBar);
-
   return (
-    <nav className="tab-bar-wrapper" ref={tabBar}>
+    <nav className="tab-bar-wrapper">
       {Tabs.map((tab, i) => (
         <Link to={tab} className="tab" key={tab}>
           {React.createElement(TabIcons[i], {

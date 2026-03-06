@@ -1,4 +1,4 @@
-.package-card {
+/* .package-card {
   background-color: #71717154;
   position: relative;
   display: flex;
@@ -60,4 +60,72 @@
   position: relative;
   width: 5rem;
   height: 5rem;
+} */
+.check-box-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border-width: 0;
+}
+.package-card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  background-color: #71717154;
+  &:has(input:checked) {
+    background-color: #00bba8b0;
+    .check-mark-container {
+      top: -1rem;
+      right: -2.2rem;
+    }
+    .package-info {
+      background-color: var(--primary-color);
+    }
+  }
+}
+.package-img-container {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+}
+.package-info {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  grid-template-rows: repeat(auto-fit, 50%);
+  background-color: black;
+  flex: 1;
+  padding: 0.3rem 0.6rem;
+  .title {
+    font-size: 0.8rem;
+  }
+  span {
+    font-weight: 900;
+    font-size: 0.8rem;
+    opacity: 0.6;
+    color: whitesmoke;
+    align-self: center;
+  }
+}
+.check-mark-container {
+  position: absolute;
+  top: -3rem;
+  right: -6.6rem;
+  width: 6.4rem;
+  height: 3.5rem;
+  background-color: var(--primary-color);
+  rotate: 45deg;
+  z-index: 5;
+  .svg {
+    width: 2.2rem;
+    position: absolute;
+    left: 35%;
+    bottom: 0rem;
+    rotate: -45deg;
+  }
 }

@@ -26,15 +26,13 @@ export default function PackageCard(props: Package) {
       <span className="check-mark-container">
         <CheckMark className="svg" />
       </span>
-      <div className="package-info">
-        <header>
-          {props.new_price.toLocaleString().replace(",", " ")} MMK
-        </header>
-        <span>{props.name}</span>
-      </div>
       <span className="package-img-container">
         {props.icon && <img src={props.icon} alt="" />}
       </span>
+      <div className="package-info">
+        <header className="title">{props.name}</header>
+        <span>{props.new_price.toLocaleString().replace(",", " ")} MMK</span>
+      </div>
     </label>
   );
 }
