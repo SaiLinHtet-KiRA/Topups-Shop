@@ -1,6 +1,6 @@
 import type { Package } from "@/interface/package";
 import "./PackageCard.css";
-import { CheckMark } from "@/svg";
+// import { CheckMark } from "@/svg";
 import { useSearchParams } from "react-router";
 
 export default function PackageCard(props: Package) {
