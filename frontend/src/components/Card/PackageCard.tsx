@@ -23,9 +23,9 @@ export default function PackageCard(props: Package) {
           })
         }
       />
-      <span className="check-mark-container">
+      {/* <span className="check-mark-container">
         <CheckMark className="svg" />
-      </span>
+      </span> */}
       <span className="package-img-container">
         {props.icon && <img src={props.icon} alt="" />}
       </span>
