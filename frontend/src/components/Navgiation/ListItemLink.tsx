@@ -13,7 +13,7 @@ export default function ListItemLink() {
   return (
     <section className="list-item-link-container">
       {Items.map(({ to, label, svg }) => (
-        <Link to={to} className="flex-center">
+        <Link to={to} className="flex-center" key={label}>
           {React.createElement(svg, { className: "svg-sm" })}
           {label}
         </Link>

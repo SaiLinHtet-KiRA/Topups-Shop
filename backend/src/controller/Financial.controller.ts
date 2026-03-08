@@ -5,18 +5,19 @@ import Receipt from "../interface/other/Receipt";
 
 class FinancialController implements FinancialControllerType {
   async deposit(
-    req: Request<any, any, Omit<Receipt, "receipt" | "userID">>,
+    req: Request<any, any, Omit<Receipt, "receipt" | "userID" | "chatId">>,
     res: Response,
   ): Promise<void> {
     try {
       if (req.file)
         await FinancialService.createDeposit({
-          receipt: req.file.buffer,
-          userID: req.user.id,
+          receipt: req.file!.buffer,
+          userID: req.user._id,
+          chatId: req.user.id,
           ...req.body,
         });
 
-      res.status(200);
+      res.status(200).json("Recharge order was successfully created");
     } catch (error) {
       throw error;
     }

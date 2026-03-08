@@ -11,14 +11,15 @@ export default async function checkBalance(
   try {
     const body = req.body;
     const user = req.user;
-    const { balance } = await UserService.getById(user.id);
-    const { _id, name, new_price } = await PackageService.getPackage(
+    const { balance } = await UserService.getById(user._id);
+    const { _id, name, new_price, icon } = await PackageService.getPackage(
       body.package as any,
     );
     if (balance < new_price) throw new Error("Insufficient Balance!!");
     req.body.package = {
       id: _id.toString(),
       name,
+      icon,
       price: new_price,
     };
 

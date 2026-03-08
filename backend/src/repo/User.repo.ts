@@ -11,7 +11,7 @@ class UserRepo implements UserRepoType {
       const User = new UserModel({ id });
       return await User.save();
     } catch (error) {
-      throw new Error("Method not implemented.");
+      throw error;
     }
   }
   async getById(id: string): Promise<UserDocument> {
@@ -20,7 +20,7 @@ class UserRepo implements UserRepoType {
       if (!User) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
       return User;
     } catch (error) {
-      throw new Error("Method not implemented.");
+      throw error;
     }
   }
   async getMany(

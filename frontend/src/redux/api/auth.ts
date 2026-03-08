@@ -18,6 +18,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
     getHistory: builder.query<reponseData, Query>({
       query: ({ type, limit, page }) =>
         `/auth/history?type=${type}&limit=${limit}&page=${page}`,
+      providesTags: ["Histroy"],
     }),
     telegramLogin: builder.mutation<any, string>({
       query: (initData) => ({

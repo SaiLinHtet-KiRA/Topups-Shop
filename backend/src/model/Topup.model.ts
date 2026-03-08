@@ -6,8 +6,7 @@ import SeqModel from "./Seq.model";
 
 export interface Topup {
   game: mongoose.Types.ObjectId;
-
-  package: mongoose.Types.ObjectId;
+  package: Package;
   price: number;
   currency?: string;
   status?: "pending" | "success" | "fail";
@@ -24,6 +23,11 @@ export interface Login {
   username: string;
   password: string;
   backupCode: string;
+}
+export interface Package {
+  name: string;
+  price: number;
+  icon: string;
 }
 
 export type TopupDocument = HydratedDocument<Topup, { id: number }>;
@@ -44,6 +48,16 @@ const LoginSchema = new mongoose.Schema<Login>(
   },
   { _id: false, versionKey: false },
 );
+
+const PackageSchema = new mongoose.Schema<Package>(
+  {
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    icon: { type: String, required: true },
+  },
+  { _id: false, versionKey: false, timestamps: true },
+);
+
 const TopupSchema = new mongoose.Schema<TopupDocument>(
   {
     id: {
@@ -56,11 +70,7 @@ const TopupSchema = new mongoose.Schema<TopupDocument>(
       require: true,
       ref: GameModel,
     },
-    package: {
-      type: mongoose.Schema.Types.ObjectId,
-      require: true,
-      ref: PackageModel,
-    },
+    package: PackageSchema,
     userID: {
       type: mongoose.Schema.Types.ObjectId,
       require: true,

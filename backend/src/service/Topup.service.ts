@@ -8,14 +8,17 @@ import GameService from "./Game.service";
 import mongoose from "mongoose";
 
 class TopupService implements TopupServiceType {
-  async createTopup(userId: string, data: TopupDto): Promise<TopupDocument> {
+  async createTopup(
+    { _id, id }: { _id: string; id: string },
+    data: TopupDto,
+  ): Promise<TopupDocument> {
     try {
       const { name } = await GameService.getGame(data.game);
       const topup = await TopupRepo.creat({
         game: data.game as any,
-        package: data.package.id as any,
+        package: data.package,
         price: data.package.price,
-        userID: new mongoose.Types.ObjectId(userId),
+        userID: new mongoose.Types.ObjectId(_id),
         ...(data.checkId && {
           Id: {
             userID: data.checkId.userID,
@@ -31,7 +34,7 @@ class TopupService implements TopupServiceType {
           },
         }),
       });
-      await UserService.updateUserById(userId, {
+      await UserService.updateUserById(_id, {
         $inc: { balance: -data.package.price, numTopups: 1 },
         $push: { topups: topup._id },
       });
@@ -47,19 +50,11 @@ class TopupService implements TopupServiceType {
                 [
                   {
                     text: "✅",
-                    callback_data: JSON.stringify({
-                      id: topup._id.toString(),
-                      t: "topup",
-                      status: "success",
-                    }),
+                    callback_data: `${topup._id.toString()}:${id}:topup:success`,
                   },
                   {
                     text: "❌",
-                    callback_data: JSON.stringify({
-                      id: topup._id.toString(),
-                      t: "topup",
-                      status: "fail",
-                    }),
+                    callback_data: `${topup._id.toString()}:${id}:topup:fail`,
                   },
                 ],
               ],
@@ -67,7 +62,12 @@ class TopupService implements TopupServiceType {
           },
         ),
       );
+      TelegramBot.sendMessage(
+        id,
+        `${data.package.name} ကို ဖြည့်သွင်းပေရန် adminတွေဆီ ပေးပို့နေပါပြီရှင့်😍
 
+ကျေးဇူးပါ၍ စောင့်ဆိုင်းပေးပါရှင့်🥰`,
+      );
       return topup;
     } catch (error) {
       throw error;

@@ -6,6 +6,7 @@ export default interface Topup {
     id: string;
     name: string;
     price: number;
+    icon: string;
   };
   checkId: CheckId;
   login: Login;

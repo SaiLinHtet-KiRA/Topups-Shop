@@ -10,8 +10,10 @@ class TopupController implements TopupControllerType {
   ): Promise<void> {
     try {
       const data = req.body;
-
-      const topup = await TopupService.createTopup(req.user.id, data);
+      const topup = await TopupService.createTopup(
+        { _id: req.user._id, id: req.user.id },
+        data,
+      );
       res.status(200).json(topup);
     } catch (error) {
       throw error;

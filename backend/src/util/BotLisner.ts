@@ -26,30 +26,60 @@ TelegramBot.on("callback_query", async (query) => {
   if (!query.message) throw new Error("Messsage was not send from client");
 
   if (query.data) {
-    const data: {
-      status: "pending" | "success" | "fail";
-      id: string;
-      t: "topup" | "r";
-    } = JSON.parse(query.data);
-    if (data.t == "topup") {
-      const topup = await TopupService.getTopup(data.id);
-      if (topup.status == data.status) {
+    const data = query.data.split(":");
+
+    if (data[2] == "topup") {
+      const topup = await TopupService.getTopup(data[0]);
+      if (topup.status == data[3]) {
         TelegramBot.sendMessage(
           query.message!.chat.id,
           "That order is already updated",
         );
       } else {
-        TopupService.updateTopup(data.id, { status: data.status } as any);
+        const topup = await TopupService.updateTopup(data[0], {
+          status: data[3],
+        } as any);
+        if (data[3] == "success")
+          TelegramBot.sendMessage(
+            data[1],
+            `${topup.package.name} ကို ဖြည့်သွင်းပေးမှု အောင်မြင်ပါတယ်ရှင့်😻
+
+ဝယ်ယူအားပေးမှုကို ကျေးဇူးတင်ပါတယ်ရှင့်🥰`,
+          );
+        else if (data[3] == "fail")
+          TelegramBot.sendMessage(
+            data[1],
+            `${topup.package.name}ကို ဖြည့်သွင်းပေးမှု မအောင်မြင်ပါဘူးရှင့်😔
+
+ကျေးဇူးပြု၍ admin ကို ဆက်သွယ်ပေးပါရှင့်🥰
+
+admin - @lucius_playz`,
+          );
       }
-    } else if (data.t == "r") {
-      const deposit = await FinancialService.getDepositById(data.id);
-      if (deposit.status == data.status) {
+    } else if (data[2] == "recharge") {
+      const deposit = await FinancialService.getDepositById(data[0]);
+
+      if (deposit.status == data[3]) {
         TelegramBot.sendMessage(
           query.message!.chat.id,
           "That order is already updated",
         );
       } else {
-        FinancialService.updateDeposit(data.id, { status: data.status } as any);
+        FinancialService.updateDeposit(data[0], { status: data[3] } as any);
+        if (data[3] == "success")
+          TelegramBot.sendMessage(
+            data[1],
+            `ငွေဖြည့်သွင်းမှု အမှတ်စဉ် ${deposit.id} က အောင်မြင်ပါတယ်ရှင့်😍
+
+Games items များကို စိတ်ကြိုက်ဝယ်ယူနိုင်ပါပြီရှင့်`,
+          );
+        else if (data[3] == "fail")
+          TelegramBot.sendMessage(
+            data[1],
+            `ငွေဖြည့်သွင်းမှု အမှတ်စဉ် ${deposit.id} က မအောင်မြင်ပါဘူးရှင့်😔
+
+ကျေးဇူးပြု၍ ထပ်မှန်ကြိုးစားပါရှင့်🥰`,
+          );
       }
     }
   }

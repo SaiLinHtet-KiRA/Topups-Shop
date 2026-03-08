@@ -16,7 +16,7 @@ export default function Notes() {
       <header>Need To Know</header>
       <ul className="note-container">
         {notes.map((note, i) => (
-          <li className={"note" + i}>{note}</li>
+          <li key={"note-" + i}>{note}</li>
         ))}
       </ul>
       <Warining text={warining} />

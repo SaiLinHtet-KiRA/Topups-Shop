@@ -25,7 +25,7 @@ export const authApiSlice = apiSlice.injectEndpoints({
         method: "POST",
         body: data,
       }),
-      invalidatesTags: ["AccountInfo"],
+      invalidatesTags: ["AccountInfo", "Histroy"],
     }),
     getTopups: builder.query<any, Query>({
       query: ({ page, limit }) => `/topups?page=${page}&limit=${limit}`,

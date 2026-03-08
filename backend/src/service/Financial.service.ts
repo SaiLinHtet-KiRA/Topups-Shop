@@ -12,6 +12,7 @@ class FinancialService implements FinancialServiceType {
     banking,
     receipt,
     userID,
+    chatId,
   }: Receipt): Promise<DepositDocument> {
     try {
       const deposit = await FinancialRepo.create({
@@ -30,26 +31,23 @@ class FinancialService implements FinancialServiceType {
               [
                 {
                   text: "✅",
-                  callback_data: JSON.stringify({
-                    id: deposit._id.toString(),
-                    t: "r",
-                    status: "success",
-                  }),
+                  callback_data: `${deposit._id.toString()}:${id}:recharge:success`,
                 },
                 {
                   text: "❌",
-                  callback_data: JSON.stringify({
-                    id: deposit._id.toString(),
-                    t: "r",
-                    status: "fail",
-                  }),
+                  callback_data: `${deposit._id.toString()}:${id}:recharge:fail`,
                 },
               ],
             ],
           },
         });
       });
+      TelegramBot.sendMessage(
+        chatId,
+        `သင့် ငွေဖြည့်သွင်းမှု အမှတ်စဉ် ${deposit.id} ကို adminတွေဆီ ပေးပို့ပြီးပါပြီးရှင့်
 
+ကျေးဇူးပါ၍ စောင့်ဆိုင်းပေးပါရှင့်🥰`,
+      );
       return deposit;
     } catch (error) {
       throw error;

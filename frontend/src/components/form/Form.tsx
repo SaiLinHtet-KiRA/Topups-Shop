@@ -3,7 +3,6 @@ import { ArrowUpTray, BankNote, User, type SvgCompontentProp } from "@/svg";
 import "./Form.css";
 import { useDepositMutation } from "@/redux/api/deposit";
 import type Receipt from "@/interface/Receipt";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import ShowToast from "@/helper/ShowToast";
 
@@ -51,16 +50,16 @@ export default function Form({ payment }: { payment: string }) {
   return (
     <form
       className="form-container"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
         try {
           if (receipt) {
-            deposit(receipt);
+            await deposit(receipt).unwrap();
             ShowToast("success", "Your order is suceessfully placed!!");
             router(-1);
           }
         } catch (error) {
-          toast.error("Something worng");
+          ShowToast("error", "Something worng!! Please try again");
         }
       }}
     >
