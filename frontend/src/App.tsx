@@ -15,6 +15,7 @@ export default function App() {
   const [telegramLogin] = useTelegramLoginMutation();
   const { data, isLoading } = useGetAccountInfoQuery();
 
+  console.log()
   useEffect(() => {
     if (window.Telegram?.WebApp) {
       const tg = window.Telegram.WebApp;
