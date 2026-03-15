@@ -1,0 +1,29 @@
+.input-user-field {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  .input-container {
+    flex-grow: 1;
+    position: relative;
+    height: 2.2rem;
+    input {
+      inset: 0;
+      position: absolute;
+      background-color: transparent;
+      font-size: 1.1rem;
+      border-bottom: 0px;
+      &:focus {
+        border-bottom: 1px solid var(--primary-color);
+      }
+    }
+  }
+
+  button {
+    background-color: var(--primary-color);
+    border: 0px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    border-radius: 0.4rem;
+  }
+}

@@ -43,3 +43,7 @@
     stroke-width: 0.02rem;
   }
 }
+.money-badge-container {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,0 +1,16 @@
+.money-badge {
+  display: flex;
+  gap: 0.1rem;
+  flex: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 0.6rem;
+  padding: 0.6rem 1rem;
+  flex-direction: column;
+  .label {
+    font-size: small;
+    opacity: 0.7;
+  }
+  .value {
+    font-weight: 900;
+  }
+}

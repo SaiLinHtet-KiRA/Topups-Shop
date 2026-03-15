@@ -15,6 +15,10 @@ export const authApiSlice = apiSlice.injectEndpoints({
       query: () => "/auth/info",
       providesTags: ["AccountInfo"],
     }),
+    updateAccountInfo: builder.mutation<AccountInfo, Partial<AccountInfo>>({
+      query: (body) => ({ url: "/auth/info", method: "PATCH", body }),
+      invalidatesTags: ["AccountInfo"],
+    }),
     getHistory: builder.query<reponseData, Query>({
       query: ({ type, limit, page }) =>
         `/auth/history?type=${type}&limit=${limit}&page=${page}`,
@@ -35,4 +39,5 @@ export const {
   useGetAccountInfoQuery,
   useTelegramLoginMutation,
   useGetHistoryQuery,
+  useUpdateAccountInfoMutation,
 } = authApiSlice;
