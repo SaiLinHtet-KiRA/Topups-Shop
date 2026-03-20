@@ -22,16 +22,16 @@ export default function GameForm(game: Game) {
           <span>Packages</span>
         </header>
         <section className="package-section-container">
-          {game.packages?.map(({ name, packages }, index) => (
+          {game.packages?.map(({ packages }, index) => (
             <section className="package-container">
-              <header>
-                <span>{name}</span>
-              </header>
               <section className="package-wrapper">
                 {packages.map(({ new_price, name, icon }, index2) => (
                   <label htmlFor={name} className="package-card">
+                    <span className="package-img-container">
+                      {icon && <img src={icon} alt="" />}
+                    </span>
                     <div className="package-info">
-                      <header>
+                      <header id="package-input-container">
                         <InputField
                           type="number"
                           value={new_price}
@@ -42,9 +42,6 @@ export default function GameForm(game: Game) {
                       </header>
                       <span>{name}</span>
                     </div>
-                    <span className="package-img-container">
-                      <img src={icon} alt="" />
-                    </span>
                   </label>
                 ))}
               </section>

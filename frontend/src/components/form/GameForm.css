@@ -1,11 +1,13 @@
-.game-info-form {
-  gap: 0.1rem;
+#package-input-container {
+  font-size: 0.8rem;
 }
 .package-input {
   border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 0.4rem;
   background-color: transparent;
-  font-size: 1rem;
-  text-align: center;
+  font-size: 0.8rem;
+  text-align: start;
+  width: 2.3rem !important;
 }
 .update-btn {
   background-color: var(--primary-color);

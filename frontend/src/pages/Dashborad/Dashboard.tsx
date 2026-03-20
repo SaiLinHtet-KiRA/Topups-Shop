@@ -1,4 +1,4 @@
-import { Clock, Controller, Document, Trophy, User } from "@/svg";
+import { Clock, Controller, Document, User } from "@/svg";
 import "./Dashborad.css";
 import React from "react";
 import { Link } from "react-router";
@@ -8,13 +8,11 @@ import InputUserNameField from "@/components/input/InputUserNameField";
 
 export default function Dashboard() {
   const options = [
-    { to: "Leaderboard", name: "Leaderboard", svg: Trophy },
+    // { to: "Leaderboard", name: "Leaderboard", svg: Trophy },
     { to: "history", name: "history", svg: Clock },
     { to: "document", name: "terms & policy", svg: Document },
   ];
-  const { role, username, totalBalance, balance } = useAppSelector(
-    ({ user }) => user,
-  );
+  const { role, totalBalance, balance } = useAppSelector(({ user }) => user);
   const moneys = [
     { text: "ကျန်ရှိငွေ", value: balance },
     { text: "စုစုပေါင်းငွေ", value: totalBalance },
