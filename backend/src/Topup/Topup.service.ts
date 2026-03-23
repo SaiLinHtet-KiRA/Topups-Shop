@@ -1,0 +1,107 @@
+import TopupServiceType from "./types/Topup.service.type";
+import { TopupDocument } from "./Topup.model";
+import TopupDto from "../interface/dto/Topup.dto";
+import TopupRepo from "./Topup.repo";
+import TelegramBot from "../util/TelegramBot";
+import UserService from "../User/User.service";
+import GameService from "../Game/Game.service";
+import mongoose from "mongoose";
+import RecordsService from "../records/Records.service";
+
+class TopupService implements TopupServiceType {
+  async createTopup(
+    { _id, id }: { _id: string; id: string },
+    data: TopupDto,
+  ): Promise<TopupDocument> {
+    try {
+      const { name } = await GameService.getGame(data.game);
+      const topup = await TopupRepo.creat({
+        game: data.game as any,
+        package: data.package,
+        price: data.package.price,
+        userID: new mongoose.Types.ObjectId(_id),
+        ...(data.checkId && {
+          Id: {
+            userID: data.checkId.userID,
+            zoneID: data.checkId.zoneID,
+            server: data.checkId.server,
+          },
+        }),
+        ...(data.login && {
+          login: {
+            username: data.login.username,
+            password: data.login.password,
+            backupCode: data.login.backupCode,
+          },
+        }),
+      });
+      await UserService.updateUserById(_id, {
+        $inc: { balance: -data.package.price },
+      });
+      await RecordsService.updateRecords(_id, {}, "Topups");
+
+      const Admins = await UserService.findAdmins();
+      Admins.map(({ id }) =>
+        TelegramBot.sendMessage(
+          Number(id),
+          `New order Arrived!!\nGame: ${name}\nPackage: ${data.package.name}\nPrice: ${data.package.price} ${topup.currency}${data.checkId.userID ? "\nUser ID: " + data.checkId.userID : ""} ${data.checkId.zoneID ? "\nZone ID or Server ID: " + data.checkId.zoneID : ""} ${data.checkId.server ? "\nServer:" + data.checkId.server : ""}${data.login.username ? "\nUsername:" + data.login.username : ""}${data.login.password ? "\nPassword:" + data.login.password : ""}${data.login.backupCode ? "\nBackup Code:" + data.login.backupCode : ""}`,
+          {
+            reply_markup: {
+              inline_keyboard: [
+                [
+                  {
+                    text: "✅",
+                    callback_data: `${topup._id.toString()}:${id}:topup:success`,
+                  },
+                  {
+                    text: "❌",
+                    callback_data: `${topup._id.toString()}:${id}:topup:fail`,
+                  },
+                ],
+              ],
+            },
+          },
+        ),
+      );
+      TelegramBot.sendMessage(
+        id,
+        `${data.package.name} ကို ဖြည့်သွင်းပေရန် adminတွေဆီ ပေးပို့နေပါပြီရှင့်😍
+
+ကျေးဇူးပါ၍ စောင့်ဆိုင်းပေးပါရှင့်🥰`,
+      );
+      return topup;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getTopup(id: string): Promise<TopupDocument> {
+    try {
+      return TopupRepo.getById(id);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getTopups(page: number, limit: number): Promise<TopupDocument[]> {
+    try {
+      return await TopupRepo.getMany(page, limit);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateTopup(id: string, data: TopupDocument): Promise<TopupDocument> {
+    try {
+      return await TopupRepo.updateById(id, data);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async deleteTopup(id: string): Promise<TopupDocument> {
+    try {
+      throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+export default new TopupService();

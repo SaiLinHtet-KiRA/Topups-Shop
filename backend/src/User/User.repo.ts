@@ -1,0 +1,112 @@
+import UserModel, { User, UserDocument } from "./User.model";
+import UserRepoType from "./types/User.repo.type";
+import { NotFoundError } from "../util/error/errors";
+import { UpdateQuery } from "mongoose";
+import { DepositType, DepositDocument } from "../Financial/Deposit.model";
+import { TopupDocument } from "../Topup/Topup.model";
+
+class UserRepo implements UserRepoType {
+  async create(id: string): Promise<UserDocument> {
+    try {
+      const User = new UserModel({ id });
+      return await User.save();
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getById(id: string): Promise<UserDocument> {
+    try {
+      const User = await UserModel.findById(id);
+      if (!User) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return User;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getMany(
+    filter: Partial<User>,
+    sort: keyof UserDocument,
+    start: number,
+    limit: number,
+  ): Promise<UserDocument[]> {
+    try {
+      return await UserModel.find(filter)
+        .sort({ [sort]: 1 })
+        .skip(start)
+        .limit(limit);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getByFindOne(id: string): Promise<UserDocument> {
+    try {
+      const user = await UserModel.findOne({ id });
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+  // async getPopulate(
+  //   id: string,
+  //   type: string,
+  //   start: number,
+  //   limit: number,
+  // ): Promise<any> {
+  //   try {
+  //     const user = await UserModel.findById(id, {
+  //       receipts: 1,
+  //       topups: 1,
+  //       numReceipts: 1,
+  //     }).populate({
+  //       path: type,
+  //       options: {
+  //         limit,
+  //         skip: (start - 1) * limit,
+  //         sort: { createdAt: -1 },
+  //         populate: type == "recharges" ? [] : ["game", "package"],
+  //       },
+  //     });
+
+  //     if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+  //     if (type == "recharges")
+  //       return { size: user.numRecharges, data: user.recharges };
+  //     if (type == "topups") return { size: user.numTopups, data: user.topups };
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
+  async updateById(
+    id: string,
+    data: UpdateQuery<UserDocument>,
+  ): Promise<UserDocument> {
+    try {
+      const user = await UserModel.findByIdAndUpdate(id, data);
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateByFindOne(
+    { id }: Partial<User>,
+    data: UpdateQuery<UserDocument>,
+  ): Promise<UserDocument> {
+    try {
+      const user = await UserModel.findOneAndUpdate({ id }, data);
+      if (!user) throw new NotFoundError(`User is not found in DB!!! ID=${id}`);
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
+  async deleteById(id: string): Promise<UserDocument> {
+    try {
+      throw new Error("Method not implemented.");
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+
+export default new UserRepo();

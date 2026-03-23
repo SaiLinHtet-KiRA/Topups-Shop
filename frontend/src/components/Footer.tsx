@@ -7,7 +7,7 @@ export default function Footer() {
         <CopyRight className="svg-sm" />
         {new Date().getFullYear()}
       </span>
-      <span>version 2.1.2</span>
+      <span>version 2.1.4</span>
     </footer>
   );
 }

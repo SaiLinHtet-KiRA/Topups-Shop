@@ -1,11 +1,11 @@
-import GameService from "../service/Game.service";
+import GameService from "../Game/Game.service";
 import Games from "../data/game";
 import Config from "../data/config";
 import fs from "fs";
-import PackageService from "../service/Package.service";
-import PackagesService from "../service/Packages.service";
+import PackageService from "../Packages/Package.service";
+import PackagesService from "../Packages/Packages.service";
 import mongoose from "mongoose";
-import ConfigService from "../service/Util.service";
+import ConfigService from "../Other/Util.service";
 
 const addData = async () => {
   try {

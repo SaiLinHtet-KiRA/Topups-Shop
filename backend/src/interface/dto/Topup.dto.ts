@@ -1,6 +1,6 @@
-import { CheckId, Login } from "../../model/Topup.model";
+import { CheckId, Login } from "../../Topup/Topup.model";
 
-export default interface Topup {
+export default interface TopupDto {
   game: string;
   package: {
     id: string;

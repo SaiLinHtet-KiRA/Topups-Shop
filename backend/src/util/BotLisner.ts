@@ -1,9 +1,9 @@
-import ConfigService from "../service/Util.service";
-import FinancialService from "../service/Financial.service";
-import TopupService from "../service/Topup.service";
+import ConfigService from "../Other/Util.service";
+import FinancialService from "../Financial/Financial.service";
+import TopupService from "../Topup/Topup.service";
 import TelegramBot from "./TelegramBot";
 import Config from "../data/config";
-import UserService from "../service/User.service";
+import UserService from "../User/User.service";
 
 TelegramBot.on("message", async (msg) => {
   try {

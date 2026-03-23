@@ -1,6 +1,6 @@
 import { Router } from "express";
 import TelegramRoute from "./telegram.route";
-import authController from "../../controller/auth.controller";
+import authController from "../../User/auth.controller";
 import requireAuth from "../../middleware/requireAuth";
 const router = Router();
 

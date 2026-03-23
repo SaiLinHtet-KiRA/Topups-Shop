@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import UserService from "../service/User.service";
-import PackageService from "../service/Package.service";
+import UserService from "../User/User.service";
+import PackageService from "../Packages/Package.service";
 import Topup from "../interface/dto/Topup.dto";
 
 export default async function checkBalance(

@@ -1,0 +1,106 @@
+import userService from "./User.service";
+import { Request, Response } from "express";
+import { createJwt } from "../util/createJwt";
+import TgInitData from "../interface/other/TgInitData";
+import { User } from "./User.model";
+import UserService from "./User.service";
+import AuthControllerType from "./types/Auth.controller.type";
+
+class AuthController implements AuthControllerType {
+  async TelegramLogin(
+    req: Request<null, null, { initData: string; user: TgInitData }, null>,
+    res: Response,
+  ): Promise<void> {
+    try {
+      // const { user } = req.body;
+      const user = {
+        user: {
+          id: 1665560632,
+          first_name: "Kira",
+          last_name: "",
+          username: "kira16ok",
+          language_code: "en",
+          allows_write_to_pm: true,
+          photo_url:
+            "https://t.me/i/userpic/320/Ktkayo1PFBb6iZlY3fTsG7IAncjkmQHmMfyyZVWAckc.svg",
+        },
+        chat_instance: "-7776823432591278099",
+        chat_type: "sender",
+        auth_date: "1771852561",
+        signature:
+          "jNwTF9MDCe9Wtg8PxQ9_W1OMaIhnVc-2wBRvw6s4vj9kmiGv-4X7uAn0MJr2yjHaefbEEy8syCC_ZFQl7EGUBQ",
+        hash: "f9727b5d82f90cf313c02d49d0234a0edfb0f70a06e0d13082288048c5b4fc6b",
+      };
+
+      const existUser = await userService.findOrCreateUser(
+        String(user.user.id),
+      );
+
+      const token = createJwt({ id: existUser._id.toString() });
+      req.session = { token };
+
+      res.status(200).json({ message: "Logged in successfully" });
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getUsers(
+    req: Request<
+      null,
+      null,
+      null,
+      { type: string; page: number; limit: number; sort: string }
+    >,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { type, page, limit, sort } = req.query;
+      const user = await UserService.getUsers(page, limit);
+      res.status(200).json(user);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async updateUserInfo(
+    req: Request<null, null, User, null>,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const user = await userService.updateUserById(req.user._id, req.body);
+      res.status(200).json(user);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getAccountInfo(
+    req: Request<null, null, null, { id: string }>,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { banned, balance, role, username, totalBalance } =
+        await userService.getById(req.user._id);
+      res.status(200).json({ banned, balance, role, username, totalBalance });
+    } catch (error) {
+      throw error;
+    }
+  }
+  async getHistory(
+    req: Request<
+      null,
+      null,
+      null,
+      { type: string; page: number; limit: number }
+    >,
+    res: Response,
+  ): Promise<void> {
+    try {
+      const { _id } = req.user;
+      const { type, page, limit } = req.query;
+      const History = await userService.getHistory(_id, type, page, limit);
+      res.status(200).json(History);
+    } catch (error) {
+      throw error;
+    }
+  }
+}
+export default new AuthController();

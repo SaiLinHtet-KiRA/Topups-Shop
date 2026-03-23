@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { AuthorizeError } from "../util/error/errors";
-import UserService from "../service/User.service";
+import UserService from "../User/User.service";
 interface JwtPayload {
   id: string;
 }

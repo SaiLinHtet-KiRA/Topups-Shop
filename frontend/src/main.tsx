@@ -19,6 +19,7 @@ import History from "./pages/Dashborad/History.tsx";
 import Document from "./pages/Document.tsx";
 import "./index.css";
 import "./animate.css";
+import LeaderBorad from "./pages/Dashborad/LeaderBorad.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
           <Route path=":id" element={<GameAdamin />} />
         </Route>
         <Route path="history" element={<History />} />
+        <Route path="leaderboard" element={<LeaderBorad />} />
         <Route path="document" element={<Document />} />
       </Route>
     </Route>,
